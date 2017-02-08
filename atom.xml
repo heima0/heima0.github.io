@@ -39,9 +39,11 @@
     <link href="http://yoursite.com/2017/02/06/Git%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/"/>
     <id>http://yoursite.com/2017/02/06/Git入门指南/</id>
     <published>2017-02-06T07:41:12.000Z</published>
-    <updated>2017-02-06T08:25:33.066Z</updated>
+    <updated>2017-02-08T02:41:25.369Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git blog</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h2 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git blog</div></pre></td></tr></table></figure>
+<p>const express = require(‘express’)<br>const app = express();<br>app.get(‘/‘, (req,res)=&gt;{<br>    res.end()<br>})<br>req.query; 获取请求字符串数据<br>req.method; 请求方法。</p>
+]]></content>
     
     <summary type="html">
     
