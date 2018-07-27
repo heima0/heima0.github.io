@@ -144,11 +144,11 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-node的知识点整理"
+            <article id="post-vue-2"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年05月10日 12:35" datetime="2016-05-10T04:35:24.000Z"  itemprop="datePublished">2016-05-10</time>
+        <time class="post-time" title="2017年06月05日 13:12" datetime="2017-06-05T05:12:14.000Z"  itemprop="datePublished">2017-06-05</time>
 
         
 
@@ -162,7 +162,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/05/10/node的知识点整理/">node的知识点整理</a>
+      <a class="post-title-link" href="/2017/06/05/vue-2/">vue-2</a>
     </h3>
   
 
@@ -172,11 +172,12 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        将之前学习过的node知识简单整理一下1模块有点多，自己按着自己的记忆大概梳理一下
-
+        vue 指令、模板语法v-for这是一个指令，只要有v-的就是指令（directive 操作dom ）
+在vue中可以通过v-for来循环数据的通知循环dom，语法是item in/of items，接收第二个参数是索引 (item,index) of items,还可以循环键值对，第一个参数是value，第二个是key，第三个依然是索引
+v-on在vue中还有v-on来为dom绑定事件，在...
     
 
-        <a href="/2016/05/10/node的知识点整理/" class="post-more waves-effect waves-button">
+        <a href="/2017/06/05/vue-2/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -186,11 +187,11 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-6"
+            <article id="post-vue-1"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年03月21日 8:46" datetime="2016-03-21T00:46:21.000Z"  itemprop="datePublished">2016-03-21</time>
+        <time class="post-time" title="2017年05月17日 15:58" datetime="2017-05-17T07:58:49.000Z"  itemprop="datePublished">2017-05-17</time>
 
         
 
@@ -204,7 +205,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/03/21/JS原生框架-6/">JS原生框架-6</a>
+      <a class="post-title-link" href="/2017/05/17/vue-1/">vue-1</a>
     </h3>
   
 
@@ -214,18 +215,13 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-常见问题 这几个模块的js文件，除了第一个core.js，其他的沙箱是不是不需要暴露接口了
-这几个模块就存在了一个依赖关系
-iquery.core.js
- 去重函数为什么不能是实例方法而是工具方法不太明白
-一般情况, 需要实现某些通用功能的时候, 都是实现一个静态方法, 然后再用这个静态方法
-实现一个实例方法, 类似于 map 或 each.
-上次的案例有一个算法上的缺陷.
-    iQu...
+        Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低
+AngularJS是强主张的，而Vue更灵活
+Vue的数据流是单向的，数据流行更清晰
+Angu...
     
 
-        <a href="/2016/03/21/JS原生框架-6/" class="post-more waves-effect waves-button">
+        <a href="/2017/05/17/vue-1/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -235,11 +231,11 @@ iquery.core.js
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-5"
+            <article id="post-浅谈tap-highlight-color"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年03月15日 18:46" datetime="2016-03-15T10:46:00.000Z"  itemprop="datePublished">2016-03-15</time>
+        <time class="post-time" title="2017年04月27日 12:16" datetime="2017-04-27T04:16:50.000Z"  itemprop="datePublished">2017-04-27</time>
 
         
 
@@ -253,7 +249,7 @@ iquery.core.js
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/03/15/JS原生框架-5/">JS原生框架-5</a>
+      <a class="post-title-link" href="/2017/04/27/浅谈tap-highlight-color/">浅谈tap-highlight-color与::selection</a>
     </h3>
   
 
@@ -263,15 +259,25 @@ iquery.core.js
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-常见问题 1&gt; 代码结构 2&gt; 总结:
-$( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
-1) 如果左边的html字符串是多个元素什么结果, 规律是什么
-2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
-3) 如果两边都是多个元素, 又是什么结果, 什么规...
+        语法：1tap-highlight-color：&lt;color&gt;
+
+- 默认值：由user agent决定
+
+- 适用于：所有元素
+
+- 继承性：有
+
+- 动画性：是
+说明：- 设置或检索对象的轻按时高亮。
+
+- 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
+
+- 如果想取消这个高亮，将值设置为全透明即可，比如transparent
+
+- 对应的脚本特...
     
 
-        <a href="/2016/03/15/JS原生框架-5/" class="post-more waves-effect waves-button">
+        <a href="/2017/04/27/浅谈tap-highlight-color/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -281,11 +287,11 @@ $( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-4"
+            <article id="post-Es6-babel"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年03月09日 10:40" datetime="2016-03-09T02:40:48.000Z"  itemprop="datePublished">2016-03-09</time>
+        <time class="post-time" title="2017年01月23日 18:51" datetime="2017-01-23T10:51:20.000Z"  itemprop="datePublished">2017-01-23</time>
 
         
 
@@ -299,7 +305,7 @@ $( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/03/09/JS原生框架-4/">JS原生框架-4</a>
+      <a class="post-title-link" href="/2017/01/23/Es6-babel/">Es6+babel</a>
     </h3>
   
 
@@ -310,13 +316,17 @@ $( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
 
     
         
-常见问题  var name = ‘…’  // 张三丰 -&gt; 张*  // 李四 -&gt; 李  function convert( name ) {
-var firstName = name.charAt( 0 ); // 遍历 百家姓
-// 如果是复姓 indexOf( ... ) == 0
-var lastName = &apos;**********&apos;.slic...
+Ecmascript 6 + Babel
+npm scripts
+Express
+
+Babel Register第一：在项目根目录下创建一个 .babelrc 文件，写入以下内容：
+1234&#123;  "presets": [  ]&#125;
+第二：安装对应的转码规则：
+1234567891011# ES2015转码规则$ npm install --save-dev babel-p...
     
 
-        <a href="/2016/03/09/JS原生框架-4/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/23/Es6-babel/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -326,11 +336,11 @@ var lastName = &apos;**********&apos;.slic...
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-3"
+            <article id="post-Ecmascript6-阮一峰"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年02月14日 10:44" datetime="2016-02-14T02:44:45.000Z"  itemprop="datePublished">2016-02-14</time>
+        <time class="post-time" title="2017年01月18日 8:44" datetime="2017-01-18T00:44:25.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
 
@@ -344,7 +354,7 @@ var lastName = &apos;**********&apos;.slic...
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/02/14/JS原生框架-3/">JS原生框架-3</a>
+      <a class="post-title-link" href="/2017/01/18/Ecmascript6-阮一峰/">Ecmascript6-阮一峰</a>
     </h3>
   
 
@@ -355,16 +365,19 @@ var lastName = &apos;**********&apos;.slic...
 
     
         
-每天坚持多看看
-今天主要内容：复习经常会遇到的问题整理一下正则表达式的用法
-问题  1.为什么 forEach 中的回调函数有第三个参数 
-arr.forEach( function ( v, i, arr ) { ... } )
-1) 代码要运行就会被解析, 已解析就会创建对象
-    for ( var i = 0; i &lt; 10; i++  ){
-        var o =...
+Ecmascript 6-阮一峰
+
+Ecmascript 6
+ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。
+Ecmascript 是 JavaScript 语言的标注规范
+JavaScript 是 Ecmascript 规范的具体实现
+具体实现取决于各大浏览器厂商的支持进度
+
+
+Ecmascript 6 也被称作 E...
     
 
-        <a href="/2016/02/14/JS原生框架-3/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/Ecmascript6-阮一峰/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -374,11 +387,11 @@ arr.forEach( function ( v, i, arr ) { ... } )
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-2"
+            <article id="post-Git-bash、Git基本命令"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年02月12日 19:41" datetime="2016-02-12T11:41:29.000Z"  itemprop="datePublished">2016-02-12</time>
+        <time class="post-time" title="2016年08月13日 18:50" datetime="2016-08-13T10:50:04.000Z"  itemprop="datePublished">2016-08-13</time>
 
         
 
@@ -392,7 +405,7 @@ arr.forEach( function ( v, i, arr ) { ... } )
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/02/12/JS原生框架-2/">JS原生框架-2</a>
+      <a class="post-title-link" href="/2016/08/13/Git-bash、Git基本命令/">Git-bash、Git基本命令</a>
     </h3>
   
 
@@ -402,17 +415,23 @@ arr.forEach( function ( v, i, arr ) { ... } )
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.
- 例如使用 DOM-Core 方法设置 div 的样式
- 
-
- 设置 div 的宽度为 300px
- div.style.width = ‘300px’;
- div.setAttribute( ‘style’,...
+        Git-bash、Git基本命令
+Git-bash 文件操作相关命令
+touch：创建文件
+cat：查看文件
+less：查看大文本文件
+vi：visual interface
+Esc 退出到命令模式
+i 进入插入模式
+:q 退出vi
+:w 保存编辑
+:wq 保存并退出
+:q! 强制退出不保存修改
+vi 的所有操作基本全部是命令，这里掌握基本使用基于可以了
+有时候使用 git commit 进...
     
 
-        <a href="/2016/02/12/JS原生框架-2/" class="post-more waves-effect waves-button">
+        <a href="/2016/08/13/Git-bash、Git基本命令/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -422,11 +441,11 @@ arr.forEach( function ( v, i, arr ) { ... } )
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-JS原生框架-1"
+            <article id="post-版本控制（SVN、Git）和Github整理"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年02月08日 19:35" datetime="2016-02-08T11:35:45.000Z"  itemprop="datePublished">2016-02-08</time>
+        <time class="post-time" title="2016年08月11日 12:45" datetime="2016-08-11T04:45:03.000Z"  itemprop="datePublished">2016-08-11</time>
 
         
 
@@ -440,7 +459,7 @@ arr.forEach( function ( v, i, arr ) { ... } )
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/02/08/JS原生框架-1/">JS原生框架-1</a>
+      <a class="post-title-link" href="/2016/08/11/版本控制（SVN、Git）和Github整理/">版本控制（SVN、Git）和Github整理</a>
     </h3>
   
 
@@ -450,18 +469,18 @@ arr.forEach( function ( v, i, arr ) { ... } )
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-原生框架 -&gt; 注意: 不是在重复造轮子. 
--&gt; 把学习到的 js 等知识用起来
--&gt; 学习背后的思想( 提升, 面试 )
- -&gt; 准备工作
--&gt; js 语言入门: 1) 所有关键字( delete, in ), 2) 学会字符串操作,
-               3) 数组操作, 4) 键值对的使用( 容易 )
--&gt; 熟悉 jquery
--&gt;...
+        版本控制（SVN、Git）和Github整理
+知识点
+版本控制
+SVN
+Git
+Github
+
+
+版本控制问题1：历史记录问题2：多人协作解决问题：软件12345版本  用户  说明                   日期    张三  删除了软件服务条款5    7/12 10:38    张三  增加了License人数限制  7/12 18:09    李四  财务部门调整了合同金额...
     
 
-        <a href="/2016/02/08/JS原生框架-1/" class="post-more waves-effect waves-button">
+        <a href="/2016/08/11/版本控制（SVN、Git）和Github整理/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -471,11 +490,11 @@ arr.forEach( function ( v, i, arr ) { ... } )
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-hello-world"
+            <article id="post-Express-MongoDB-package-json"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年01月02日 20:11" datetime="2016-01-02T12:11:59.000Z"  itemprop="datePublished">2016-01-02</time>
+        <time class="post-time" title="2016年06月01日 12:38" datetime="2016-06-01T04:38:01.000Z"  itemprop="datePublished">2016-06-01</time>
 
         
 
@@ -489,7 +508,7 @@ arr.forEach( function ( v, i, arr ) { ... } )
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/01/02/hello-world/">Hello World</a>
+      <a class="post-title-link" href="/2016/06/01/Express-MongoDB-package-json/">Express-MongoDB-package.json</a>
     </h3>
   
 
@@ -499,11 +518,23 @@ arr.forEach( function ( v, i, arr ) { ... } )
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+        Express、 MongoDB、 package.json的介绍
+知识点
+Express
+MongoDB
 
+package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。
+目前已知的两个非常重要的属性：
+
+main
+main 和模块化中的第三方包加载规则有关系
+
+
+dependencies
+dependencie...
     
 
-        <a href="/2016/01/02/hello-world/" class="post-more waves-effect waves-button">
+        <a href="/2016/06/01/Express-MongoDB-package-json/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -513,11 +544,11 @@ arr.forEach( function ( v, i, arr ) { ... } )
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-通知"
+            <article id="post-对Node的理解以及简单使用"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2016年01月02日 10:51" datetime="2016-01-02T02:51:59.000Z"  itemprop="datePublished">2016-01-02</time>
+        <time class="post-time" title="2016年05月21日 12:48" datetime="2016-05-21T04:48:44.000Z"  itemprop="datePublished">2016-05-21</time>
 
         
 
@@ -531,7 +562,7 @@ arr.forEach( function ( v, i, arr ) { ... } )
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/01/02/通知/">通知</a>
+      <a class="post-title-link" href="/2016/05/21/对Node的理解以及简单使用/">对Node的理解以及简单使用</a>
     </h3>
   
 
@@ -541,10 +572,64 @@ arr.forEach( function ( v, i, arr ) { ... } )
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        callback callbackcallback callback callbackcallback callback callback1callback callback callback callback callback callback
+        Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。
+做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。
+REPL：Node 中类似于浏览器中的 Console 控制台
+R...
     
 
-        <a href="/2016/01/02/通知/" class="post-more waves-effect waves-button">
+        <a href="/2016/05/21/对Node的理解以及简单使用/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-npm介绍"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2016年05月15日 12:44" datetime="2016-05-15T04:44:19.000Z"  itemprop="datePublished">2016-05-15</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2016/05/15/npm介绍/">npm介绍</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        npm介绍npm是什么两层含义
+npm 是一个网站，这个网站上托管了几十万个使用 JavaScript 开发的功能模块库
+npm 是一个基于Node开发的一个终端命令行包管理工具
+可以使用这个工具去 npm 网站上下载对应的库
+
+
+
+npm 安装只要安装了 node 就有了 npm。
+通过 npm -v 测试是否有 npm 工具。
+使用 npm 安装包
+找到能解决自己问题的包，看文档使用说明...
+    
+
+        <a href="/2016/05/15/npm介绍/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
@@ -558,7 +643,7 @@ arr.forEach( function ( v, i, arr ) { ... } )
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </div>
 </nav>
 

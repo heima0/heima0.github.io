@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-3 | 博客空间</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="vue 数据改变 重新渲染问题
+当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
+123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-3">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/vue-3/index.html">
+<meta property="og:site_name" content="博客空间">
+<meta property="og:description" content="vue 数据改变 重新渲染问题
+当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
+123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+<meta property="og:updated_time" content="2018-07-27T06:30:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-3">
+<meta name="twitter:description" content="vue 数据改变 重新渲染问题
+当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
+123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+    
+        <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/liaoxuefeng/" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                廖神 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/ruanyf/" target="_blank" >
+                <i class="icon icon-lg icon-阮神Github"></i>
+                阮神 Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-3</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-3</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-08T02:44:56.000Z" itemprop="datePublished" class="page-time">
+  2017-06-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vue-数据改变-重新渲染问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue 数据改变 重新渲染问题</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-3"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-3</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年06月08日 10:44" datetime="2017-06-08T02:44:56.000Z"  itemprop="datePublished">2017-06-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="vue-数据改变-重新渲染问题"><a href="#vue-数据改变-重新渲染问题" class="headerlink" title="vue 数据改变 重新渲染问题"></a>vue 数据改变 重新渲染问题</h2><ul>
+<li><p>当无关数据进行改变时，Vue根元素内部还会渲染<br>解决办法：watch监听、计算属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">例：</div><div class="line">button @click=&quot;a++&quot; button</div><div class="line">&#123;&#123;a&#125;&#125;</div><div class="line">&#123;&#123;ab()&#125;&#125;</div><div class="line"></div><div class="line">input type=&quot;text&quot; v-model=&quot;message&quot; name=&quot;&quot;</div><div class="line">&#123;&#123;message&#125;&#125;</div><div class="line"></div><div class="line">data: &#123;</div><div class="line">        a: 1,</div><div class="line">        b: null,</div><div class="line">        message: &apos;&apos;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">        ab: function()&#123;</div><div class="line">          return this.a*2 + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    watch: &#123;</div><div class="line">      a: function(val,oldval)&#123;</div><div class="line">        console.log(&apos;watch&apos;);</div><div class="line">        this.b = val*2 + 1;</div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>当点击button a的值变化，会打印‘watch’,但是当无关数据message改变时，同样会触发ab();<br>这样肯定不是我们想要的，所以可以用watch监听 a的变化，在函数中进行一些操作，这样就不会影响了。<br>这样做有个小弊端，就是我们需要定义一个变量名‘b’来接受，如果要改变名字 需要改2处地方，当然这个因素基本可以忽略。</p>
+</li>
+<li><p>Vue给了我们最完美的方法，就是通过计算属性computed来进行操作</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/08/vue-3/&title=《vue-3》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/08/vue-3/&title=《vue-3》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/08/vue-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-3》 — 博客空间&url=http://yoursite.com/2017/06/08/vue-3/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/08/vue-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/06/13/vue-4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-4</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/05/vue-2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-3" data-title="vue-3" data-url="http://yoursite.com/2017/06/08/vue-3/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>博客空间 &copy; 2015 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/06/08/vue-3/&title=《vue-3》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/06/08/vue-3/&title=《vue-3》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/06/08/vue-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-3》 — 博客空间&url=http://yoursite.com/2017/06/08/vue-3/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/06/08/vue-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aQW7DMAwEwPz/0ynQaxt7SUqqC4xOQRzIoxwIaanXKx7v75E8fV+On7957Ri4uLhjbv6CT/SEksx5bcDFxT3PzctTXuCul3f9F3z8HhcX92HcaqmqzomLi/sfuYVJW0cmXFzcp3EnQcba3y87q+Hi4g641cB0x+eN+S4uLm6R+y6OHXFJ4e24uLhHuElrJAk+JrFpNULFxcU9w01KzNqjSxKXFA4/uLi4S7nJi3shSH7NIjkU/bIjw8XF3cbNy9mk2OUtk9G1Tlxc3KXcZNLkaQ+Xz4yLi3uG22uvTg421fB0QTcYFxd3zK0WryQATfZWy9IaXFzcpdz8Nfkiq9ujmy0XLi7uce4kQaluknBxcZ/PHV2Tihsn+dObzg8uLu5m7o62xxxXyHdxcXE3cPPjTW8Z1WJ3syRcXNyD3N41yt7Fi2qjBRcX96+4vQNPUtSSclZYBi4u7hFutaDkoHxL1GvA4OLi7ubm17MmcUleyG5KGy4u7kFuvh3ptUl6FfRjvouLi/sY7iQk7V3X+GUGXFzcB3PzDUq1KYuLi/scbrW4TDZG1SikGYvg4uIOuL3ANG+HJAehfJG4uLibuV9XdAYcGUWXuwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>
