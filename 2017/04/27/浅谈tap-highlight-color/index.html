@@ -13,23 +13,62 @@
     
     
     
-    <title>node的知识点整理 | 博客空间</title>
+    <title>浅谈tap-highlight-color与::selection | 博客空间</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="将之前学习过的node知识简单整理一下1模块有点多，自己按着自己的记忆大概梳理一下">
+    <meta name="description" content="语法：### tap-highlight-color：&amp;lt;color&amp;gt;
+
+### 默认值：由user agent决定
+
+### 适用于：所有元素
+
+### 继承性：有
+
+### 动画性：是
+说明：### 设置或检索对象的轻按时高亮。
+
+### 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
+
+### 如果想取消这个高亮，将值设置为全透明即可，比如transpa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node的知识点整理">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/node的知识点整理/index.html">
+<meta property="og:title" content="浅谈tap-highlight-color与::selection">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/浅谈tap-highlight-color/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="将之前学习过的node知识简单整理一下1模块有点多，自己按着自己的记忆大概梳理一下">
-<meta property="og:updated_time" content="2017-02-11T05:10:52.000Z">
+<meta property="og:description" content="语法：### tap-highlight-color：&amp;lt;color&amp;gt;
+
+### 默认值：由user agent决定
+
+### 适用于：所有元素
+
+### 继承性：有
+
+### 动画性：是
+说明：### 设置或检索对象的轻按时高亮。
+
+### 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
+
+### 如果想取消这个高亮，将值设置为全透明即可，比如transpa">
+<meta property="og:updated_time" content="2018-07-27T04:26:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node的知识点整理">
-<meta name="twitter:description" content="将之前学习过的node知识简单整理一下1模块有点多，自己按着自己的记忆大概梳理一下">
+<meta name="twitter:title" content="浅谈tap-highlight-color与::selection">
+<meta name="twitter:description" content="语法：### tap-highlight-color：&amp;lt;color&amp;gt;
+
+### 默认值：由user agent决定
+
+### 适用于：所有元素
+
+### 继承性：有
+
+### 动画性：是
+说明：### 设置或检索对象的轻按时高亮。
+
+### 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
+
+### 如果想取消这个高亮，将值设置为全透明即可，比如transpa">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -106,7 +145,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">node的知识点整理</div>
+        <div class="flex-col header-title ellipsis">浅谈tap-highlight-color与::selection</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -128,11 +167,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">node的知识点整理</h1>
+        <h1 class="title">浅谈tap-highlight-color与::selection</h1>
         <h5 class="subtitle">
             
-                <time datetime="2016-05-10T04:35:24.000Z" itemprop="datePublished" class="page-time">
-  2016-05-10
+                <time datetime="2017-04-27T04:16:50.000Z" itemprop="datePublished" class="page-time">
+  2017-04-27
 </time>
 
 
@@ -150,17 +189,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#将之前学习过的node知识简单整理一下"><span class="post-toc-number">1.</span> <span class="post-toc-text">将之前学习过的node知识简单整理一下</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#语法："><span class="post-toc-number">1.</span> <span class="post-toc-text">语法：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#说明："><span class="post-toc-number">2.</span> <span class="post-toc-text">说明：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题指向"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题指向</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#selection-选择器问题"><span class="post-toc-number">4.</span> <span class="post-toc-text">::selection 选择器问题</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-node的知识点整理"
+<article id="post-浅谈tap-highlight-color"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">node的知识点整理</h1>
+        <h1 class="post-card-title">浅谈tap-highlight-color与::selection</h1>
         <div class="post-meta">
-            <time class="post-time" title="2016年05月10日 12:35" datetime="2016-05-10T04:35:24.000Z"  itemprop="datePublished">2016-05-10</time>
+            <time class="post-time" title="2017年04月27日 12:16" datetime="2017-04-27T04:16:50.000Z"  itemprop="datePublished">2017-04-27</time>
 
             
 
@@ -175,8 +214,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="将之前学习过的node知识简单整理一下"><a href="#将之前学习过的node知识简单整理一下" class="headerlink" title="将之前学习过的node知识简单整理一下"></a>将之前学习过的node知识简单整理一下</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">模块有点多，自己按着自己的记忆大概梳理一下</div></pre></td></tr></table></figure>
+            <h2 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h2><pre><code>### tap-highlight-color：&lt;color&gt;
 
+### 默认值：由user agent决定
+
+### 适用于：所有元素
+
+### 继承性：有
+
+### 动画性：是
+</code></pre><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><pre><code>### 设置或检索对象的轻按时高亮。
+
+### 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
+
+### 如果想取消这个高亮，将值设置为全透明即可，比如transparent
+
+### 对应的脚本特性为textHighlightColor。
+</code></pre><h2 id="问题指向"><a href="#问题指向" class="headerlink" title="问题指向"></a>问题指向</h2><pre><code>### CSS3 修改和去除移动端点击事件出现的背景框
+### 设定元素在移动设备（如Adnroid、iOS）上被触发点击事件时，响应的背景框的颜色。
+
+### 例：在Adnroid版本的微信中，点击a标签时将会出现一个橙色的小框表示点击的响应。此时，如果对元素设置了tap-highlight-color值，例如:-webkit-tap-highlight-color: rgba(240,240,240,0.7);
+则可改变元素被点击时背景框的颜色。
+如果需要背景框不显示，则可以将rgba中的alpha值设为0即可，例如rgba(0,0,0,0)
+</code></pre><h2 id="selection-选择器问题"><a href="#selection-选择器问题" class="headerlink" title="::selection 选择器问题"></a>::selection 选择器问题</h2><pre><code>### 应用场景：通常我们选中文字时的背景色是黑色，文字颜色是白色。我们可以用以下样式去设置网页的选中内容的样式：
+::selection         { background:#000; color:#fff; }
+
+::-moz-selection    { background:#000; color:#fff; }
+
+::-webkit-selection { background:#000; color:#fff;}
+
+### 官方参考文档---http://www.w3school.com.cn/cssref/selector_selection.asp
+</code></pre>
         </div>
 
         <blockquote class="post-copyright">
@@ -210,7 +278,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/05/10/node的知识点整理/&title=《node的知识点整理》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&title=《浅谈tap-highlight-color与::selection》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -220,22 +288,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/05/10/node的知识点整理/&title=《node的知识点整理》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&title=《浅谈tap-highlight-color与::selection》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/10/node的知识点整理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node的知识点整理》 — 博客空间&url=http://yoursite.com/2016/05/10/node的知识点整理/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈tap-highlight-color与::selection》 — 博客空间&url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/10/node的知识点整理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -255,21 +323,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2016/05/12/node.js介绍/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">node介绍</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2016/03/21/JS原生框架-6/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/23/Es6-babel/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">JS原生框架-6</h4>
+        <h4 class="title">Es6+babel</h4>
       </a>
     </div>
   
@@ -280,7 +341,7 @@
     
 
 <div class="comments" id="comments">
-    <div class="ds-thread" data-thread-key="node的知识点整理" data-title="node的知识点整理" data-url="http://yoursite.com/2016/05/10/node的知识点整理/"></div>
+    <div class="ds-thread" data-thread-key="浅谈tap-highlight-color" data-title="浅谈tap-highlight-color与::selection" data-url="http://yoursite.com/2017/04/27/浅谈tap-highlight-color/"></div>
 </div>
 <script>
 lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
@@ -362,7 +423,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2016/05/10/node的知识点整理/&title=《node的知识点整理》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&title=《浅谈tap-highlight-color与::selection》 — 博客空间&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -372,22 +433,22 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2016/05/10/node的知识点整理/&title=《node的知识点整理》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&title=《浅谈tap-highlight-color与::selection》 — 博客空间&source=我的个人静态博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2016/05/10/node的知识点整理/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《node的知识点整理》 — 博客空间&url=http://yoursite.com/2016/05/10/node的知识点整理/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《浅谈tap-highlight-color与::selection》 — 博客空间&url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2016/05/10/node的知识点整理/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/04/27/浅谈tap-highlight-color/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -398,7 +459,7 @@ lazyScripts.push('/js/embed.min.js?v=1.4.7');
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3a0W7DIAwF0P3/T2evm6Zk13ZbCTg8VRWEnFayjM3XVzyuP6M6/+equyfkz28ODAyMZRnX48jnzGGjfTEwMA5g3G18Nydfdbf27vl5aMbAwMDIGb2UMX8yBgYGRpXx/Ln3TY7EwMA4mdErkCXFsjytfIa97CyOgYGxICMvln3+81v6GxgYGEsxruLoHVB7qWHhrTAwMLZmvCrty8PlqwIuBgbGOYykQD8fE0B0MMbAwDiA0WtGPoOriWM1ifz1DQYGxjGM6vE1vySRp5VRq3JSbsPAwFiQ0duyVyDLw3QThoGBcQwjT+nmlyeS8N0MuBgYGIcxqsnf5ApXNYks9zcwMDAWZPRCbd5CqIbO558mamFiYGBsyhgV5QehM29z/gPDwMA4hpEHvqRVkLxiNaAXLltgYGBsxJiHyyRQThqZk6CPgYGxB2OSAvaCYN6qLOyOgYGxNaMaLieJXTVxLOMxMDAOYOSlsTz5q84fBWIMDIwDGL0CXNJuzHepjts7IxgYGFsznlOxZPteK3R+dQwDA+MERrLl+1b1AIWbIxgYGMsyruLIj5TvWFv4HzAwMDZi9IJd9RV71zKqDQMMDIy9Gckr9i5hPIMnl8+avzQGBsbijGrge1UprVduw8DAwMjTsmqhLc9Mm9krBgYGxmMqWUXmoTZKNzEwMA5gJIfY6py8SVBlY2BgnMao5l2TMJqE6Q+ljxgYGGswvgFxFsYECho0HwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKUlEQVR42u3aS27DMAxF0ex/0y7QUSeW76PUACavRoGd2DoZEPzo88Hr+l38O9efRe6urx9bMmTIeC3jWq47xvoKec4aw/cmQ4aMOQweQAmpxiN/3+11GTJkyFimcWl4XaeAMmTIkHE24PLUjZNkyJAhY6eIJZtb98HW7/1SLS5DhowXMtLBwDc//+N8Q4YMGS9hXOGqNeN4GVzclQwZMloz+HjyVJLHoyU5tIH+JxkyZDRlrB9BAmtampKg/HBdhgwZYxhpAckbcztJJHqCDBkyWjN46z99NB9V7gdrGTJkdGWQ0JZ240lhnH7/YUQhQ4aMAYygUARJYXp3Z/AgQ4aMCQzyej6GTA9ynR18ypAhoyujlqLxcpdg9o9iyJAhYwKjdjCClJfpyLN4gkKGDBmtGekwcuvYFth0LRmVIUPGHAZqwZdSQ/KrtLkmQ4aMmYwrXGmgjEvTcGgqQ4aMrozaEa5aYD0bXmXIkDGHkQbBWkmZbr02EJUhQ0ZXBm+WnQq+BBwcBZMhQ8YYRq28rAXQs29HGa4MGTJezkjnBjwIpu02vh4yXBkyZLRj1IYBvJTlAZoPCW4HAzJkyGjKSMPcTqlJEsTau2TIkDGBkQZZEhD52GAnAZUhQ8Y0Bm+H1dK7YEN4n7ftNhkyZAxm7KRuaTHMi2oZMmTI4MMDMrBEGwoPlsmQIWMOY79ZXzv4FU9cyRk3GTJktGMcKCAPjRCu0pIhQ0Zrxg9E4FbkbuDdhgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
