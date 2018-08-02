@@ -20,25 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) {
-var firstName = name.charAt( 0 ); // 遍历 百家姓
-// 如果是复姓 indexOf( ... ) == 0
-var lastName = &amp;apos;**********&amp;apos;.slice(">
+    <meta name="description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS原生框架-4">
 <meta property="og:url" content="http://yoursite.com/2016/03/09/JS原生框架-4/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) {
-var firstName = name.charAt( 0 ); // 遍历 百家姓
-// 如果是复姓 indexOf( ... ) == 0
-var lastName = &amp;apos;**********&amp;apos;.slice(">
+<meta property="og:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-02-11T05:07:44.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原生框架-4">
-<meta name="twitter:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) {
-var firstName = name.charAt( 0 ); // 遍历 百家姓
-// 如果是复姓 indexOf( ... ) == 0
-var lastName = &amp;apos;**********&amp;apos;.slice(">
+<meta name="twitter:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -178,7 +170,7 @@ var lastName = &amp;apos;**********&amp;apos;.slice(">
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <ol>
-<li><p>常见问题<br>  var name = ‘…’<br>  // 张三丰 -&gt; 张<em>*<br>  // 李四 -&gt; 李</em><br>  function convert( name ) {</p>
+<li><p>常见问题<br>  var name = ‘…’<br>  // 张三丰 -&gt; 张*<em><br>  // 李四 -&gt; 李</em><br>  function convert( name ) {</p>
 <pre><code>var firstName = name.charAt( 0 ); // 遍历 百家姓
 // 如果是复姓 indexOf( ... ) == 0
 var lastName = &apos;**********&apos;.slice( 0, name.length - 1 );
@@ -202,7 +194,7 @@ arr.map( v =&gt; v*2 );
 </code></pre><p>  3) 在 箭头函数中, 函数内的 this 不再具有新的作用域. </p>
 </li>
 </ol>
-<ol>
+<ol start="2">
 <li>问题<br> ([|!^$~]?=) 分析<pre><code>[|!^$~]?=
 因此它是匹配 = 或 xxx=
 [|!^$~] 匹配 | 或者 ! 或者 ^ 或者 $ 或者 ~
@@ -234,7 +226,7 @@ function replace( str, regex, callback ) {
 
     #([\w-]*)
     #名字
-</code></pre><ol>
+</code></pre><ol start="3">
 <li><p>核心结构<br> 1) 代码应该写在 单独的文件中<br> 2) 应该具有的成员有什么呢? 构造函数, 暴露的函数接口, 原型, each 和 map</p>
 </li>
 <li><p>框架的 扩展<br> 所谓的扩展就是给原型或构造方法( iQuery ) 提供新的成员<br> 就是在给一个对象增加新的成员</p>
@@ -299,7 +291,7 @@ return [].slice.call( div.childNodes );
 </code></pre><p> 在 init 构造函数中准备一套 if else 结构<br> 处理每一个情况</p>
 </li>
 <li><p>引入 appendTo 方法<br> 问题:<br> 1&gt; 方法写在哪里?  加到原型中<br> 2&gt; 参数与返回值?  参数: 字符串, dom, iquery<br> 3&gt; 具体的逻辑实现? </p>
-<p> 实现:<br> 1) 参数为 dom 对象<br> 2) dom 数组怎么处理( <em>*</em> )<br> 3) 一般情况</p>
+<p> 实现:<br> 1) 参数为 dom 对象<br> 2) dom 数组怎么处理( *** )<br> 3) 一般情况</p>
 </li>
 <li><p>问题<br> 1&gt; 代码结构<br> 2&gt; 总结:</p>
 <pre><code>$( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
@@ -309,7 +301,7 @@ return [].slice.call( div.childNodes );
 </code></pre><p> 3&gt; 实现代码 appendTo() 参数为 dom 数组的情况<br> 4&gt; dom 操作整理</p>
 </li>
 </ol>
-<ol>
+<ol start="10">
 <li><p>js 数据类型<br>-&gt; 简单类型: number, string, boolean. 变量存储数据本身.<br>-&gt; 复合类型: 由简单类型或复合类型组合得到是数据类型.</p>
 <pre><code>对象: String, Number, Boolean,
       [], {}, /.+/, ...

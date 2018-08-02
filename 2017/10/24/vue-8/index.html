@@ -20,28 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据
-父组件在模板中使用子组件的时候可以给子组件传递数据
-1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt;
-子组件需要通过props属性来接收后才能使用
-12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
+    <meta name="description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据 父组件在模板中使用子组件的时候可以给子组件传递数据 1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt; 子组件需要通过props属性来接收后才能使用 12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-8">
 <meta property="og:url" content="http://yoursite.com/2017/10/24/vue-8/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据
-父组件在模板中使用子组件的时候可以给子组件传递数据
-1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt;
-子组件需要通过props属性来接收后才能使用
-12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
+<meta property="og:description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据 父组件在模板中使用子组件的时候可以给子组件传递数据 1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt; 子组件需要通过props属性来接收后才能使用 12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-27T06:11:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-8">
-<meta name="twitter:description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据
-父组件在模板中使用子组件的时候可以给子组件传递数据
-1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt;
-子组件需要通过props属性来接收后才能使用
-12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
+<meta name="twitter:description" content="组件间通信prop 传递数据组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据 父组件在模板中使用子组件的时候可以给子组件传递数据 1&amp;lt;bbb money=&amp;quot;2&amp;quot;&amp;gt;&amp;lt;/bbb&amp;gt; 子组件需要通过props属性来接收后才能使用 12&amp;apos;bbb&amp;apos;:&amp;#123;    props:[&amp;apos;money">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -189,10 +178,10 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h2><h6 id="prop-传递数据"><a href="#prop-传递数据" class="headerlink" title="prop 传递数据"></a>prop 传递数据</h6><p>组件实例的作用域是孤立的,父组件不能直接使用子组件的数据，子组件也不能直接使用父组件的数据</p>
 <p>父组件在模板中使用子组件的时候可以给子组件传递数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;bbb money=&quot;2&quot;&gt;&lt;/bbb&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;bbb money=&quot;2&quot;&gt;&lt;/bbb&gt;</span><br></pre></td></tr></table></figure>
 <p>子组件需要通过props属性来接收后才能使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;bbb&apos;:&#123;</div><div class="line">    props:[&apos;money&apos;]</div></pre></td></tr></table></figure>
-<p>如果父组件传递属性给子组件的时候键名有’-‘，子组件接收的时候写成小驼峰的模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;bbb clothes-logo=&apos;amani&apos; clothes-price=&quot;16.58&quot;&gt;&lt;/bbb&gt;</div><div class="line">////</div><div class="line">props:[&apos;clothesLogo&apos;,&apos;clothesPrice&apos;]</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;bbb&apos;:&#123;</span><br><span class="line">    props:[&apos;money&apos;]</span><br></pre></td></tr></table></figure>
+<p>如果父组件传递属性给子组件的时候键名有’-‘，子组件接收的时候写成小驼峰的模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bbb clothes-logo=&apos;amani&apos; clothes-price=&quot;16.58&quot;&gt;&lt;/bbb&gt;</span><br><span class="line">////</span><br><span class="line">props:[&apos;clothesLogo&apos;,&apos;clothesPrice&apos;]</span><br></pre></td></tr></table></figure></p>
 <p>我们可以用 v-bind 来动态地将 prop 绑定到父组件的数据。每当父组件的数据变化时，该变化也会传导给子组件</p>
 <h6 id="单向数据流"><a href="#单向数据流" class="headerlink" title="单向数据流"></a>单向数据流</h6><p>Prop 是单向绑定的：当父组件的属性变化时，将传导给子组件，但是反过来不会。这是为了防止子组件无意间修改了父组件的状态，来避免应用的数据流变得难以理解。</p>
 <p>另外，每次父组件更新时，子组件的所有 prop 都会更新为最新值。这意味着你不应该在子组件内部改变 prop。如果你这么做了，Vue 会在控制台给出警告。</p>
@@ -203,13 +192,13 @@
 <li><p>Prop 作为原始数据传入，由子组件处理成其它数据输出。<br>对这两种情况，正确的应对方式是：</p>
 </li>
 </ol>
-<p>定义一个局部变量，并用 prop 的值初始化它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">props: [&apos;initialCounter&apos;],</div><div class="line">data: function () &#123;</div><div class="line">  return &#123; counter: this.initialCounter &#125;</div><div class="line">&#125;</div><div class="line">//定义一个计算属性，处理 prop 的值并返回：</div><div class="line">props: [&apos;size&apos;],</div><div class="line">computed: &#123;</div><div class="line">  normalizedSize: function () &#123;</div><div class="line">    return this.size.trim().toLowerCase()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>定义一个局部变量，并用 prop 的值初始化它：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">props: [&apos;initialCounter&apos;],</span><br><span class="line">data: function () &#123;</span><br><span class="line">  return &#123; counter: this.initialCounter &#125;</span><br><span class="line">&#125;</span><br><span class="line">//定义一个计算属性，处理 prop 的值并返回：</span><br><span class="line">props: [&apos;size&apos;],</span><br><span class="line">computed: &#123;</span><br><span class="line">  normalizedSize: function () &#123;</span><br><span class="line">    return this.size.trim().toLowerCase()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>注意在 JavaScript 中对象和数组是引用类型，指向同一个内存空间，如果 prop 是一个对象或数组，在子组件内部改变它会影响父组件的状态。</p>
 </blockquote>
 <h6 id="prop验证"><a href="#prop验证" class="headerlink" title="prop验证"></a>prop验证</h6><p>我们可以为组件的 prop 指定验证规则。如果传入的数据不符合要求，Vue 会发出警告。这对于开发给他人使用的组件非常有用</p>
 <p>验证主要分为：类型验证、必传验证、默认值设置、自定义验证</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">props:&#123;</div><div class="line">    //类型验证:</div><div class="line">    str:String,</div><div class="line">    strs:[String,Number],</div><div class="line">    //必传验证</div><div class="line">    num:&#123;</div><div class="line">        type:Number,</div><div class="line">        required:true</div><div class="line">    &#125;,</div><div class="line">    //默认数据</div><div class="line">    bool:&#123;</div><div class="line">        type:Boolean,</div><div class="line">        // default:true,</div><div class="line">        default:function()&#123;</div><div class="line"></div><div class="line">            return true</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    //自定义验证函数</div><div class="line">    nums:&#123;</div><div class="line">        type:Number,</div><div class="line">        validator: function (value) &#123;</div><div class="line">            return value %2 == 0</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">props:&#123;</span><br><span class="line">    //类型验证:</span><br><span class="line">    str:String,</span><br><span class="line">    strs:[String,Number],</span><br><span class="line">    //必传验证</span><br><span class="line">    num:&#123;</span><br><span class="line">        type:Number,</span><br><span class="line">        required:true</span><br><span class="line">    &#125;,</span><br><span class="line">    //默认数据</span><br><span class="line">    bool:&#123;</span><br><span class="line">        type:Boolean,</span><br><span class="line">        // default:true,</span><br><span class="line">        default:function()&#123;</span><br><span class="line"></span><br><span class="line">            return true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    //自定义验证函数</span><br><span class="line">    nums:&#123;</span><br><span class="line">        type:Number,</span><br><span class="line">        validator: function (value) &#123;</span><br><span class="line">            return value %2 == 0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当父组件传递数据给子组件的时候，子组件不接收，这个数据就会挂载在子组件的模板的根节点上</p>
 
         </div>

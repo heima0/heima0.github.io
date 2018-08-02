@@ -20,22 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算
-
-123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+    <meta name="description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-4">
 <meta property="og:url" content="http://yoursite.com/2017/06/13/vue-4/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算
-
-123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+<meta property="og:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-27T05:34:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-4">
-<meta name="twitter:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算
-
-123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+<meta name="twitter:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -183,14 +178,14 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="计算属性、监听"><a href="#计算属性、监听" class="headerlink" title="计算属性、监听"></a>计算属性、监听</h2><h5 id="计算属性、监听-1"><a href="#计算属性、监听-1" class="headerlink" title="计算属性、监听"></a>计算属性、监听</h5><pre><code>有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example&quot;&gt;</div><div class="line">&#123;&#123; message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125;&#125;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example&quot;&gt;</span><br><span class="line">&#123;&#123; message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 
 这样我们的维护就会非常困难，也不便于阅读
 
 
 那め我们就可以在methods里设置一个方法，在模板的表达式中使用这个方法
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;Reversed message: &quot;&#123;&#123; reversedMessage() &#125;&#125;&quot;&lt;/p&gt;</div><div class="line">// 在组件中</div><div class="line">methods: &#123;</div><div class="line">reversedMessage: function () &#123;</div><div class="line">    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Reversed message: &quot;&#123;&#123; reversedMessage() &#125;&#125;&quot;&lt;/p&gt;</span><br><span class="line">// 在组件中</span><br><span class="line">methods: &#123;</span><br><span class="line">reversedMessage: function () &#123;</span><br><span class="line">    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 但是这个时候，只要vm中有数据变化，这个变化的数据可能和我们关注的数据无关，但是vm都会重新渲染模板，这个时候表达式中的方法就会重新执行，大大的影响性能
 
@@ -198,13 +193,13 @@
 这个时候其实我们可以使用监听器里完成：
 
 在vm实例中设置watch属性，在里面通过键值对来设置一些监听，键名为数据名，值可以是一个函数，这个函数在数据改变之后才会执行，两个参数分别是性格前的值和更改后的值
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a: function (val, oldVal) &#123;</div><div class="line">    console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a: function (val, oldVal) &#123;</span><br><span class="line">    console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>值还可以是一个方法名字，当数据改变的时候这个方法会执行
 
 当数据为object的时候，object的键值对改变不会被监听到（数组的push等方法可以）,这个时候需要设置深度监听：
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">c: &#123;</div><div class="line">    deep:true,</div><div class="line">    handler:function (val, oldVal) &#123;</div><div class="line">        console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</div><div class="line">    &#125;</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c: &#123;</span><br><span class="line">    deep:true,</span><br><span class="line">    handler:function (val, oldVal) &#123;</span><br><span class="line">        console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <pre><code>监听的handler函数前面的这几种写法都是在数据变化的时候才会执行，初始化的时候不会执行，但是如果设置immediate为true就可以了
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">num:&#123;</div><div class="line">    immediate:true,</div><div class="line">    handler:function(val)&#123;</div><div class="line">        this.nums = val*2</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num:&#123;</span><br><span class="line">    immediate:true,</span><br><span class="line">    handler:function(val)&#123;</span><br><span class="line">        this.nums = val*2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>我们在回到上面的问题，用监听器加上immediate属性就可以做到该效果，但是大家可以看到的是逻辑稍稍有点复杂
 
 watch还可以通过实例对象直接使用:vm.$watch，返回一个取消监听的函数，这个函数执行之后会取消监听

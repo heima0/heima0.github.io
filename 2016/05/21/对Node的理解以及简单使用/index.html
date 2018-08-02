@@ -20,25 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。
-做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。
-REPL：Node 中类似于浏览器中的 Console 控制台
-Read">
+    <meta name="description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对Node的理解以及简单使用">
 <meta property="og:url" content="http://yoursite.com/2016/05/21/对Node的理解以及简单使用/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。
-做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。
-REPL：Node 中类似于浏览器中的 Console 控制台
-Read">
+<meta property="og:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-02-11T05:12:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对Node的理解以及简单使用">
-<meta name="twitter:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。
-做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。
-REPL：Node 中类似于浏览器中的 Console 控制台
-Read">
+<meta name="twitter:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -320,11 +312,11 @@ Read">
 <h2 id="总结基础概念"><a href="#总结基础概念" class="headerlink" title="总结基础概念"></a>总结基础概念</h2><hr>
 <h2 id="使用-Npm-安装全局命令行工具"><a href="#使用-Npm-安装全局命令行工具" class="headerlink" title="使用 Npm 安装全局命令行工具"></a>使用 Npm 安装全局命令行工具</h2><p>在 npm 社区中，除了有可以在项目中使用的第三方包之外，还有一些特殊的包：<br>这些特殊的包被称之为命令行工具，不是用于项目的，而是可以安装到计算机中，<br>然后通过命令行中的命令的形式来使用，这种工具有很多，例如：<code>http-server</code>、<code>gulp</code>、<br><code>browser-sync</code>、<code>nodemon</code> 等等等等很多。</p>
 <p>安装方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --global 第三方命令行工具名字</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global 第三方命令行工具名字</span><br></pre></td></tr></table></figure>
 <p>卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm uninstall --global 第三方命令行工具名称</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall --global 第三方命令行工具名称</span><br></pre></td></tr></table></figure>
 <p>查看全局命令行安装目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm root --global</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm root --global</span><br></pre></td></tr></table></figure>
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
 <li>能掌握 Node 中模块化交互 API（require、exports、module.exports）并解释每一个API的作用</li>
 <li>能详细概述 Node 中模块的分类以及加载规则（自己写的模块、核心模块、第三方模块）</li>

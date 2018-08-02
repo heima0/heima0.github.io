@@ -20,34 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用
-vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了
-所以在vue中如果想要使用过滤器就需要自定义
-自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用
-
-全局定义
- Vue.">
+    <meta name="description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-5">
 <meta property="og:url" content="http://yoursite.com/2017/07/23/vue-5/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用
-vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了
-所以在vue中如果想要使用过滤器就需要自定义
-自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用
-
-全局定义
- Vue.">
+<meta property="og:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-27T05:40:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-5">
-<meta name="twitter:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用
-vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了
-所以在vue中如果想要使用过滤器就需要自定义
-自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用
-
-全局定义
- Vue.">
+<meta name="twitter:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -204,11 +187,11 @@ vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了
 <p> 在模板中通过 | (管道符) 来使用,在过滤器名字后面加（）来传参，参数会在handler函数中第二个及后面的形参来接收</p>
 </li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;&#123;&#123;msg | firstUpper(3,2)&#125;&#125;&lt;/p&gt;</div><div class="line"></div><div class="line">Vue.filter(&apos;firstUpper&apos;,function (value,num=1,num2) &#123;</div><div class="line">    console.log(num2)</div><div class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;msg | firstUpper(3,2)&#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">Vue.filter(&apos;firstUpper&apos;,function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
 <li><p>局部定义</p>
 <p> 在实例、组件的配置项中设置 filters，键名为过滤器名，值为handler</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">filters:&#123;</div><div class="line">    firstUpper:function (value,num=1,num2) &#123;</div><div class="line">    console.log(num2)</div><div class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">    firstUpper:function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>注意：</p>
@@ -218,7 +201,7 @@ vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了
 <p>当我们需要控制一组元素显示隐藏的时候，可以用template标签将其包裹，将指令设置在template上，等等vm渲染这一组元素的时候，不会渲染template</p>
 <p>当有else分支逻辑的时候，可以给该元素加上v-else指令来控制，v-else会根据上面的那个v-if来控制，效果与v-if相反，注意，一定要紧挨着</p>
 <p>还有v-else-if指令可以实现多分支逻辑</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; v-model=&quot;mode&quot;&gt;  </div><div class="line">  &lt;template  v-if=&quot;mode==&apos;A&apos;&quot;&gt;</div><div class="line">    &lt;h1&gt;1.title&lt;/h1&gt;</div><div class="line">    &lt;p&gt;我的第一个P标签&lt;/p&gt;  </div><div class="line">  &lt;/template&gt;</div><div class="line"> &lt;template  v-else-if=&quot;mode==&apos;B&apos;&quot;&gt;</div><div class="line">    &lt;h1&gt;2.title&lt;/h1&gt;</div><div class="line">    &lt;p&gt;我的第二个P标签&lt;/p&gt;</div><div class="line"> &lt;/template&gt;</div><div class="line"> &lt;template  v-else-if=&quot;mode==&apos;C&apos;&quot;&gt;</div><div class="line">    &lt;h1&gt;3.title&lt;/h1&gt;</div><div class="line">    &lt;p&gt;我的第三个P标签&lt;/p&gt;</div><div class="line"> &lt;/template&gt;</div><div class="line"> &lt;template  v-else&gt;</div><div class="line">   </div><div class="line">    &lt;p&gt;不好意思，输入有误&lt;/p&gt;</div><div class="line"> &lt;/template&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;mode&quot;&gt;  </span><br><span class="line">  &lt;template  v-if=&quot;mode==&apos;A&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;1.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第一个P标签&lt;/p&gt;  </span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;B&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;2.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第二个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;C&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;3.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第三个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else&gt;</span><br><span class="line">   </span><br><span class="line">    &lt;p&gt;不好意思，输入有误&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br></pre></td></tr></table></figure>
 <p>需要注意的另一个地方是：Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这样确实能使Vue变得更快，性能更高，但是有的时候我们需要让实例去更新dom而不是复用，就需要给dom加上不同的key属性，因为vue在判断到底渲染什么的时候，包括哪些dom可以复用，都会参考key值，如果dom表现基本一致，符合复用的条件，但是key值不同，依然不会复用</p>
 <p>Vue还提供了v-show指令，用法和v-if基本一样，控制的是元素的css中display属性，从而控制元素的显示和隐藏 ， 不能和v-else配合使用,且不能使用在template标签上，因为template不会渲染，再更改它的css属性也不会渲染，不会生效</p>
 <h6 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a>v-if vs v-show</h6><p>v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。<br>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。<br>一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</p>

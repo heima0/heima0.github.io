@@ -20,22 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="vue 数据改变 重新渲染问题
-当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
-123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+    <meta name="description" content="vue 数据改变 重新渲染问题 当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性 123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-3">
 <meta property="og:url" content="http://yoursite.com/2017/06/08/vue-3/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="vue 数据改变 重新渲染问题
-当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
-123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+<meta property="og:description" content="vue 数据改变 重新渲染问题 当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性 123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-27T06:30:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-3">
-<meta name="twitter:description" content="vue 数据改变 重新渲染问题
-当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性
-123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
+<meta name="twitter:description" content="vue 数据改变 重新渲染问题 当无关数据进行改变时，Vue根元素内部还会渲染解决办法：watch监听、计算属性 123456789101112131415161718192021222324例：button @click=&amp;quot;a++&amp;quot; button&amp;#123;&amp;#123;a&amp;#125;&amp;#125;&amp;#123;&amp;#123;ab()&amp;#125;&amp;#125;input type=&amp;q">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -183,7 +178,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="vue-数据改变-重新渲染问题"><a href="#vue-数据改变-重新渲染问题" class="headerlink" title="vue 数据改变 重新渲染问题"></a>vue 数据改变 重新渲染问题</h2><ul>
 <li><p>当无关数据进行改变时，Vue根元素内部还会渲染<br>解决办法：watch监听、计算属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">例：</div><div class="line">button @click=&quot;a++&quot; button</div><div class="line">&#123;&#123;a&#125;&#125;</div><div class="line">&#123;&#123;ab()&#125;&#125;</div><div class="line"></div><div class="line">input type=&quot;text&quot; v-model=&quot;message&quot; name=&quot;&quot;</div><div class="line">&#123;&#123;message&#125;&#125;</div><div class="line"></div><div class="line">data: &#123;</div><div class="line">        a: 1,</div><div class="line">        b: null,</div><div class="line">        message: &apos;&apos;</div><div class="line">    &#125;,</div><div class="line">    methods: &#123;</div><div class="line">        ab: function()&#123;</div><div class="line">          return this.a*2 + 1;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    watch: &#123;</div><div class="line">      a: function(val,oldval)&#123;</div><div class="line">        console.log(&apos;watch&apos;);</div><div class="line">        this.b = val*2 + 1;</div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">例：</span><br><span class="line">button @click=&quot;a++&quot; button</span><br><span class="line">&#123;&#123;a&#125;&#125;</span><br><span class="line">&#123;&#123;ab()&#125;&#125;</span><br><span class="line"></span><br><span class="line">input type=&quot;text&quot; v-model=&quot;message&quot; name=&quot;&quot;</span><br><span class="line">&#123;&#123;message&#125;&#125;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">        a: 1,</span><br><span class="line">        b: null,</span><br><span class="line">        message: &apos;&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        ab: function()&#123;</span><br><span class="line">          return this.a*2 + 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    watch: &#123;</span><br><span class="line">      a: function(val,oldval)&#123;</span><br><span class="line">        console.log(&apos;watch&apos;);</span><br><span class="line">        this.b = val*2 + 1;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>当点击button a的值变化，会打印‘watch’,但是当无关数据message改变时，同样会触发ab();<br>这样肯定不是我们想要的，所以可以用watch监听 a的变化，在函数中进行一些操作，这样就不会影响了。<br>这样做有个小弊端，就是我们需要定义一个变量名‘b’来接受，如果要改变名字 需要改2处地方，当然这个因素基本可以忽略。</p>
 </li>

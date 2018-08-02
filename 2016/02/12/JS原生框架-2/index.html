@@ -20,34 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.
- 例如使用 DOM-Core 方法设置 div 的样式
- 
-
- 设置 div 的宽度为 300px
- div.style.width = ‘300px’;
- div.setAttribute( ‘style’, ‘w">
+    <meta name="description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS原生框架-2">
 <meta property="og:url" content="http://yoursite.com/2016/02/12/JS原生框架-2/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.
- 例如使用 DOM-Core 方法设置 div 的样式
- 
-
- 设置 div 的宽度为 300px
- div.style.width = ‘300px’;
- div.setAttribute( ‘style’, ‘w">
+<meta property="og:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-02-11T05:07:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原生框架-2">
-<meta name="twitter:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.
- 例如使用 DOM-Core 方法设置 div 的样式
- 
-
- 设置 div 的宽度为 300px
- div.style.width = ‘300px’;
- div.setAttribute( ‘style’, ‘w">
+<meta name="twitter:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -301,7 +284,7 @@ function each( arr, callback ) {
     }
     return arr;
 }
-</code></pre><ol>
+</code></pre><ol start="3">
 <li><p>封装 map</p>
 <p> 首先考虑, 只是处理 v 返回 结果( 实现一个 与 数组 的 map 一样的方法 )<br> function map( arr, callback ) {</p>
 <pre><code>var rest = [];
@@ -332,7 +315,7 @@ return rest;
 </code></pre><p> }</p>
 </li>
 </ol>
-<ol>
+<ol start="4">
 <li><p>再回到原始的问题<br> 使用 jq 来实现, 应该怎么写<br> $( ‘div, p’ ).each( … )</p>
 <p> 在 jq 中有两组遍历方法, 一个是静态的 each 和 map, 例如</p>
 <pre><code>$.map( arr, callback )
@@ -387,7 +370,7 @@ this.length = list.length;
 <p> 如何使用呢?<br> new F( ‘div, p’ ).each( … )</p>
 </li>
 </ol>
-<ol>
+<ol start="7">
 <li><p>隐藏 new 关键字<br> 考虑引入函数<br> function iQuery( selector ) {</p>
 <pre><code>return new F( selector );
 </code></pre><p> }<br> var I = iQuery;</p>
@@ -410,7 +393,7 @@ this.length = list.length;
 </code></pre></li>
 </ol>
 <p>  缺点:<br>     1&gt; 代码结构凌乱. 优化结构.<br>     2&gt; 无法实现扩展, 只有在该文件中实现代码结构.  // ?不是引入沙箱模式了吗？</p>
-<ol>
+<ol start="8">
 <li><p>可扩展性<br> 1&gt; 可以将 iQuery 的一个属性指向构造函数</p>
 <pre><code>var iQuery = function ( selector ) {
     return new F( selector );
@@ -492,7 +475,7 @@ jQuery.fn = jQuery.prototype = {
 jQuery.fn.init.prototype = jQuery.fn;
 </code></pre></li>
 </ol>
-<ol>
+<ol start="9">
 <li>代码结构</li>
 </ol>
 <p> 1.为什么 forEach 中的回调函数会有第三个参数<br>    arr.forEach( function ( v, i, arr ){<br>        1) 代码要运行就会被解析，一解析就会创建对象<br>    }</p>

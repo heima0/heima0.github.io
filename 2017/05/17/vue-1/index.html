@@ -20,27 +20,19 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低
-AngularJS是强主张的，而Vue更灵活
-Vue的数据流是单向的，数据流行更清晰
-Angular">
+    <meta name="description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-1">
 <meta property="og:url" content="http://yoursite.com/2017/05/17/vue-1/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低
-AngularJS是强主张的，而Vue更灵活
-Vue的数据流是单向的，数据流行更清晰
-Angular">
+<meta property="og:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
+<meta property="og:locale" content="default">
 <meta property="og:image" content="http://image.beekka.com/blog/2015/bg2015020105.png">
 <meta property="og:image" content="http://image.beekka.com/blog/2015/bg2015020108.png">
 <meta property="og:updated_time" content="2018-07-27T05:01:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue-1">
-<meta name="twitter:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低
-AngularJS是强主张的，而Vue更灵活
-Vue的数据流是单向的，数据流行更清晰
-Angular">
+<meta name="twitter:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
 <meta name="twitter:image" content="http://image.beekka.com/blog/2015/bg2015020105.png">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
@@ -201,7 +193,7 @@ Angular">
 <p>在实例化实例的时候我们可以传入一个；配置项，在配置项中设置很多属性方法可以实现复杂的功能</p>
 <p>在配置中可以设置el的属性，el属性代表的是此实例的作用范围</p>
 <p>在配置中同过设置data属性来为实例绑定数据</p>
-<h3 id="mvc-mvvm"><a href="#mvc-mvvm" class="headerlink" title="mvc/mvvm"></a>mvc/mvvm</h3><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="external">阮大神博客</a></p>
+<h3 id="mvc-mvvm"><a href="#mvc-mvvm" class="headerlink" title="mvc/mvvm"></a>mvc/mvvm</h3><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">阮大神博客</a></p>
 <p>mvc 分为三层，其实M层是数据模型层，它是真正的后端数据在前端js中的一个映射模型，他们的关系是：数据模型层和视图层有映射关系，model改变，view展示也会更改，当view产生用户操作或会反馈给controller，controller更改model，这个时候view又会进行新的数据渲染</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
@@ -223,11 +215,11 @@ Angular">
 <p>控制器可以直接操作view，如果，让某一个标签获得进入页面获得焦点，不需要model来控制，所以一般会直接操作（angularJS，指令）</p>
 <p>view可以直接操作model （数据双向绑定）</p>
 <p>MVP:</p>
-<p><a href="http://image.beekka.com/blog/2015/bg2015020109.png" target="_blank" rel="external">mvp</a></p>
+<p><a href="http://image.beekka.com/blog/2015/bg2015020109.png" target="_blank" rel="noopener">mvp</a></p>
 <p>view和model不能直接通信，所有的交互都由presenter来做，其他部分的通信都是双向的</p>
 <p>view较薄 ，presenter较为厚重</p>
 <p>MVVM：</p>
-<p><a href="http://image.beekka.com/blog/2015/bg2015020110.png" target="_blank" rel="external">mvvm</a></p>
+<p><a href="http://image.beekka.com/blog/2015/bg2015020110.png" target="_blank" rel="noopener">mvvm</a></p>
 <p>MVVM和MVP及其相似，只是view和viewmodel的通信是双向绑定，view的操作会自动的像viewmodel通过</p>
 
         </div>

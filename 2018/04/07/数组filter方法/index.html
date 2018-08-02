@@ -20,46 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="JavaScript Array filter() 方法定义和用法
-filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
-
-
-注意： filter() 不会对空数组进行检测。
-
-注意： filter() 不会改变原始数组。
-
-
-语法  1array.filter(function(value,index,arr), thisValue)
-eg  12345">
+    <meta name="description" content="JavaScript Array filter() 方法定义和用法 filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。   注意： filter() 不会对空数组进行检测。  注意： filter() 不会改变原始数组。   语法  1array.filter(function(value,index,arr), thisValue) eg  12345">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组filter方法">
 <meta property="og:url" content="http://yoursite.com/2018/04/07/数组filter方法/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="JavaScript Array filter() 方法定义和用法
-filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
-
-
-注意： filter() 不会对空数组进行检测。
-
-注意： filter() 不会改变原始数组。
-
-
-语法  1array.filter(function(value,index,arr), thisValue)
-eg  12345">
+<meta property="og:description" content="JavaScript Array filter() 方法定义和用法 filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。   注意： filter() 不会对空数组进行检测。  注意： filter() 不会改变原始数组。   语法  1array.filter(function(value,index,arr), thisValue) eg  12345">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-30T02:40:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组filter方法">
-<meta name="twitter:description" content="JavaScript Array filter() 方法定义和用法
-filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
-
-
-注意： filter() 不会对空数组进行检测。
-
-注意： filter() 不会改变原始数组。
-
-
-语法  1array.filter(function(value,index,arr), thisValue)
-eg  12345">
+<meta name="twitter:description" content="JavaScript Array filter() 方法定义和用法 filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。   注意： filter() 不会对空数组进行检测。  注意： filter() 不会改变原始数组。   语法  1array.filter(function(value,index,arr), thisValue) eg  12345">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -214,8 +185,8 @@ eg  12345">
 <li><p>注意： filter() 不会改变原始数组。</p>
 </li>
 </ul>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">array.filter(function(value,index,arr), thisValue)</div></pre></td></tr></table></figure>
-<h3 id="eg"><a href="#eg" class="headerlink" title="eg"></a>eg</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var arr = [</div><div class="line">  &#123; id: 1, text: &apos;aa&apos;, done: true &#125;,</div><div class="line">  &#123; id: 2, text: &apos;bb&apos;, done: false &#125;</div><div class="line">]</div><div class="line">console.log(arr.filter(function (item) &#123;</div><div class="line">  return item.done;</div><div class="line">&#125;))</div></pre></td></tr></table></figure>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.filter(function(value,index,arr), thisValue)</span><br></pre></td></tr></table></figure>
+<h3 id="eg"><a href="#eg" class="headerlink" title="eg"></a>eg</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [</span><br><span class="line">  &#123; id: 1, text: &apos;aa&apos;, done: true &#125;,</span><br><span class="line">  &#123; id: 2, text: &apos;bb&apos;, done: false &#125;</span><br><span class="line">]</span><br><span class="line">console.log(arr.filter(function (item) &#123;</span><br><span class="line">  return item.done;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 <ul>
 <li>返回一个新数组，打印的值 [{ id: 1, text: ‘aa’, done: true }]</li>
 <li>新数组中的值为return true的value。return后面判断结果，取布尔值，true的话就添入新的filter数组中，false的话，不会添进filter的数组中</li>

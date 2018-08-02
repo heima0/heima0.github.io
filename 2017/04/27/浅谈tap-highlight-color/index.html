@@ -20,61 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;
-
-- 默认值：由user agent决定
-
-- 适用于：所有元素
-
-- 继承性：有
-
-- 动画性：是
-说明：- 设置或检索对象的轻按时高亮。
-
-- 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
-
-- 如果想取消这个高亮，将值设置为全透明即可，比如transparent
-
-- 对应的脚本特性为t">
+    <meta name="description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;  - 默认值：由user agent决定  - 适用于：所有元素  - 继承性：有  - 动画性：是 说明：- 设置或检索对象的轻按时高亮。  - 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色  - 如果想取消这个高亮，将值设置为全透明即可，比如transparent  - 对应的脚本特性为t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈tap-highlight-color与::selection">
 <meta property="og:url" content="http://yoursite.com/2017/04/27/浅谈tap-highlight-color/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;
-
-- 默认值：由user agent决定
-
-- 适用于：所有元素
-
-- 继承性：有
-
-- 动画性：是
-说明：- 设置或检索对象的轻按时高亮。
-
-- 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
-
-- 如果想取消这个高亮，将值设置为全透明即可，比如transparent
-
-- 对应的脚本特性为t">
+<meta property="og:description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;  - 默认值：由user agent决定  - 适用于：所有元素  - 继承性：有  - 动画性：是 说明：- 设置或检索对象的轻按时高亮。  - 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色  - 如果想取消这个高亮，将值设置为全透明即可，比如transparent  - 对应的脚本特性为t">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-07-27T04:57:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈tap-highlight-color与::selection">
-<meta name="twitter:description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;
-
-- 默认值：由user agent决定
-
-- 适用于：所有元素
-
-- 继承性：有
-
-- 动画性：是
-说明：- 设置或检索对象的轻按时高亮。
-
-- 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色
-
-- 如果想取消这个高亮，将值设置为全透明即可，比如transparent
-
-- 对应的脚本特性为t">
+<meta name="twitter:description" content="语法：1tap-highlight-color：&amp;lt;color&amp;gt;  - 默认值：由user agent决定  - 适用于：所有元素  - 继承性：有  - 动画性：是 说明：- 设置或检索对象的轻按时高亮。  - 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色  - 如果想取消这个高亮，将值设置为全透明即可，比如transparent  - 对应的脚本特性为t">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -220,7 +176,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tap-highlight-color：&lt;color&gt;</div></pre></td></tr></table></figure>
+            <h2 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h2><pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tap-highlight-color：&lt;color&gt;</span><br></pre></td></tr></table></figure>
 
 - 默认值：由user agent决定
 
@@ -243,7 +199,7 @@
 则可改变元素被点击时背景框的颜色。
 如果需要背景框不显示，则可以将rgba中的alpha值设为0即可，例如rgba(0,0,0,0)
 </code></pre><h2 id="selection-选择器问题"><a href="#selection-选择器问题" class="headerlink" title="::selection 选择器问题"></a>::selection 选择器问题</h2><pre><code>- 应用场景：通常我们选中文字时的背景色是黑色，文字颜色是白色。我们可以用以下样式去设置网页的选中内容的样式：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">::selection         &#123; background:#000; color:#fff; &#125;</div><div class="line"></div><div class="line">::-moz-selection    &#123; background:#000; color:#fff; &#125;</div><div class="line"></div><div class="line">::-webkit-selection &#123; background:#000; color:#fff;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">::selection         &#123; background:#000; color:#fff; &#125;</span><br><span class="line"></span><br><span class="line">::-moz-selection    &#123; background:#000; color:#fff; &#125;</span><br><span class="line"></span><br><span class="line">::-webkit-selection &#123; background:#000; color:#fff;&#125;</span><br></pre></td></tr></table></figure>
 
 - 官方参考文档---http://www.w3school.com.cn/cssref/selector_selection.asp
 </code></pre>

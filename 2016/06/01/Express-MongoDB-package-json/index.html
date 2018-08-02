@@ -20,57 +20,19 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="Express、 MongoDB、 package.json的介绍
-知识点
-Express
-MongoDB
-
-package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。
-目前已知的两个非常重要的属性：
-
-main
-main 和模块化中的第三方包加载规则有关系
-
-
-dependencies
-dependencies 和">
+    <meta name="description" content="Express、 MongoDB、 package.json的介绍 知识点 Express MongoDB  package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。 目前已知的两个非常重要的属性：  main main 和模块化中的第三方包加载规则有关系   dependencies dependencies 和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Express-MongoDB-package.json">
 <meta property="og:url" content="http://yoursite.com/2016/06/01/Express-MongoDB-package-json/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="Express、 MongoDB、 package.json的介绍
-知识点
-Express
-MongoDB
-
-package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。
-目前已知的两个非常重要的属性：
-
-main
-main 和模块化中的第三方包加载规则有关系
-
-
-dependencies
-dependencies 和">
-<meta property="og:image" content="http://yoursite.com/img/mongodb数据存储结构.png">
+<meta property="og:description" content="Express、 MongoDB、 package.json的介绍 知识点 Express MongoDB  package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。 目前已知的两个非常重要的属性：  main main 和模块化中的第三方包加载规则有关系   dependencies dependencies 和">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2016/06/01/Express-MongoDB-package-json/img/mongodb数据存储结构.png">
 <meta property="og:updated_time" content="2017-02-11T05:12:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Express-MongoDB-package.json">
-<meta name="twitter:description" content="Express、 MongoDB、 package.json的介绍
-知识点
-Express
-MongoDB
-
-package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。
-目前已知的两个非常重要的属性：
-
-main
-main 和模块化中的第三方包加载规则有关系
-
-
-dependencies
-dependencies 和">
-<meta name="twitter:image" content="http://yoursite.com/img/mongodb数据存储结构.png">
+<meta name="twitter:description" content="Express、 MongoDB、 package.json的介绍 知识点 Express MongoDB  package.json 文件package.json 文件一般用来描述项目的一些基本信息，例如入口文件、依赖项、项目介绍、开发作者等数据。 目前已知的两个非常重要的属性：  main main 和模块化中的第三方包加载规则有关系   dependencies dependencies 和">
+<meta name="twitter:image" content="http://yoursite.com/2016/06/01/Express-MongoDB-package-json/img/mongodb数据存储结构.png">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -241,16 +203,16 @@ dependencies 和">
 <p>一个基于 Node 开发的一个快速 Web 开发框架<br>主要用来构建 Server</p>
 </blockquote>
 <ul>
-<li><a href="http://expressjs.com/" target="_blank" rel="external">http://expressjs.com/</a></li>
-<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">http://www.expressjs.com.cn/</a></li>
+<li><a href="http://expressjs.com/" target="_blank" rel="noopener">http://expressjs.com/</a></li>
+<li><a href="http://www.expressjs.com.cn/" target="_blank" rel="noopener">http://www.expressjs.com.cn/</a></li>
 </ul>
-<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello-world"></a>hello-world</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"></div><div class="line"><span class="comment">// 1. 调用 express 方法，得到一个类似于 server 的实例</span></div><div class="line"><span class="comment">//    一般称作 app</span></div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"></div><div class="line"><span class="comment">// 2. 通过 app 根据不同的请求方法及请求路径设定具体的处理函数</span></div><div class="line"></div><div class="line"><span class="comment">// 当用户以 GET 请求 / 的时候，执行对应的回调处理函数</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello world'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 当用户以 GET 请求 /login 的时候，执行对应的回调处理函数</span></div><div class="line">app.get(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  res.end(<span class="string">'hello login'</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 3. 启动监听</span></div><div class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'服务器已启动，请访问：http://127.0.0.1:3000/'</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello-world"></a>hello-world</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 调用 express 方法，得到一个类似于 server 的实例</span></span><br><span class="line"><span class="comment">//    一般称作 app</span></span><br><span class="line"><span class="keyword">var</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 通过 app 根据不同的请求方法及请求路径设定具体的处理函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 当用户以 GET 请求 / 的时候，执行对应的回调处理函数</span></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.end(<span class="string">'hello world'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当用户以 GET 请求 /login 的时候，执行对应的回调处理函数</span></span><br><span class="line">app.get(<span class="string">'/login'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.end(<span class="string">'hello login'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 启动监听</span></span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'服务器已启动，请访问：http://127.0.0.1:3000/'</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h3 id="处理静态资源"><a href="#处理静态资源" class="headerlink" title="处理静态资源"></a>处理静态资源</h3><blockquote>
-<p>参考文档：<a href="http://www.expressjs.com.cn/starter/static-files.html" target="_blank" rel="external">http://www.expressjs.com.cn/starter/static-files.html</a></p>
+<p>参考文档：<a href="http://www.expressjs.com.cn/starter/static-files.html" target="_blank" rel="noopener">http://www.expressjs.com.cn/starter/static-files.html</a></p>
 </blockquote>
 <p>通过 Express 内置的 <code>express.static</code> 可以方便地托管静态文件，<br>例如图片、CSS、JavaScript 文件等。</p>
 <p>配置规则如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.use(<span class="string">'路径访问前缀'</span>, express.static(<span class="string">'资源目录路径'</span>))</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(<span class="string">'路径访问前缀'</span>, express.static(<span class="string">'资源目录路径'</span>))</span><br></pre></td></tr></table></figure>
 <p>以下是一些配置示例：</p>
 <ul>
 <li>将目录 static 资源暴露出来，可以通过 <code>/static/*</code> 的形式进行访问<ul>
@@ -281,19 +243,19 @@ dependencies 和">
 </ul>
 <h3 id="路由系统"><a href="#路由系统" class="headerlink" title="路由系统"></a>路由系统</h3><h3 id="在-Express-配置使用-ejs-模板引擎"><a href="#在-Express-配置使用-ejs-模板引擎" class="headerlink" title="在 Express 配置使用 ejs 模板引擎"></a>在 Express 配置使用 ejs 模板引擎</h3><p>Express 这个框架很精简，默认是不支持模板引擎的，需要配合一些第三方的模板引擎来结合使用，<br>例如这里将 <code>ejs</code> 和 <code>express</code> 结合起来使用：</p>
 <p>第一：安装 <code>ejs</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save ejs</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save ejs</span><br></pre></td></tr></table></figure>
 <p>第二：在代码中配置：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app.set(<span class="string">'views'</span>, 模板文件存储路径) <span class="comment">// 注意，这里可以不配置，因为 Express 默认会去项目中的 `views` 目录进行查找</span></div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>) <span class="comment">// 这里表示让 Express 中的 res.render 方法使用 ejs 模板引擎，这里的 ejs 就是你安装的那个模板引擎的包名</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.set(<span class="string">'views'</span>, 模板文件存储路径) <span class="comment">// 注意，这里可以不配置，因为 Express 默认会去项目中的 `views` 目录进行查找</span></span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'ejs'</span>) <span class="comment">// 这里表示让 Express 中的 res.render 方法使用 ejs 模板引擎，这里的 ejs 就是你安装的那个模板引擎的包名</span></span><br></pre></td></tr></table></figure>
 <p>只要经过了上面这种配置，然后 res 对象上就会自动多出一个方法：<code>res.render</code> ,使用方式和咱们之前<br>自己封装的一样：<code>res.render(&#39;视图名称&#39;, {要解析替换的对象数据})</code></p>
 <p>注意：使用了 ejs 模板引擎，默认视图文件后缀名必须是 <code>.ejs</code>，否则 render 方法找不到。<br>如果想要修改，可以像下面这样：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app.set('view enginge', 'ejs')</span></div><div class="line"><span class="comment">// 将上面这句配置改为下面的形式，就修改了默认的 .ejs 后缀名</span></div><div class="line">app.engine(<span class="string">'.html'</span>, <span class="built_in">require</span>(<span class="string">'ejs'</span>).__express)</div><div class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'html'</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// app.set('view enginge', 'ejs')</span></span><br><span class="line"><span class="comment">// 将上面这句配置改为下面的形式，就修改了默认的 .ejs 后缀名</span></span><br><span class="line">app.engine(<span class="string">'.html'</span>, <span class="built_in">require</span>(<span class="string">'ejs'</span>).__express)</span><br><span class="line">app.set(<span class="string">'view engine'</span>, <span class="string">'html'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="在-Express-中配置使用-body-parser-插件解析处理表单-POST-请求体"><a href="#在-Express-中配置使用-body-parser-插件解析处理表单-POST-请求体" class="headerlink" title="在 Express 中配置使用 body-parser 插件解析处理表单 POST 请求体"></a>在 Express 中配置使用 <code>body-parser</code> 插件解析处理表单 POST 请求体</h3><p>第一步：安装 <code>body-parser</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save body-parser</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save body-parser</span><br></pre></td></tr></table></figure>
 <p>第二步，在代码中进行配置：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</div><div class="line">app.use(bodyParser.json())</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">app.use(bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;))</span><br><span class="line">app.use(bodyParser.json())</span><br></pre></td></tr></table></figure>
 <p>只要经过上面的安装配置，则在任意的 post 处理函数中都可以直接通过 <code>req.body</code> 来获取表单 POST 请求体数据。</p>
 <p>例如：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'login'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</div><div class="line">  <span class="comment">// 这里可以直接通过 req.body 来获取表单 POST 请求体数据</span></div><div class="line">  <span class="built_in">console</span>.log(req.body)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.post(<span class="string">'login'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 这里可以直接通过 req.body 来获取表单 POST 请求体数据</span></span><br><span class="line">  <span class="built_in">console</span>.log(req.body)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <h2 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h2><h3 id="数据库概念"><a href="#数据库概念" class="headerlink" title="数据库概念"></a>数据库概念</h3><blockquote>
 <p>数据库：一个电子化的文件柜</p>
 </blockquote>
@@ -309,7 +271,7 @@ dependencies 和">
 </ul>
 <p>数据库没有排名之分，各有各的应用场景，这里说的是 MongoDB 数据库。</p>
 <h3 id="MongoDB-数据库"><a href="#MongoDB-数据库" class="headerlink" title="MongoDB 数据库"></a>MongoDB 数据库</h3><blockquote>
-<p>为了更好的学习 MongoDB 数据库，可以参考菜鸟教程上的 MongoDB 数据库教程文档，<br>链接地址：<a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="external">http://www.runoob.com/mongodb/mongodb-tutorial.html</a></p>
+<p>为了更好的学习 MongoDB 数据库，可以参考菜鸟教程上的 MongoDB 数据库教程文档，<br>链接地址：<a href="http://www.runoob.com/mongodb/mongodb-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/mongodb/mongodb-tutorial.html</a></p>
 </blockquote>
 <h3 id="MongoDB-数据库存储结构"><a href="#MongoDB-数据库存储结构" class="headerlink" title="MongoDB 数据库存储结构"></a>MongoDB 数据库存储结构</h3><figure class="image-bubble">
                 <div class="img-lightbox">
@@ -322,18 +284,18 @@ dependencies 和">
 <p>直接在控制台输入：<code>mongod</code> 敲回车即可。</p>
 <p>在启动的时候，可以通过 <code>--dbpath</code> 指定数据服务存储数据的目录，<br>如果不指定该目录，默认 <code>mongod</code> 会去 <code>c:/data/db</code> 作为自己的数据存储目录。</p>
 <p>64 位版本启动 MongoDB 数据服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath C:\data\db</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath C:\data\db</span><br></pre></td></tr></table></figure>
 <p>32 位版本使用下面的命令启动数据服务：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1</span><br></pre></td></tr></table></figure>
 <p>提示：如果不加 <code>--dbpath</code>, mongod 会自动使用 <code>C:\data\db</code> 目录作为自己的数据存储路径，<br>所以，如果你已经有了 <code>C:\data\db</code> 目录了，可以省略 <code>--dbpath</code>。</p>
 <p>执行完上面的命令并成功开启 MongoDB 数据服务实例之后，就把该控制台最小化到一边就可以了，<br>千万不要关闭，否则无法连接，如果对数据库的操作结束，可以打开该控制台通过 <code>Ctrl + C</code> 关闭。</p>
 <h3 id="连接-MongoDB-数据服务"><a href="#连接-MongoDB-数据服务" class="headerlink" title="连接 MongoDB 数据服务"></a>连接 MongoDB 数据服务</h3><p><strong>注意：在进行连接之前请确保你的服务实例是开启状态的（不要关闭刚才开启的数据服务实例）。</strong></p>
 <p>打开一个新的控制台，在控制台输入以下命令用来连接本机的 MongoDB 服务实例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo</span><br></pre></td></tr></table></figure>
 <p>mongo 命令默认去连接本机上的 MongoDB 服务实例：<code>127.0.0.1:27017</code>，可以通过下面的命令<br>指定连接的主机名和端口号：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mongo --host 127.0.0.1 --port 27017</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongo --host 127.0.0.1 --port 27017</span><br></pre></td></tr></table></figure>
 <p>如果看到类似于如下的字样说明连接成功：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">MongoDB shell version v3.4.0</div><div class="line">connecting to: mongodb://127.0.0.1:27017</div><div class="line">MongoDB server version: 3.4.0</div><div class="line">Server has startup warnings:</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten]</div><div class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</div><div class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">MongoDB shell version v3.4.0</span><br><span class="line">connecting to: mongodb://127.0.0.1:27017</span><br><span class="line">MongoDB server version: 3.4.0</span><br><span class="line">Server has startup warnings:</span><br><span class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten]</span><br><span class="line">2017-01-18T18:49:53.865+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.</span><br><span class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.</span><br><span class="line">2017-01-18T18:49:53.866+0800 I CONTROL  [initandlisten]</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 <p>如果提示 “无法连接主机”，请检查你的 MongoDB 数据服务实例是否开启。</p>
 <h3 id="基本操作命令"><a href="#基本操作命令" class="headerlink" title="基本操作命令"></a>基本操作命令</h3><ul>
 <li><code>show dbs</code><ul>
@@ -371,8 +333,8 @@ dependencies 和">
 </li>
 </ul>
 <h2 id="使用-Node-操作-MongoDB"><a href="#使用-Node-操作-MongoDB" class="headerlink" title="使用 Node 操作 MongoDB"></a>使用 Node 操作 MongoDB</h2><p>安装 MongoDB 官方提供的驱动包：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save mongodb</div></pre></td></tr></table></figure>
-<p>具体操作方式请参考官方文档：<a href="https://www.npmjs.com/package/mongodb" target="_blank" rel="external">https://www.npmjs.com/package/mongodb</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save mongodb</span><br></pre></td></tr></table></figure>
+<p>具体操作方式请参考官方文档：<a href="https://www.npmjs.com/package/mongodb" target="_blank" rel="noopener">https://www.npmjs.com/package/mongodb</a></p>
 <h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
 <li>能概述 package.json 文件的作用并能列举出至少两个该文件内成员的名称及作用</li>
 <li>能掌握 Express 的基本使用（配置处理静态资源、配置使用ejs模板引擎、解析处理表单POST请求体）</li>

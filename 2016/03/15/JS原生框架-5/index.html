@@ -20,28 +20,17 @@
     
     
     <meta name="keywords" content="">
-    <meta name="description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结:
-$( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) )
-1) 如果左边的html字符串是多个元素什么结果, 规律是什么
-2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
-3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+    <meta name="description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS原生框架-5">
 <meta property="og:url" content="http://yoursite.com/2016/03/15/JS原生框架-5/index.html">
 <meta property="og:site_name" content="博客空间">
-<meta property="og:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结:
-$( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) )
-1) 如果左边的html字符串是多个元素什么结果, 规律是什么
-2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
-3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+<meta property="og:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+<meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2017-02-11T05:07:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS原生框架-5">
-<meta name="twitter:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结:
-$( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) )
-1) 如果左边的html字符串是多个元素什么结果, 规律是什么
-2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
-3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+<meta name="twitter:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
     
         <link rel="alternative" href="/atom.xml" title="博客空间" type="application/atom+xml">
     
@@ -227,7 +216,7 @@ var init = iQuery.fn.init = function(){
     slice.apply(this,document.querySelectorAll(selector));
 }
 不是一样么?
-</code></pre><ol>
+</code></pre><ol start="3">
 <li><p>如果appendTo方法右边是多个元素, 如何处理</p>
  <div></div><br> <div></div>
 
@@ -248,7 +237,7 @@ var init = iQuery.fn.init = function(){
 <pre><code>    var IObj= iQuery( selector );
 
 }
-</code></pre><ol>
+</code></pre><ol start="4">
 <li><p>说明<br>  appendTo: function ( array ) {</p>
 <pre><code>var that = this;
 </code></pre></li>
@@ -268,7 +257,7 @@ var init = iQuery.fn.init = function(){
 
     return iQuery( arr );
 }
-</code></pre><ol>
+</code></pre><ol start="5">
 <li><p>实现 prepend 与 prependTo 方法<br> 区别:</p>
 <pre><code>1&gt; appendTo 和 prependTo
  $( &apos;&lt;div&gt;&lt;/div&gt;&apos; ).appendTo( &apos;div&apos; ); 将新创建的 div 加到页面中已有的 div 中的子元素中的结尾处( 追加 )
@@ -294,7 +283,7 @@ var init = iQuery.fn.init = function(){
 <li><p>after 与 before</p>
 </li>
 </ol>
-<ol>
+<ol start="9">
 <li>其他的亲属节点访问方法<br> .parent()<br> .next()<br> .nextAll()<br> .prev()<br> .prevAll()<br> .siblings()</li>
 </ol>
 
