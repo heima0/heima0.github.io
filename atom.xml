@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-01T08:57:22.000Z</updated>
+  <updated>2018-08-06T08:25:18.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网页布局</title>
+    <link href="http://yoursite.com/2018/04/20/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2018/04/20/网页布局/</id>
+    <published>2018-04-20T07:57:10.000Z</published>
+    <updated>2018-08-06T08:25:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="静态、自适应、流式、响应式、弹性布局的概念和区别"><a href="#静态、自适应、流式、响应式、弹性布局的概念和区别" class="headerlink" title="静态、自适应、流式、响应式、弹性布局的概念和区别"></a>静态、自适应、流式、响应式、弹性布局的概念和区别</h2><p>一、静态布局（Static Layout）</p><p>  传统Web设计，网页上的所有元素的尺寸一律使用px作为单位。</p><p>  1、布局特点：不管浏览器尺寸具体是多少，网页布局始终按照最初写代码时的布局来显示。常规的pc的网站都是静态（定宽度）布局的，也就是设置了min-width，这样的话，如果小于这个宽度就会出现滚动条，如果大于这个宽度则内容居中外加背景，这种设计常见与pc端。<br>  2、设计方法：<br>　　PC：居中布局，所有样式使用绝对宽度/高度(px)，设计一个Layout，在屏幕宽高有调整时，使用横向和竖向的滚动条来查阅被遮掩部分；<br>　　移动设备：另外建立移动网站，单独设计一个布局，使用不同的域名如wap.或m.。</p><p>　   在移动端开发中采用静态布局的两种方式：(来自：流布局与响应式网页设计有什么区别？)</p><p>　（1）在viewport meta标签上设置width=320，页面的各个元素也采用px作为单位。通过用JS动态修改标签的initial-scale使得页面等比缩放，从而刚好占满整个屏幕。（见前端开发-web app 变革之rem）</p><p>　（2）设在viewport meta标签上设置content”width=640,user-scalable=no，页面的各个元素也采用px作为单位。由于640px超出了手机宽度，浏览器会自动缩小页面至刚好全屏。（具体见content”width=640,user-scalable=no” 然后再进行固定尺寸的px设计？ - 前端开发）</p><ul><li><p>优点：这种布局方式对设计师和CSS编写者来说都是最简单的，亦没有兼容性问题。</p></li><li><p>缺点：显而易见，即不能根据用户的屏幕尺寸做出不同的表现。</p></li><li><p>当前，大部分门户网站、大部分企业的PC宣传站点都采用了这种布局方式。固定像素尺寸的网页是匹配固定像素尺寸显示器的最简单办法。但这种方法不是一种完全兼容未来网页的制作方法。</p></li></ul><p>二、流式布局（Liquid Layout）</p><p>  流式布局（Liquid）的特点（也叫”Fluid”) 是页面元素的宽度按照屏幕分辨率进行适配调整，但整体布局不变。代表作栅栏系统（网格系统）。</p><p>  网页中主要的划分区域的尺寸使用百分数（搭配min-<em>、max-</em>属性使用），例如，设置网页主体的宽度为80%，min-width为960px。图片也作类似处理（width:100%, max-width一般设定为图片本身的尺寸，防止被拉伸而失真）。</p><p>  1、布局特点：屏幕分辨率变化时，页面里元素的大小会变化而但布局不变。【这就导致如果屏幕太大或者太小都会导致元素无法正常显示】</p><p>  2、设计方法：使用%百分比定义宽度，高度大都是用px来固定住，可以根据可视区域 (viewport) 和父元素的实时尺寸进行调整，尽可能的适应各种分辨率。往往配合 max-width/min-width 等属性控制尺寸流动范围以免过大或者过小影响阅读。</p><ul><li>这种布局方式在Web前端开发的早期历史上，用来应对不同尺寸的PC屏幕（那时屏幕尺寸的差异不会太大），在当今的移动端开发也是常用布局方式，但缺点明显：主要的问题是如果屏幕尺度跨度太大，那么在相对其原始设计而言过小或过大的屏幕上不能正常显示。因为宽度使用%百分比定义，但是高度和文字大小等大都是用px来固定，所以在大屏幕的手机下显示效果会变成有些页面元素宽度被拉的很长，但是高度、文字大小还是和原来一样（即，这些东西无法变得“流式”），显示非常不协调。</li></ul><p>三、自适应布局（Adaptive Layout）</p><p>  自适应布局的特点是分别为不同的屏幕分辨率定义布局，即创建多个静态布局，每个静态布局对应一个屏幕分辨率范围。改变屏幕分辨率可以切换不同的静态局部（页面元素位置发生改变），但在每个静态布局中，页面元素不随窗口大小的调整发生变化。可以把自适应布局看作是静态布局的一个系列。</p><p>  1、布局特点：屏幕分辨率变化时，页面里面元素的位置会变化而大小不会变化。<br>  2、设计方法：使用 @media 媒体查询给不同尺寸和介质的设备切换不同的样式。在优秀的响应范围设计下可以给适配范围内的设备最好的体验，在同一个设备下实际还是固定的布局。</p><p>四、响应式布局（Responsive Layout）</p><p>  随着CSS3出现了媒体查询技术，又出现了响应式设计的概念。响应式设计的目标是确保一个页面在所有终端上（各种尺寸的PC、手机、手表、冰箱的Web浏览器等等）都能显示出令人满意的效果，对CSS编写者而言，在实现上不拘泥于具体手法，但通常是糅合了流式布局+弹性布局，再搭配媒体查询技术使用。——分别为不同的屏幕分辨率定义布局，同时，在每个布局中，应用流式布局的理念，即页面元素宽度随着窗口调整而自动适配。即：创建多个流体式布局，分别对应一个屏幕分辨率范围。可以把响应式布局看作是流式布局和自适应布局设计理念的融合。</p><ul><li><p>响应式几乎已经成为优秀页面布局的标准。</p><p>1、布局特点：每个屏幕分辨率下面会有一个布局样式，即元素位置和大小都会变。</p><p>2、设计方法：媒体查询+流式布局。通常使用 @media 媒体查询 和网格系统 (Grid System) 配合相对布局单位进行布局，实际上就是综合响应式、流动等上述技术通过 CSS 给单一网页不同设备返回不同样式的技术统称。</p></li><li><p>优点：适应pc和移动端，如果足够耐心，效果完美</p></li><li><p>缺点：（1）媒体查询是有限的，也就是可以枚举出来的，只能适应主流的宽高。（2）要匹配足够多的屏幕大小，工作量不小，设计也需要多个版本。</p></li></ul><p>五、弹性布局（rem/em布局）</p><p>  1、rem,em区别：rem,em都是顺应不同网页字体大小展现而产生的。其中，em是相对其父元素，在实际应用中相对而言会带来很多不便；而rem是始终相对于html大小，即页面根元素。</p><p>  2、使用 em 或 rem 单位进行相对布局，相对%百分比更加灵活，同时可以支持浏览器的字体大小调整和缩放等的正常显示，因为em是相对父级元素的原因没有得到推广。【中国站点制作网页的时候，习惯用CSS强制定义字体大小，保证每个人都看到一致的效果，包括网易、搜狐这些门户网站在内的大部分站点，用的都是绝对单位px（像素）。但是，如果从网站易用性方面考虑，字体大小应该是可变的，一些视力不是那么好的人需要放大字体才能看得清页面内容。然而，占据大部分浏览器市场的IE无法调整那些使用px作为单位的字体大小。国外人士非常重视网站的易用性，相当一部分外国站点已经使用em作为字体单位。】<br>  3、这类布局的特点是，包裹文字的各元素的尺寸采用em/rem做单位，而页面的主要划分区域的尺寸仍使用百分数或px做单位（同「流式布局」或「静态/固定布局」）。早期浏览器不支持整个页面按比例缩放，仅支持网页内文字尺寸的放大，这种情况下。使用em/rem做单位，可以使包裹文字的元素随着文字的缩放而缩放。</p><p>  4、浏览器的默认字体高度一般为16px，即1em:16px，但是 1:16 的比例不方便计算，为了使单位em/rem更直观，CSS编写者常常将页面跟节点字体设为62.5%，比如选择用rem控制字体时，先需要设置根节点html的字体大小，因为浏览器默认字体大小16px*62.5%=10px。这样1rem便是10px，方便了计算。</p><p>  5、用em/rem定义尺寸的另一个好处是更能适应缩进/以字体单位padding或margin／浏览器设置字体尺寸等情况（因为em/rem相对于字体大小，会同步改变）。例如：p{ text-indent: 2em; }</p><p>  6、使用rem单位的弹性布局在移动端也很受欢迎。</p><ul><li><p>工具ViewtoREM：PX转换到REM（自动预处理）</p></li><li><p>REM支持的浏览器：Mozilla Firefox 3.6+、Apple Safari 5+、Google Chrome、IE9+和Opera11+。IE6-8无法支持。</p></li></ul><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>  1.如果只做pc端，那么静态布局（定宽度）是最好的选择；</p><p>  2.如果做移动端，且设计对高度和元素间距要求不高，那么弹性布局（rem+js）是最好的选择，一份css+一份js调节font-size搞定；</p><p>  3.如果既要做pc，也要兼容移动端，而且要求很高那么响应式布局还是最好的选择，前提是设计根据不同的高宽做不同的设计，响应式根据媒体查询做不同的布局。（工作量很大）</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li><p>静态布局：定宽高；</p></li><li><p>流式布局：宽度百分比；</p></li><li><p>自适应布局：多个静态布局系列；使用 @media 媒体查询给不同尺寸和介质的设备切换不同的样式；</p></li><li><p>响应式布局：自适应布局+流式布局；屏幕差距间用百分比控制，利用min-width/max-width；</p></li><li><p>弹性布局：使用rem单位动态控制元素尺寸；</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;静态、自适应、流式、响应式、弹性布局的概念和区别&quot;&gt;&lt;a href=&quot;#静态、自适应、流式、响应式、弹性布局的概念和区别&quot; class=&quot;headerlink&quot; title=&quot;静态、自适应、流式、响应式、弹性布局的概念和区别&quot;&gt;&lt;/a&gt;静态、自适应、流式、响应式、
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>标签marquee</title>
@@ -380,6 +401,90 @@
 &lt;li&gt;Ecmascript 6-阮一峰&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&quot;Ecmascript-6&quot;&gt;&lt;a href=&quot;#Ecmascript-6&quot; class=&quot;headerlink&quot; title=&quot;Ecmascript 6&quot;&gt;&lt;/a&gt;Ecmascript 6&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>诗圣-杜甫</title>
+    <link href="http://yoursite.com/2016/10/28/%E8%AF%97%E5%9C%A3-%E6%9D%9C%E7%94%AB/"/>
+    <id>http://yoursite.com/2016/10/28/诗圣-杜甫/</id>
+    <published>2016-10-28T12:45:42.000Z</published>
+    <updated>2018-08-06T08:53:31.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="杜甫-（唐代著名现实主义诗人）"><a href="#杜甫-（唐代著名现实主义诗人）" class="headerlink" title="杜甫 （唐代著名现实主义诗人）"></a>杜甫 （唐代著名现实主义诗人）</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">杜甫（712年—770年），字子美，汉族，原籍湖北襄阳，后徙河南巩县。自号少陵野老，唐代伟大的现实主义诗人，与李白合称“李杜”。为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”，杜甫也常被称为“老杜”。</span><br><span class="line"></span><br><span class="line">杜甫在中国古典诗歌中的影响非常深远，被后人称为“诗圣”，他的诗被称为“诗史”。后世称其杜拾遗、杜工部，也称他杜少陵、杜草堂。</span><br><span class="line"></span><br><span class="line">杜甫创作了《登高》《春望》《北征》《三吏》《三别》等名作。乾元二年（759年）杜甫弃官入川，虽然躲避了战乱，生活相对安定，但仍然心系苍生，胸怀国事。虽然杜甫是个现实主义诗人，但他也有狂放不羁的一面，从其名作《饮中八仙歌》不难看出杜甫的豪气干云。</span><br><span class="line"></span><br><span class="line">杜甫的思想核心是儒家的仁政思想，他有“致君尧舜上，再使风俗淳”的宏伟抱负。杜甫虽然在世时名声并不显赫，但后来声名远播，对中国文学和日本文学都产生了深远的影响。杜甫共有约1500首诗歌被保留了下来，大多集于《杜工部集》。</span><br></pre></td></tr></table></figure><h2 id="代表作品"><a href="#代表作品" class="headerlink" title="代表作品"></a>代表作品</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">三吏：《石壕吏》 《新安吏》 《潼关吏》</span><br><span class="line"></span><br><span class="line">三别：《新婚别》 《无家别》 《垂老别》</span><br></pre></td></tr></table></figure><h2 id="人物评价"><a href="#人物评价" class="headerlink" title="人物评价"></a>人物评价</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">鲁迅对杜甫的评价：“杜甫似乎不是古人，就好像今天还活在我们堆里似的。”曾经加入《新青年》，以《狂人日记》等名作参与发动“五四”文化革命之鲁迅，到三十年代，岿然成为众望所归之革命文学导师，晚年与友人讨论中国文学史，以为中古之陶潜、李白、杜甫皆第一流诗人，继而又说：“我总觉得陶潜站得稍稍远一点，李白站得稍稍高一点，这也是时代使然。杜甫似乎不是古人，就好像今天还活在我们堆里似的。”鲁迅晚年在政治上己与胡适分道扬镳，惟此评论杜甫之寥寥数语，仍然与胡适笙磐同音。他还曾经说过：“杜甫是中华民族的脊梁！”</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;杜甫-（唐代著名现实主义诗人）&quot;&gt;&lt;a href=&quot;#杜甫-（唐代著名现实主义诗人）&quot; class=&quot;headerlink&quot; title=&quot;杜甫 （唐代著名现实主义诗人）&quot;&gt;&lt;/a&gt;杜甫 （唐代著名现实主义诗人）&lt;/h2&gt;  &lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>词帝-李煜</title>
+    <link href="http://yoursite.com/2016/10/16/%E8%AF%8D%E5%B8%9D-%E6%9D%8E%E7%85%9C/"/>
+    <id>http://yoursite.com/2016/10/16/词帝-李煜/</id>
+    <published>2016-10-16T08:39:15.000Z</published>
+    <updated>2018-08-06T08:43:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="李煜-（南唐后主）"><a href="#李煜-（南唐后主）" class="headerlink" title="李煜 （南唐后主）"></a>李煜 （南唐后主）</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">李煜（937年8月15日―978年8月13日），南唐元宗（即南唐中主）李璟第六子，初名从嘉，字重光，号钟隐、莲峰居士，汉族，生于金陵（今江苏南京），祖籍彭城（今江苏徐州铜山区），南唐最后一位国君。</span><br><span class="line"></span><br><span class="line">北宋建隆二年（961年），李煜继位，尊宋为正统，岁贡以保平安。开宝四年（971年）十月，宋太祖灭南汉，李煜去除唐号，改称“江南国主”。次年，贬损仪制，撤去金陵台殿鸱吻以示尊奉宋廷。开宝八年（975年），李煜兵败降宋，被俘至汴京（今河南开封），授右千牛卫上将军，封违命侯。太平兴国三年（978年）七月七日，李煜死于汴京，追赠太师，追封吴王。世称南唐后主、李后主。</span><br><span class="line"></span><br><span class="line">李煜精书法、工绘画、通音律，诗文均有一定造诣，尤以词的成就最高。李煜的词，继承了晚唐以来温庭筠、韦庄等花间派词人的传统，又受李璟、冯延巳等的影响，语言明快、形象生动、用情真挚，风格鲜明，其亡国后词作更是题材广阔，含意深沉，在晚唐五代词中别树一帜，对后世词坛影响深远。</span><br></pre></td></tr></table></figure><h2 id="主要作品"><a href="#主要作品" class="headerlink" title="主要作品"></a>主要作品</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">据徐铉记载，李煜有《文集》30卷、《杂说》百篇   ，晁公武《郡斋读书志》载《李煜集》10卷，《宋史·艺文志》亦载《南唐李后主集》10卷，均佚。陈振孙《直斋书录解题》有《南唐二主词》1卷，录李煜词34首，存世有明万历四十八年墨华斋本，清代邵长光又录得 1首，近代王国维增加9首。李煜词集注本有清人刘继增《南唐二主词笺》，近人唐圭璋《南唐二主词汇笺》、王仲闻《南唐二主词校订》、詹安泰《李璟李煜词》等</span><br></pre></td></tr></table></figure><h2 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">历史上建都金陵的亡国之君，多遭到后世非议。三国吴后主孙皓，“一片降幡出石头”，白棺素服，自缚出降；南朝梁武帝崇信佛，终起侯景之乱，被囚饿死于景阳楼；陈朝后主陈叔宝，金陵城破时，同宠妃张丽华藏于胭脂井中，后被隋将吊出处死。这三位末代君王，亡国起因各不相同，但却都亡于虎踞龙盘的金陵石头城。李煜也是亡于金陵的末代君王，难免要遭到后世的斥责非议。</span><br><span class="line"></span><br><span class="line">但是，李煜亡国的原因应该具体分析，就南唐国来讲，其不亡是不可能的。理论上，当时整个中国的形势和历史发展趋势要求南唐灭亡，北宋统一；事实上，南唐国势已败，李煜即使有能力也无力回天，更何况国策早有失误，在李煜继位的前一年，其父李璟已经因国势衰危而称臣于宋，减制纳贡了。宋朝灭南唐的形势已定，李煜继位，也只能采取消极守业的政策。但是，尽管李煜时的南唐面临着这样那样的困难，其毕竟维持政权达15年之久，而且在他被俘的日子中始终时时不忘故国，心系故土，从未心归宋朝，终至客死他乡。</span><br><span class="line"></span><br><span class="line">史载，赵光义曾问南唐旧臣潘慎修：“李煜果真是一个暗懦无能之辈吗？”潘慎修答道：“假如他真是无能无识之辈，何以能守国十余年？”徐铉在《吴王陇西公墓志铭》也写到：李煜敦厚善良，在兵戈之世，而有厌战之心，虽孔明在世，也难保社稷；既已躬行仁义，虽亡国又有何愧！</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;李煜-（南唐后主）&quot;&gt;&lt;a href=&quot;#李煜-（南唐后主）&quot; class=&quot;headerlink&quot; title=&quot;李煜 （南唐后主）&quot;&gt;&lt;/a&gt;李煜 （南唐后主）&lt;/h2&gt;  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>酒剑仙-李白</title>
+    <link href="http://yoursite.com/2016/10/08/%E9%85%92%E5%89%91%E4%BB%99-%E6%9D%8E%E7%99%BD/"/>
+    <id>http://yoursite.com/2016/10/08/酒剑仙-李白/</id>
+    <published>2016-10-08T02:33:33.000Z</published>
+    <updated>2018-08-06T08:40:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="李白-（唐代著名浪漫主义诗人）"><a href="#李白-（唐代著名浪漫主义诗人）" class="headerlink" title="李白 （唐代著名浪漫主义诗人）"></a>李白 （唐代著名浪漫主义诗人）</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">李白（701年－762年） ，字太白，号青莲居士，又号“谪仙人”，是唐代伟大的浪漫主义诗人，被后人誉为“诗仙”，与杜甫并称为“李杜”，为了与另两位诗人李商隐与杜牧即“小李杜”区别，杜甫与李白又合称“大李杜”。据《新唐书》记载，李白为兴圣皇帝（凉武昭王李暠）九世孙，与李唐诸王同宗。其人爽朗大方，爱饮酒作诗，喜交友。</span><br><span class="line"></span><br><span class="line">李白深受黄老列庄思想影响，有《李太白集》传世，诗作中多以醉时写的，代表作有《望庐山瀑布》《行路难》《蜀道难》《将进酒》《梁甫吟》《早发白帝城》等多首。</span><br><span class="line"></span><br><span class="line">李白所作词赋，宋人已有传记（如文莹《湘山野录》卷上），就其开创意义及艺术成就而言，“李白词”享有极为崇高的地位。</span><br></pre></td></tr></table></figure><h2 id="代表作品"><a href="#代表作品" class="headerlink" title="代表作品"></a>代表作品</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">《将进酒》《蜀道难》《梦游天姥吟留别》《静夜思》《望庐山瀑布》《侠客行》《春思》《子夜秋歌》等。</span><br></pre></td></tr></table></figure><h2 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">杜甫：“笔落惊风雨，诗成泣鬼神。”（《寄李十二白二十韵》）</span><br><span class="line"></span><br><span class="line">杜甫：“清新庾开府，俊逸鲍参军”（《春日忆李白》）</span><br><span class="line"></span><br><span class="line">辛弃疾：“当年宫殿赋昭阳，岂信人间过夜郎。明月入江依旧好，青山埋骨至今香。不寻饭颗山头伴，却趁汨罗江上狂。定要骑鲸归汗漫，故来濯足戏沧浪。”（《忆李白》）</span><br><span class="line"></span><br><span class="line">杜甫：“李白斗酒诗百篇，长安市上酒家眠。天子呼来不上船， 自称臣是酒中仙。”（《饮中八仙歌》）</span><br><span class="line">贺知章：“谪仙”（《本事诗》）。</span><br><span class="line"></span><br><span class="line">魏颢：“白与古人争长，三字九言，鬼出神入。” 许多文人都对李白有着很高的评价。</span><br><span class="line"></span><br><span class="line">苏轼：“李太白、杜子美以英玮绝世之姿，凌跨百代，古今诗人尽废。然魏、晋以来，高风绝尘亦少衰矣。”(《书黄子思诗集后》)</span><br><span class="line"></span><br><span class="line">韩愈：“李杜文章在，光焰万丈长。”（《调张籍》）</span><br><span class="line"></span><br><span class="line">唐朝文宗御封李白的诗歌、裴旻的剑舞、张旭的草书为“三绝”。</span><br><span class="line"></span><br><span class="line">白居易：“又诗之豪者，世称李杜之作。才矣奇矣，人不逮矣。”</span><br><span class="line"></span><br><span class="line">杨升庵：李太白为古今诗圣。(《周受庵诗选序》)</span><br><span class="line"></span><br><span class="line">严羽：李、杜二公，正不当优劣。太白有一二妙处，子美不能道；子美有一二妙处，太白不能作。子美不能为太白之飘逸。太白不能为子美之沉郁。太白《梦游天姥吟》《远别离》等，子美不能道。子美《北征》《兵车行》《垂老别》等，太白不能作。论诗以李、杜为准，挟天子以令诸侯也。少陵诗法如孙吴。太白诗法如李广。(《沧浪诗话》)</span><br><span class="line"></span><br><span class="line">王世贞：五七言绝句，李青莲、王龙标最称擅场，为有唐绝唱。少陵虽工力悉敌，风韵殊不逮也。(《艺苑卮言》)</span><br><span class="line"></span><br><span class="line">傅若金：太白天才放逸，故其诗自为一体。子美学优才赡，故其诗兼备众体，而植纲常系风化为多，三百篇以后之诗，子美其集大成也。(《清江集》)</span><br><span class="line"></span><br><span class="line">高棅：太白天仙之词，语多率然而成者，故乐府歌词咸善。或谓其始以《蜀道难》一篇见赏于知音，为明主所爱重，此岂浅材者徼幸际其时而驰骋哉！不然也。白之所蕴，非止是。今观其《远别离》、《长相思》、《乌栖曲》、《鸣皋歌》、《梁园吟》、《天姥吟》、《庐山谣》等作，长篇短韵，驱驾气势，殆与南山秋气并高可也。虽少陵犹有让焉，余子琐琐矣。(《唐诗品汇》)</span><br><span class="line"></span><br><span class="line">吕居仁：“唐自李、杜之出，昆耀一世，后之言诗者，皆莫能及。”(《江西宗派图序》)</span><br><span class="line"></span><br><span class="line">余光中：“酒入豪肠，七分酿成了月光，余下的三分啸成剑气，绣口一吐就半个盛唐。”旗，促进民族团结、国家统一和振兴中华时充分发挥妇女的社会作用，具有十分重大的意义。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;李白-（唐代著名浪漫主义诗人）&quot;&gt;&lt;a href=&quot;#李白-（唐代著名浪漫主义诗人）&quot; class=&quot;headerlink&quot; title=&quot;李白 （唐代著名浪漫主义诗人）&quot;&gt;&lt;/a&gt;李白 （唐代著名浪漫主义诗人）&lt;/h2&gt;  &lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>千古第一才女-李清照</title>
+    <link href="http://yoursite.com/2016/10/06/%E5%8D%83%E5%8F%A4%E7%AC%AC%E4%B8%80%E6%89%8D%E5%A5%B3-%E6%9D%8E%E6%B8%85%E7%85%A7/"/>
+    <id>http://yoursite.com/2016/10/06/千古第一才女-李清照/</id>
+    <published>2016-10-06T08:26:55.000Z</published>
+    <updated>2018-08-06T08:45:14.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="李清照-（宋代女词人）"><a href="#李清照-（宋代女词人）" class="headerlink" title="李清照 （宋代女词人）"></a>李清照 （宋代女词人）</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">李清照（1084年3月13日—约1155年），号易安居士，汉族，齐州济南（今山东省济南市章丘区）人。宋代女词人，婉约词派代表，有“千古第一才女”之称。</span><br><span class="line"></span><br><span class="line">李清照出生于书香门第，早期生活优裕，其父李格非藏书甚富，她小时候就在良好的家庭环境中打下文学基础。出嫁后与夫赵明诚共同致力于书画金石的搜集整理。金兵入据中原时，流寓南方，境遇孤苦。所作词，前期多写其悠闲生活，后期多悲叹身世，情调感伤。形式上善用白描手法，自辟途径，语言清丽。论词强调协律，崇尚典雅，提出词“别是一家”之说，反对以作诗文之法作词。能诗，留存不多，部分篇章感时咏史，情辞慷慨，与其词风不同。</span><br><span class="line"></span><br><span class="line">有《易安居士文集》《易安词》，已散佚。后人有《漱玉词》辑本。今有《李清照集校注》。</span><br></pre></td></tr></table></figure><h2 id="主要作品"><a href="#主要作品" class="headerlink" title="主要作品"></a>主要作品</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">李清照的文集在当时就曾刻印行世。《直斋书录解题》载《漱玉集》1卷，“别本”分5卷。黄升《花庵词选》称有《漱玉词》3卷。《宋史·艺文志》载有《易安居士文集》7卷、《易安词》6卷。都久已不传。现存的诗文及词集是后人所辑。四印斋本有《漱玉词》1卷，李文编的《漱玉集》5卷，辑录的作品最多。但其中所收词多有赝品。近人赵万里《校辑宋金元人词》中的《漱玉词》收有60首。今人孔凡礼《全宋词补遗》中有新发现的李清照词。王仲闻有《李清照集校注》，人民文学出版社排印本。</span><br></pre></td></tr></table></figure><h2 id="评价"><a href="#评价" class="headerlink" title="评价"></a>评价</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">李清照作为中国古代文学史上少有的女作家，其作品中所体现的爱国思想，具有积极的社会意义。 历史的角度李清照的爱国思想，代表了中国古代广大妇女追求男女平等、关心国事、热爱祖国的一个侧面，让后人从中看到了中国古代女性情感世界的另一面。而且，她还在众多爱国作家中为女性争得了一席之地。不仅如此，李清照还开创了女作家爱国主义创作的先河，为后世留下了一个女性爱国的光辉典范，特别是现代女性文学的创作产生了重大影响。 现实的角度认识李清照的爱国思想，能感受到女性在国家统一、民族团结以及社会进步等方面的巨大作用。这对于在弘扬爱国主义，高举爱国大旗，促进民族团结、国家统一和振兴中华时充分发挥妇女的社会作用，具有十分重大的意义。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;李清照-（宋代女词人）&quot;&gt;&lt;a href=&quot;#李清照-（宋代女词人）&quot; class=&quot;headerlink&quot; title=&quot;李清照 （宋代女词人）&quot;&gt;&lt;/a&gt;李清照 （宋代女词人）&lt;/h2&gt;  &lt;figure class=&quot;highlight plain&quot;&gt;&lt;ta
       
     
     </summary>
