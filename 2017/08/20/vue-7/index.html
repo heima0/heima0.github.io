@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-7 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="虚拟dom以及组件化虚拟dom频繁且复杂的dom操作通常是前端性能瓶颈的产生点，Vue提供了虚拟dom的解决办法 虚拟的DOM的核心思想是：对复杂的文档DOM结构，提供一种方便的工具，进行最小化地DOM操作。这句话，也许过于抽象，却基本概况了虚拟DOM的设计思想 (1) 提供一种方便的工具，使得开发效率得到保证(2) 保证最小化的DOM操作，使得执行效率得到保证 也就是说，虚拟dom的框架/工具都">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-7">
+<meta property="og:url" content="https://heima0.github.io/2017/08/20/vue-7/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="虚拟dom以及组件化虚拟dom频繁且复杂的dom操作通常是前端性能瓶颈的产生点，Vue提供了虚拟dom的解决办法 虚拟的DOM的核心思想是：对复杂的文档DOM结构，提供一种方便的工具，进行最小化地DOM操作。这句话，也许过于抽象，却基本概况了虚拟DOM的设计思想 (1) 提供一种方便的工具，使得开发效率得到保证(2) 保证最小化的DOM操作，使得执行效率得到保证 也就是说，虚拟dom的框架/工具都">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-7">
+<meta name="twitter:description" content="虚拟dom以及组件化虚拟dom频繁且复杂的dom操作通常是前端性能瓶颈的产生点，Vue提供了虚拟dom的解决办法 虚拟的DOM的核心思想是：对复杂的文档DOM结构，提供一种方便的工具，进行最小化地DOM操作。这句话，也许过于抽象，却基本概况了虚拟DOM的设计思想 (1) 提供一种方便的工具，使得开发效率得到保证(2) 保证最小化的DOM操作，使得执行效率得到保证 也就是说，虚拟dom的框架/工具都">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-7</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-7</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-20T04:04:09.000Z" itemprop="datePublished" class="page-time">
+  2017-08-20
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟dom以及组件化"><span class="post-toc-number">1.</span> <span class="post-toc-text">虚拟dom以及组件化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件化"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">组件化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意浏览器规则"><span class="post-toc-number">1.0.0.3.1.</span> <span class="post-toc-text">注意浏览器规则</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#template"><span class="post-toc-number">1.0.0.3.2.</span> <span class="post-toc-text">template</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#is切换"><span class="post-toc-number">1.0.0.3.3.</span> <span class="post-toc-text">is切换</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#组件嵌套"><span class="post-toc-number">1.0.0.3.4.</span> <span class="post-toc-text">组件嵌套</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-7"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-7</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年08月20日 12:04" datetime="2017-08-20T04:04:09.000Z"  itemprop="datePublished">2017-08-20</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="虚拟dom以及组件化"><a href="#虚拟dom以及组件化" class="headerlink" title="虚拟dom以及组件化"></a>虚拟dom以及组件化</h2><h5 id="虚拟dom"><a href="#虚拟dom" class="headerlink" title="虚拟dom"></a>虚拟dom</h5><p>频繁且复杂的dom操作通常是前端性能瓶颈的产生点，Vue提供了虚拟dom的解决办法</p>
+<p>虚拟的DOM的核心思想是：对复杂的文档DOM结构，提供一种方便的工具，进行最小化地DOM操作。这句话，也许过于抽象，却基本概况了虚拟DOM的设计思想</p>
+<p>(1) 提供一种方便的工具，使得开发效率得到保证<br>(2) 保证最小化的DOM操作，使得执行效率得到保证</p>
+<p>也就是说，虚拟dom的框架/工具都是这么做的：</p>
+<ol>
+<li>根据现有的真实dom来生成一个完整的虚拟dom树结构</li>
+<li>当数据变化，或者说是页面需要重新渲染的时候，会重新生成一个新的完整的虚拟dom</li>
+<li>拿新的虚拟dom来和旧的虚拟dom做对比（使用diff算法），。得到需要更新的地方之后，更新内容</li>
+</ol>
+<p>这样的话，就能大量减少真实dom的操作,提高性能</p>
+<h5 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h5><p>模块化就是将系统功能分离成独立的功能部分的方法，一般指的是单个的某一种东西，例如js、css</p>
+<p>而组件化针对的是页面中的整个完整的功能模块划分，组件是一个html、css、js、image等外链资源，这些部分组成的一个聚合体</p>
+<p>优点：代码复用，便于维护</p>
+<p>划分组件的原则：复用率高的，独立性强的</p>
+<p>组件应该拥有的特性：可组合，可重用，可测试，可维护</p>
+<h5 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h5><p>在vue中，我们通过Vue.extend来创建Vue的子类，这个东西其实就是组件</p>
+<p>也就是说Vue实例和组件的实例有差别但是差别不带，因为毕竟一个是父类一个是子类</p>
+<p>一般的应用，会拥有一个根实例，在根实例里面都是一个一个的组件</p>
+<p>因为组件是要嵌入到实例或者父组件里的，也就是说，组件可以互相嵌套，而且，所有的组件最外层必须有一个根实例，所以组件分为：全局组件和局部组件</p>
+<p>全局组件在任意的实例、父级组件中都能使用，局部组件只能在创建自己的父级组件或者实例中使用</p>
+<p>组件通过不同的注册方法成为全局、局部组件</p>
+<p>创建组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.extend(options)</span><br></pre></td></tr></table></figure></p>
+<p>全局注册：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var App = Vue.extend(&#123;</span><br><span class="line">    template:&quot;&lt;h1&gt;hello world&lt;/h1&gt;&quot;</span><br><span class="line">&#125;)</span><br><span class="line">Vue.component(&apos;my-app&apos;,App)</span><br></pre></td></tr></table></figure></p>
+<p>简便写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 创建组件构造器和注册组件合并一起  </span><br><span class="line"> Vue.component(&apos;hello&apos;,&#123;//Vue会自动的将此对象给Vue.extend</span><br><span class="line">     template:&quot;&lt;h1&gt;hello&lt;/h1&gt;&quot;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure></p>
+<p>组件通过template来确定自己的模板,template里的模板必须有根节点，标签必须闭合</p>
+<p>组件的属性挂载通过：data方法来返回一个对象作为组件的属性，这样做的目的是为了每一个组件实例都拥有独立的data属性</p>
+<p>局部注册：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">    el:&quot;#app&quot;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        &apos;my-app&apos;:App</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>简便写法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;&#125;,</span><br><span class="line">components:&#123;</span><br><span class="line">    &apos;hello&apos;:&#123;</span><br><span class="line">        template:&quot;&lt;h1&gt;asdasdasdasdasdas&lt;/h1&gt;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在实例或者组件中注册另一个组件，这个时候，被注册的组件只能在注册它的实例或组件的模板中使用，一个组件可以被多个组件或实例注册</p>
+<h6 id="注意浏览器规则"><a href="#注意浏览器规则" class="headerlink" title="注意浏览器规则"></a>注意浏览器规则</h6><p>因为vue在解析模板的时候会根据某些html的规则，例如，在table里只能放tr,td,th..，如果放入组件不会解析 这个时候我们可以放入tr使用is方式来标识这个tr其实是组件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;table id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;tr is=&quot;hello&quot;&gt;&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="template"><a href="#template" class="headerlink" title="template"></a>template</h6><p>我们可以在html的某个地方通过template标签来定义组件的模板，在组件的template属性中通过选择器指定对应的template标签内容就可以了,注意，需要给template标签加id来指定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template id=&quot;my-hello&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;hello world&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;hahahah&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">//组件中</span><br><span class="line">template:&quot;#my-hello&quot;</span><br></pre></td></tr></table></figure></p>
+<h6 id="is切换"><a href="#is切换" class="headerlink" title="is切换"></a>is切换</h6><p>在实例、组件的模板中的某一个标签上，可以通过is属性来指定为另一个目标的组件，这个时候我们一般会使用component标签来占位、设置is属性来指定目标组件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;component :is=&quot;type&quot;&gt;&lt;/component&gt;</span><br><span class="line"></span><br><span class="line">//组件中</span><br><span class="line">data:&#123;</span><br><span class="line">    type:&apos;aaa&apos;</span><br><span class="line">&#125;,</span><br><span class="line">components:&#123;</span><br><span class="line">    &apos;aaa&apos;:&#123;template:&quot;&lt;h1&gt;AAAAAAAAAAAAA&lt;/h1&gt;&quot;&#125;,</span><br><span class="line">    &apos;bbb&apos;:&#123;template:&quot;&lt;h1&gt;BBBBBBBBBBBBB&lt;/h1&gt;&quot;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h6 id="组件嵌套"><a href="#组件嵌套" class="headerlink" title="组件嵌套"></a>组件嵌套</h6><p>应用中划分的组件可能会很多，为了更好的实现代码复用，所以必然会存在组件的嵌套关系</p>
+<p>组件设计初衷就是要配合使用的，最常见的就是形成父子组件的关系：组件 A 在它的模板中使用了组件 B。</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/08/20/vue-7/&title=《vue-7》 — 人间客栈&pic=https://heima0.github.io/2017/08/20/vue-7//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/08/20/vue-7/&title=《vue-7》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-7》 — 人间客栈&url=https://heima0.github.io/2017/08/20/vue-7/&via=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/09/10/时间戳——-时间/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">时间戳——&gt;时间</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/08/09/vue-6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-6</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-7" data-title="vue-7" data-url="https://heima0.github.io/2017/08/20/vue-7/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/08/20/vue-7/&title=《vue-7》 — 人间客栈&pic=https://heima0.github.io/2017/08/20/vue-7//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/08/20/vue-7/&title=《vue-7》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-7》 — 人间客栈&url=https://heima0.github.io/2017/08/20/vue-7/&via=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/08/20/vue-7/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABx0lEQVR42u3awW7DIBAEUP//T7vXSpGdGTA0qR6nyo3g2YcVO3Ac8Tjj8fv3yZzHioGLizvNzZd/fZ4snMyTGHBxcfdzk2XaCvP6vJ0fFxf3W7iXJeaCnsyAi4v7P7j5VqZ9GVxc3M/htjHH2CZma6+Gi4s7wc1TynV/L8l3cXFxh7hnOe43KFeFrC1bl6vj4uJu4c6EoWNVs50BFxf3E7hjZevZ1qU4ZMXFxd1SPfLgsn2SX90oXhsXF3cZt72Mdb9AG8LWAQouLu5i7thlqbactWXr8kPg4uJu544deOQblPzFoqgUFxd3GTe5JNFesGgD0ORzRIEpLi7uAu5Mq9OWxbE2CRcXdz+3LWTtlYt2l/Jw3cXFxR3iti3K2NWr/JD1cnVcXNyN3DzsuC9k7RFLXuZwcXH3c2e2Ne1LTkUnuLi4f8TNg488NJk5uD3mz2pwcXHj35zlSApN+/JFa4SLi7uFm4/28LUtamMz4OLiruPWx5xxJDr23zdfFBcXdyO3LTQzEeoDvRouLu6HccfanrEGCRcX97u47THJTPzx5kwYFxd3GbcNSfNGqH3+ZoOFi4u7hVuXkqA8tUHqYESCi4v7PPcHBk4p+JdI5uoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

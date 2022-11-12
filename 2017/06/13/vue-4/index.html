@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-4 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-4">
+<meta property="og:url" content="https://heima0.github.io/2017/06/13/vue-4/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-4">
+<meta name="twitter:description" content="计算属性、监听计算属性、监听有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算  123&amp;lt;div id=&amp;quot;example&amp;quot;&amp;gt;&amp;#123;&amp;#123; message.split(&amp;apos;&amp;apos;).reverse().join(&amp;apos;&amp;apos">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-4</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-4</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-13T01:19:45.000Z" itemprop="datePublished" class="page-time">
+  2017-06-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#计算属性、监听"><span class="post-toc-number">1.</span> <span class="post-toc-text">计算属性、监听</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#计算属性、监听-1"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">计算属性、监听</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-4"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-4</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年06月13日 9:19" datetime="2017-06-13T01:19:45.000Z"  itemprop="datePublished">2017-06-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="计算属性、监听"><a href="#计算属性、监听" class="headerlink" title="计算属性、监听"></a>计算属性、监听</h2><h5 id="计算属性、监听-1"><a href="#计算属性、监听-1" class="headerlink" title="计算属性、监听"></a>计算属性、监听</h5><pre><code>有的时候我们需要在模板中使用数据a，这个时候就需要用到表达式，但是有的地方我们需要对a数据进行一些简单的处理后才能使用，那么我们就会在表达式中写一些js逻辑运算
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;example&quot;&gt;</span><br><span class="line">&#123;&#123; message.split(&apos;&apos;).reverse().join(&apos;&apos;) &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+这样我们的维护就会非常困难，也不便于阅读
+
+
+那め我们就可以在methods里设置一个方法，在模板的表达式中使用这个方法
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Reversed message: &quot;&#123;&#123; reversedMessage() &#125;&#125;&quot;&lt;/p&gt;</span><br><span class="line">// 在组件中</span><br><span class="line">methods: &#123;</span><br><span class="line">reversedMessage: function () &#123;</span><br><span class="line">    return this.message.split(&apos;&apos;).reverse().join(&apos;&apos;)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+但是这个时候，只要vm中有数据变化，这个变化的数据可能和我们关注的数据无关，但是vm都会重新渲染模板，这个时候表达式中的方法就会重新执行，大大的影响性能
+
+
+这个时候其实我们可以使用监听器里完成：
+
+在vm实例中设置watch属性，在里面通过键值对来设置一些监听，键名为数据名，值可以是一个函数，这个函数在数据改变之后才会执行，两个参数分别是性格前的值和更改后的值
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a: function (val, oldVal) &#123;</span><br><span class="line">    console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>值还可以是一个方法名字，当数据改变的时候这个方法会执行
+
+当数据为object的时候，object的键值对改变不会被监听到（数组的push等方法可以）,这个时候需要设置深度监听：
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">c: &#123;</span><br><span class="line">    deep:true,</span><br><span class="line">    handler:function (val, oldVal) &#123;</span><br><span class="line">        console.log(&apos;new: %s, old: %s&apos;, val, oldVal)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<pre><code>监听的handler函数前面的这几种写法都是在数据变化的时候才会执行，初始化的时候不会执行，但是如果设置immediate为true就可以了
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">num:&#123;</span><br><span class="line">    immediate:true,</span><br><span class="line">    handler:function(val)&#123;</span><br><span class="line">        this.nums = val*2</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>我们在回到上面的问题，用监听器加上immediate属性就可以做到该效果，但是大家可以看到的是逻辑稍稍有点复杂
+
+watch还可以通过实例对象直接使用:vm.$watch，返回一个取消监听的函数，这个函数执行之后会取消监听
+
+
+我们一般都会用到一个叫计算属性的东西来解决：
+
+计算属性就是在实例配置项中通过computed来为vm设置一个新的数据，而这个新数据会拥有一个依赖（一条已经存在的数据），当依赖发送变化的时候，新数据也会发送变化
+
+与方法的方式相比，它性能更高，计算属性是基于它们的依赖进行缓存的。计算属性只有在它的相关依赖发生改变时才会重新求值。相比之下，每当触发重新渲染时，调用方法将总会再次执行函数。
+
+与watch相比，写起来简单，逻辑性更清晰，watch一般多用于，根据数据的变化而执行某些动作，而至于这些动作是在干什么其实无所谓，而计算属性更有针对性，根据数据变化而更改另一个数据
+
+计算属性也拥有getter和setter，默认写的是getter，设置setter执行可以当此计算属性数据更改的时候去做其他的一些事情，相当于watch这个计算属性
+</code></pre><pre><code>xm:{
+    get:function(){//getter 当依赖改变后设置值的时候
+        return this.xing+&apos;丶&apos;+this.ming
+    },
+    set:function(val){//setter 当自身改变后执行
+        this.xing = val.split(&apos;丶&apos;)[0]
+        this.ming = val.split(&apos;丶&apos;)[1]
+    }
+}
+</code></pre>
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/06/13/vue-4/&title=《vue-4》 — 人间客栈&pic=https://heima0.github.io/2017/06/13/vue-4//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/06/13/vue-4/&title=《vue-4》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-4》 — 人间客栈&url=https://heima0.github.io/2017/06/13/vue-4/&via=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/23/vue-5/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-5</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/08/vue-3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-3</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-4" data-title="vue-4" data-url="https://heima0.github.io/2017/06/13/vue-4/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/06/13/vue-4/&title=《vue-4》 — 人间客栈&pic=https://heima0.github.io/2017/06/13/vue-4//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/06/13/vue-4/&title=《vue-4》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-4》 — 人间客栈&url=https://heima0.github.io/2017/06/13/vue-4/&via=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/06/13/vue-4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABt0lEQVR42u3ay46DMAwF0P7/TzPbSiOYazuEdnSyqgptDiys+PF6xet4W+/f/L7n7OrZf77uWLi4uGPucbmu70k2vv6f3ICLi7ufm2yTP+QZpRr4cHFxv4Wbb3P9K1xc3P/NzYMXLi7ud3Hz9GaSAm3N1XBxcQfcvEp53+db6ru4uLgt7lFck6NPHrZOf4uLi7uFW22IJgedaiyq7ouLi7uTmzQ8JieNyUmmcBkXF3fMzQ8l1UQoCknF14GLi7uHm7Qukm96G/fSKlxc3J3cJHxUx616j5SEP1xc3Pu4k0GKZLSimlaNkh9cXNxF3El5tFcEmQxt4OLi7uT2GqKTEY3qSBYuLu6z3CTVuQ5DvQcr5Gq4uLhbuL1kZjKYlRyDypVdXFzcpdxJ7yUPavMwh4uL+znctanLgtIJLi7udm7eEK0OZ1S55cu4uLiLuEdxzZsuy5qpuLi4t3HztaqlWq3WNB8GFxd3zC23OWNWL5D98TpwcXE3cnvF0GqM3JSr4eLiPsTtJVTVBAkXF/dbuGuPQfkrwMXF3c/NQ8+kNVsd1sTFxX2KWw4lQfIzb8AsqO/i4uJ2uD9a5uIxY4ZIgQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

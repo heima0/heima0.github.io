@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Es6+babel | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Ecmascript 6 + Babel npm scripts Express  Babel Register第一：在项目根目录下创建一个 .babelrc 文件，写入以下内容： 1234&amp;#123;  &quot;presets&quot;: [  ]&amp;#125; 第二：安装对应的转码规则： 1234567891011# ES2015转码规则$ npm install --save-dev babel-pres">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Es6+babel">
+<meta property="og:url" content="https://heima0.github.io/2017/01/23/Es6-babel/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Ecmascript 6 + Babel npm scripts Express  Babel Register第一：在项目根目录下创建一个 .babelrc 文件，写入以下内容： 1234&amp;#123;  &quot;presets&quot;: [  ]&amp;#125; 第二：安装对应的转码规则： 1234567891011# ES2015转码规则$ npm install --save-dev babel-pres">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.945Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Es6+babel">
+<meta name="twitter:description" content="Ecmascript 6 + Babel npm scripts Express  Babel Register第一：在项目根目录下创建一个 .babelrc 文件，写入以下内容： 1234&amp;#123;  &quot;presets&quot;: [  ]&amp;#125; 第二：安装对应的转码规则： 1234567891011# ES2015转码规则$ npm install --save-dev babel-pres">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Es6+babel</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Es6+babel</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-23T10:51:20.000Z" itemprop="datePublished" class="page-time">
+  2017-01-23
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Babel-Register"><span class="post-toc-number">1.</span> <span class="post-toc-text">Babel Register</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#–save-和-–save-dev"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">–save 和 –save-dev</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Express"><span class="post-toc-number">2.</span> <span class="post-toc-text">Express</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#hello-world"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">hello world</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本路由"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">基本路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#处理静态资源"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">处理静态资源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模板引擎"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">模板引擎</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#中间件"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Express-API"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">Express API</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Es6-babel"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Es6+babel</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月23日 18:51" datetime="2017-01-23T10:51:20.000Z"  itemprop="datePublished">2017-01-23</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li>Ecmascript 6 + Babel</li>
+<li>npm scripts</li>
+<li>Express</li>
+</ul>
+<h2 id="Babel-Register"><a href="#Babel-Register" class="headerlink" title="Babel Register"></a>Babel Register</h2><p>第一：在项目根目录下创建一个 <code>.babelrc</code> 文件，写入以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第二：安装对应的转码规则：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ES2015转码规则</span></span><br><span class="line">$ npm install --save-dev babel-preset-es2015</span><br><span class="line"></span><br><span class="line"><span class="comment"># react转码规则</span></span><br><span class="line">$ npm install --save-dev babel-preset-react</span><br><span class="line"></span><br><span class="line"><span class="comment"># ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个</span></span><br><span class="line">$ npm install --save-dev babel-preset-stage-0</span><br><span class="line">$ npm install --save-dev babel-preset-stage-1</span><br><span class="line">$ npm install --save-dev babel-preset-stage-2</span><br><span class="line">$ npm install --save-dev babel-preset-stage-3</span><br></pre></td></tr></table></figure>
+<p>第三：将 <code>.babelrc</code> 文件中修改为以下内容：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span>: [</span><br><span class="line">    <span class="string">"es2015"</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第四步（从第四步开始，前三部必不可少）：</p>
+<ul>
+<li>babel-cli：命令行转码</li>
+<li>babel-node：babel-cli工具自带一个babel-node命令，提供一个支持ES6的REPL环境</li>
+<li>babel-register：实时转码，所以只适合在开发环境使用</li>
+<li>babel-core：如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块</li>
+</ul>
+<p>babel-cli：</p>
+<p>一种使用方式就是全局安装：<code>npm install -g babel-cli</code>（可以通过 <code>npm root -g</code> 查看全局包安装目录），<br>只要全局安装了 <code>babel-cli</code>，则会在命令行中多出一个命令：<code>babel</code>。</p>
+<p>这里如果使用全局安装的 <code>babel-cli</code> 进行转码是没有问题的，但是问题是如果一旦项目给了别人，<br>别人不知道你使用了这个转码工具，所以解决方式就是将 <code>babel-cli</code> 安装到本地项目中：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure>
+<p>这种第三方命令行工具如果安装到本地项目，会在 <code>node_modules</code> 中生成一个目录：<code>.bin</code>，<br>然后第三方命令行工具会将对应的可执行文件放到该目录中。</p>
+<p>这样的话，就可以直接在本地项目中使用该第三方命令行工具了。</p>
+<p>对于如何使用，则可以通过配置 <code>package.json</code> 文件中的 <code>scripts</code> 字段来配置使用：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"babel-demo"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>,</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"babel demo1.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"babel-cli"</span>: <span class="string">"^6.22.2"</span>,</span><br><span class="line">    <span class="attr">"babel-preset-es2015"</span>: <span class="string">"^6.22.0"</span>,</span><br><span class="line">    <span class="attr">"babel-preset-react"</span>: <span class="string">"^6.22.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>babel-register（适合开发阶段，实时编码转换）:</p>
+<p>第一：安装 babel-register</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-register</span><br></pre></td></tr></table></figure>
+<p>第二：添加一个傀儡文件(main.js)：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">'babel-register'</span>)</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'你的核心功能代码入口文件模块'</span>)</span><br></pre></td></tr></table></figure>
+<p>第三：使用 node 执行 <code>main.js</code>，而不是你的入口文件.</p>
+<h3 id="–save-和-–save-dev"><a href="#–save-和-–save-dev" class="headerlink" title="–save 和 –save-dev"></a>–save 和 –save-dev</h3><p>通过 <code>--save</code> 参数安装的包，是将依赖项保存到 package.json 文件中的 dependencies 选项中。<br>通过 <code>--save-dev</code> 参数安装的包，是将依赖项保存到 package.json 文件中的 devDependencies 选项中。</p>
+<p>无论是 <code>--save</code> 或者 <code>--save-dev</code> 安装的包，通过执行 <code>npm install</code> 都会将对应的依赖包安装进来。</p>
+<p>但是，在开发阶段会有一些仅仅用来辅助开发的一些第三方包或是工具，然后最终上线运行（到了生产环境），<br>这些开发依赖项就不再需要了，就可以通过 <code>npm install --production</code> 命令仅仅安装 <code>dependencies</code> 中的<br>依赖项。</p>
+<hr>
+<h2 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h2><h3 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h3><h3 id="基本路由"><a href="#基本路由" class="headerlink" title="基本路由"></a>基本路由</h3><p>根据不同的请求路径分发到具体的请求处理函数</p>
+<h3 id="处理静态资源"><a href="#处理静态资源" class="headerlink" title="处理静态资源"></a>处理静态资源</h3><h3 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h3><h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><h3 id="Express-API"><a href="#Express-API" class="headerlink" title="Express API"></a>Express API</h3><ul>
+<li>express()</li>
+<li>Application</li>
+<li>Request</li>
+<li>Response</li>
+<li>Router</li>
+</ul>
+<hr>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/01/23/Es6-babel/&title=《Es6+babel》 — 人间客栈&pic=https://heima0.github.io/2017/01/23/Es6-babel//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/01/23/Es6-babel/&title=《Es6+babel》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Es6+babel》 — 人间客栈&url=https://heima0.github.io/2017/01/23/Es6-babel/&via=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/04/27/浅谈tap-highlight-color/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">浅谈tap-highlight-color与::selection</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/18/Ecmascript6-阮一峰/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Ecmascript6-阮一峰</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Es6-babel" data-title="Es6+babel" data-url="https://heima0.github.io/2017/01/23/Es6-babel/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/01/23/Es6-babel/&title=《Es6+babel》 — 人间客栈&pic=https://heima0.github.io/2017/01/23/Es6-babel//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/01/23/Es6-babel/&title=《Es6+babel》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Es6+babel》 — 人间客栈&url=https://heima0.github.io/2017/01/23/Es6-babel/&via=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/01/23/Es6-babel/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMklEQVR42u3aS27DMAxF0ex/0+4CjKj3kXYAUdejInEqHw1o8fP54Ou6XfdvyZ33e759+3njkiFDxraMa3mtF+ZLko1Yr/vPBsmQIeMAxjrwccA6mK4DNFn36+cyZMiQgY+DPNSuP5chQ4aMDoOQ1neu75chQ4aMThLbKYrx9PX1XFyGDBkbMvhD/P7vV/obMmTI2IpxhddTB0EeUtFTyZAhYzSDBzh+RONFN34MRQdNGTJkDGXU3Lw8lw6HFUc6ZMiQcQCDHOnIFpCHSFsC6H4ZMmSMZvCRiH7DsjOQ0Sq9yZAhY3NGMMrQCJHpOEWcJMuQIWM0o5aI1uJ6DcmPqjJkyDiBUVsgLfo/VcJD7xAZMmQMZZBhCN6q5FvQD9YyZMiYykjLW5xHkk9e1EPTIjJkyBjKqJW3SFuRN0H7WyBDhozZjPRn6wcl4DRMo4RWhgwZBzCeevSntiNNbmXIkDGbkY5npWGx2EfF7UwZMmScwyBJaRouOSldMejBypAhYygjPoS125Bpm+ErRoYMGccwaiGyH6DTXwXvDRkyZAxipCMXvOjGk+RaWitDhozZjCu80hGN/sgFosqQIWM0o1am56X/NCklR89Os0GGDBn7MjpDFTz55PvHWw4yZMg4jbEu9/MmZS3g8jcAGraQIUOGjBeKdLWxMLSjMmTIOJ5Binf8cMnT2ocDrgwZMjZhkIfojH+lrc0Xc3EZMmRsyOCpY+3ISP4nD+U8hZYhQ8YIxh8bnNsZjPGVBwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

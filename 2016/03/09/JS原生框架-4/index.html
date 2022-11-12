@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JS原生框架-4 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原生框架-4">
+<meta property="og:url" content="https://heima0.github.io/2016/03/09/JS原生框架-4/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原生框架-4">
+<meta name="twitter:description" content="常见问题  var name = ‘…’  // 张三丰 -&amp;gt; 张*  // 李四 -&amp;gt; 李  function convert( name ) { var firstName = name.charAt( 0 ); // 遍历 百家姓 // 如果是复姓 indexOf( ... ) == 0 var lastName = &amp;apos;**********&amp;apos;.slice(">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JS原生框架-4</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JS原生框架-4</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-09T02:40:48.000Z" itemprop="datePublished" class="page-time">
+  2016-03-09
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-JS原生框架-4"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JS原生框架-4</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年03月09日 10:40" datetime="2016-03-09T02:40:48.000Z"  itemprop="datePublished">2016-03-09</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>常见问题<br>  var name = ‘…’<br>  // 张三丰 -&gt; 张*<em><br>  // 李四 -&gt; 李</em><br>  function convert( name ) {</p>
+<pre><code>var firstName = name.charAt( 0 ); // 遍历 百家姓
+// 如果是复姓 indexOf( ... ) == 0
+var lastName = &apos;**********&apos;.slice( 0, name.length - 1 );
+return firstName + lastName;
+</code></pre><p>  }</p>
+<p>  在 ES6 中引入了箭头函数( 简单的说: 函数的简写形式 )<br>  arr.forEach( function ( v, i ) {</p>
+<pre><code>// ...
+</code></pre><p>  });<br>  1) 删去 function 关键字<br>  2) 利用 =&gt; 链接参数与函数体, 符号 =&gt; 读作 goes to<br>  arr.forEach( ( v, i ) =&gt; {</p>
+<pre><code>// ...
+</code></pre><p>  });<br>  注意:<br>  1) 如果参数只有一个, 那么圆括号可以省略</p>
+<pre><code>arr.forEach( v =&gt; {
+    console.log( v );
+});
+</code></pre><p>  2) 如果方法体只有一句话, {} 可以省略, return 也可以省略</p>
+<pre><code>// 例如将数组元素扩大一倍返回
+arr.map(function ( v ) {
+    return v * 2;
+});
+// 如果使用箭头函数
+arr.map( v =&gt; v*2 );
+</code></pre><p>  3) 在 箭头函数中, 函数内的 this 不再具有新的作用域. </p>
+</li>
+</ol>
+<ol start="2">
+<li>问题<br> ([|!^$~]?=) 分析<pre><code>[|!^$~]?=
+因此它是匹配 = 或 xxx=
+[|!^$~] 匹配 | 或者 ! 或者 ^ 或者 $ 或者 ~
+因此正则表达式是在匹配
+    =, |=, !=, ^=, $=, ~=
+</code></pre></li>
+</ol>
+<pre><code>            &lt;div class=&quot;main-app aap1 app2 app3&quot;&gt;&lt;/div&gt;
+
+            [class |= main]
+
+
+function replace( str, regex, callback ) {
+    var arr = regex.exec( str ); // [ 0, 1, ... ]
+    callback.apply( null, arr )
+    // 字符串拼接
+}
+
+
+^(?:\s*(&lt;[\w\W]+&gt;)[^&gt;]*|#([\w-]*))$
+
+分析
+    (&lt;[\w\W]+&gt;)[^&gt;]*
+
+    01234567890123
+    &lt;div&gt;123&lt;/div&gt;
+
+    &apos;   &lt;div&gt; .... &lt;/div&gt;     &apos;
+
+    #([\w-]*)
+    #名字
+</code></pre><ol start="3">
+<li><p>核心结构<br> 1) 代码应该写在 单独的文件中<br> 2) 应该具有的成员有什么呢? 构造函数, 暴露的函数接口, 原型, each 和 map</p>
+</li>
+<li><p>框架的 扩展<br> 所谓的扩展就是给原型或构造方法( iQuery ) 提供新的成员<br> 就是在给一个对象增加新的成员</p>
+<p> 可以使用混合式. 其思想就是将几个对象的成员混合到一起</p>
+<p> extend 扩展</p>
+<p> 需求:<br> 1) 实现 extend 方法<br> 2) 使得代码尽可能短</p>
+<p> // 对原型的处理<br> iQuery.fn.extend = function ( options ) {</p>
+<pre><code>for ( var k in options ) {
+    this[ k ] = options[ k ];
+}
+</code></pre><p> }</p>
+<p> // 对 iQuery 处理<br> iQuery.extend = function( options ) {</p>
+<pre><code>for ( var k in options ) {
+    this[ k ] = options[ k ];
+}
+</code></pre><p> }</p>
+<p> //<br> iQuery.extend = iQuery.fn.extend = function ( options ) {</p>
+<pre><code>for ( var k in options ) {
+    this[ k ] = options[ k ];
+}
+</code></pre><p> };</p>
+<p> 将来在扩展功能的时候怎么用呢?<br> 1) 扩展实例方法</p>
+<pre><code>iQuery.fn.extend({
+    method: function ...
+});
+</code></pre><p> 2) 扩展静态方法</p>
+<pre><code>iQuery.extend( ... )
+</code></pre></li>
+<li><p>DOM 操作<br> appendTo<br> append<br> prependTo<br> prepend<br> insertBefore<br> insertAfter<br> before</p>
+<p> parent<br> next<br> nextAll<br> prev<br> prevAll<br> siblings</p>
+<p> parseHTML   </p>
+<p> 要实现一个方法<br> 1) 如何定义其参数与返回值( 返回以dom作为元素的数组 )<br> 2) 具体的代码实现</p>
+<p> ‘<div><div></div></div>‘<br> ‘<div></div><div></div>‘<br> function parseHTML ( htmlStr ) {</p>
+<p> }<br> // 思路: 只需要创建一个 div, 将 字符串赋值给 div 的 innerHTML 属性即可</p>
+<p> function parseHTML ( htmlStr ) {</p>
+<pre><code>var div = document.createElement( &apos;div&apos; );
+div.innerHTML = htmlStr; // 转换
+// 要返回数组 
+// return div.childNodes;
+return [].slice.call( div.childNodes );
+</code></pre><p> }</p>
+<p> // 思考题: 这里有一个 bug</p>
+</li>
+<li><p>问题<br> 所有的 dom 元素只允许有一个父元素. 因此将一个 dom 元素<br> 追加到另一个元素里时, 会自动的从原有的父元素中移除.</p>
+<p> <div></div></p>
+<pre><code>&lt;div&gt;123&lt;/div&gt;
+&lt;div&gt;456&lt;/div&gt;
+</code></pre><p> <br> 将 第 0 个 div 追加到 body 上的时候, 会从原有的位置移除<br> <div></div></p>
+<pre><code>&lt;div&gt;456&lt;/div&gt;
+</code></pre><p> <br> 此时 childNodes 的长度也会自动的 -1, 原来排在第 1 号<br> 位置的 div 也会变成 第 0 号.</p>
+</li>
+<li><p>将 parseHTML 引入到 框架结构中<br> 修改构造函数, 判断一下, 如果是 字符串结构, 就采用 parseHTML<br> 如果不是字符串结构就用 qsa 方法</p>
+<p> 在 jq 构造函数中, 参数可以是很多东西</p>
+<pre><code>1) 字符串: 1&gt;选择器, 2&gt;HTML 字符串
+2) DOM 元素
+3) 函数: 相当于 onload 事件
+4) jquery 元素
+    $( &apos;&lt;div /&gt;&apos; ).appendTo( $( &apos;body&apos; ) );
+    $( &apos;&lt;div /&gt;&apos; ).appendTo( &apos;body&apos; );
+5) 可以是 空
+...
+</code></pre><p> 在 init 构造函数中准备一套 if else 结构<br> 处理每一个情况</p>
+</li>
+<li><p>引入 appendTo 方法<br> 问题:<br> 1&gt; 方法写在哪里?  加到原型中<br> 2&gt; 参数与返回值?  参数: 字符串, dom, iquery<br> 3&gt; 具体的逻辑实现? </p>
+<p> 实现:<br> 1) 参数为 dom 对象<br> 2) dom 数组怎么处理( *** )<br> 3) 一般情况</p>
+</li>
+<li><p>问题<br> 1&gt; 代码结构<br> 2&gt; 总结:</p>
+<pre><code>$( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
+1) 如果左边的html字符串是多个元素什么结果, 规律是什么
+2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
+3) 如果两边都是多个元素, 又是什么结果, 什么规律
+</code></pre><p> 3&gt; 实现代码 appendTo() 参数为 dom 数组的情况<br> 4&gt; dom 操作整理</p>
+</li>
+</ol>
+<ol start="10">
+<li><p>js 数据类型<br>-&gt; 简单类型: number, string, boolean. 变量存储数据本身.<br>-&gt; 复合类型: 由简单类型或复合类型组合得到是数据类型.</p>
+<pre><code>对象: String, Number, Boolean,
+      [], {}, /.+/, ...
+
+函数
+由于结构特征, 一二引用数据无法直接确定需要占据多大内存, 因此理论上
+变量不能直接存储数据本身. 系统一般会在内存的一个独立区域存储数据本身,
+而变量仅仅存储的是 这个数据的 &quot;内存地址&quot;. 常常称为引用.
+</code></pre></li>
+</ol>
+<pre><code>-&gt; 空类型: null, undefined
+
+var number1 = 123;
+var number2 = number1;
+
+number1 = 456;
+
+var person = {
+    name: &apos;jim&apos;,
+    age: 19,
+    gender: &apos;男&apos;,
+    scores: {
+        chinese: 95,
+        english: 80,
+        math: 70
+    }
+};
+
+var stu = person;
+// 凡是看到等号, 就是将 等号右边的盒子中 的数据 拷贝一份
+// 存储到 左边的这个盒子中
+</code></pre>
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/09/JS原生框架-4/&title=《JS原生框架-4》 — 人间客栈&pic=https://heima0.github.io/2016/03/09/JS原生框架-4//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/09/JS原生框架-4/&title=《JS原生框架-4》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-4》 — 人间客栈&url=https://heima0.github.io/2016/03/09/JS原生框架-4/&via=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/15/JS原生框架-5/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JS原生框架-5</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/02/14/JS原生框架-3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS原生框架-3</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="JS原生框架-4" data-title="JS原生框架-4" data-url="https://heima0.github.io/2016/03/09/JS原生框架-4/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/09/JS原生框架-4/&title=《JS原生框架-4》 — 人间客栈&pic=https://heima0.github.io/2016/03/09/JS原生框架-4//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/09/JS原生框架-4/&title=《JS原生框架-4》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-4》 — 人间客栈&url=https://heima0.github.io/2016/03/09/JS原生框架-4/&via=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/09/JS原生框架-4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3azW4qMQwGUN7/pdv1lRruZztTleTMCgEz5LCw/Pd6xdfX4Fo97f1vvZ64MDAwPpaRHGJ1rPffWX36/vnJXT9QMTAwLmC8D3xJiEwAOSk/GwYGBkb1dQ+AgYGB8RxjUhJXk0sMDAyMeRBMksVdSSQGBsZtjHmIfO71I/MNDAyMj2LMh5F5u211xDy8Lk+FgYFxNKOX6iWLFKvjJs/ppZ4YGBg3MKoLFj1MknT2YBgYGKcyqk35ScOr+qcUGnMYGBhHM3aNGCcla/7kxyelGBgYf5KRjBir4ThPPXth9D/bIhgYGIcykuSsWuJWYdW1DAwMDIy9ixFP3PvPOxgYGEczqmlitQWWDyyrY4bl9zEwMA5llFOxVlevmkSWh6MYGBhHM/KBZR6C82Fnb9kCAwPjHkYyAOi1yXJkbySw3BnBwMA4lDG58lIzf1p5TwQDA+Noxu807ifv5yEbAwPjNkZvDaKa2OWkqDDGwMC4gDFv3O8dZ5aHDRgYGBcwqvVgtSjNE83N4wEMDIzjGNWQN1mV6BXMy7swMDAOZexq3E+SvGqpvGG+gYGB8VGMXcPOJK5HLbNWYoqBgXEDoxpkJ4VrbySQhGkMDIwbGJOhYzK83DsMwMDAwJhklwkvX87IG3kYGBgYzQWIYmlaXeMYBVwMDIwPZEyK0urAch5eMTAwbmNM1inyg+5a0YjSRAwMjHMY34mWQc+wdMZJAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

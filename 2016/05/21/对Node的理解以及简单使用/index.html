@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>对Node的理解以及简单使用 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
+<meta name="keywords" content="node,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对Node的理解以及简单使用">
+<meta property="og:url" content="https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对Node的理解以及简单使用">
+<meta name="twitter:description" content="Node理解、npm使用NodeNode 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上给 Ecmascript 提供了很多操作系统级别的编程接口。 做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。 REPL：Node 中类似于浏览器中的 Console 控制台 Read">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">对Node的理解以及简单使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">对Node的理解以及简单使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-05-21T04:48:44.000Z" itemprop="datePublished" class="page-time">
+  2016-05-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Node理解、npm使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">Node理解、npm使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Node</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#REPL：Node-中类似于浏览器中的-Console-控制台"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">REPL：Node 中类似于浏览器中的 Console 控制台</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-中的-JavaScript"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Node 中的 JavaScript</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模块化"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">模块化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块化概念"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">模块化概念</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义模块"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">自定义模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#核心模块"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">核心模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方模块"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">第三方模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块加载机制规则"><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">模块加载机制规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包与Npm"><span class="post-toc-number">1.3.6.</span> <span class="post-toc-text">包与Npm</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过模块化改造-Hacker-News-案例"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">通过模块化改造 Hacker News 案例</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结基础概念"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">总结基础概念</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用-Npm-安装全局命令行工具"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">使用 Npm 安装全局命令行工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">目标</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-对Node的理解以及简单使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">对Node的理解以及简单使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年05月21日 12:48" datetime="2016-05-21T04:48:44.000Z"  itemprop="datePublished">2016-05-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Node理解、npm使用"><a href="#Node理解、npm使用" class="headerlink" title="Node理解、npm使用"></a>Node理解、npm使用</h1><h2 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h2><p>Node 是一个平台，Node 是一个框架，基于 Ecmascript 语言，在这个平台（或者说框架）之上<br>给 Ecmascript 提供了很多操作系统级别的编程接口。</p>
+<p>做 Node 编程实际上就是通过 Ecmascript、Node平台内置的核心模块、第三方社区提供的模块构建高度模块化的程序。</p>
+<h3 id="REPL：Node-中类似于浏览器中的-Console-控制台"><a href="#REPL：Node-中类似于浏览器中的-Console-控制台" class="headerlink" title="REPL：Node 中类似于浏览器中的 Console 控制台"></a>REPL：Node 中类似于浏览器中的 Console 控制台</h3><ul>
+<li>Read</li>
+<li>Eval</li>
+<li>Print</li>
+<li>Loop</li>
+</ul>
+<h2 id="Node-中的-JavaScript"><a href="#Node-中的-JavaScript" class="headerlink" title="Node 中的 JavaScript"></a>Node 中的 JavaScript</h2><ul>
+<li>Ecmascript</li>
+<li><em>console</em></li>
+<li><em>setInterval(callback, delay[, …args])</em></li>
+<li><em>setTimeout(callback, delay[, …args])</em></li>
+<li><em>clearInterval(intervalObject)</em></li>
+<li><em>clearTimeout(timeoutObject)</em></li>
+<li>clearImmediate(immediateObject)</li>
+<li>setImmediate(callback[, …args])</li>
+<li>__dirname<ul>
+<li>用于获取当前文件所属目录的绝对路径</li>
+<li>使用场景：常用语将相对路径转为绝对路径，防止执行node命令所处的目录影响路径的问题</li>
+</ul>
+</li>
+<li>__filename<ul>
+<li>作用：获取当前文件的绝对路径</li>
+</ul>
+</li>
+<li>process<ul>
+<li>process 是Node中一个进程对象，可以用来访问当前运行进程的一些信息</li>
+</ul>
+</li>
+<li>global<ul>
+<li>类似于浏览器中的 window，是一个全局对象</li>
+<li>唯一的区别在于浏览器中的 window 是全局对象，默认在全局声明的变量成员都属于 window</li>
+<li>Node 中是模块作用域</li>
+<li>在一个模块系统中，所有的模块都共享一个 global</li>
+<li>也就是说可以通过给 global 显示的挂载成员在多个模块之间全局共享</li>
+<li>虽然可以这样做，了解即可，尽量不要使用</li>
+</ul>
+</li>
+<li>模块成员<ul>
+<li>module<ul>
+<li>module 是一个模块对象，里面包含了当前模块的一些信息</li>
+<li>例如 exports 就是当前模块对外的导出接口对象</li>
+</ul>
+</li>
+<li>exports<ul>
+<li>在每一个模块中，同时还提供了一个接口成员：<code>exports</code></li>
+<li><code>exports</code> 是 <code>module.exports</code> 接口对象的一个引用</li>
+<li>也就是可以把 <code>module.exports.foo=xxx</code> 的形式简写为 <code>exports.foo=xxx</code></li>
+<li>注意：注重向外的暴露的接口对象是：<code>module.exports</code></li>
+</ul>
+</li>
+<li>require()<ul>
+<li>执行被加载模块中的代码</li>
+<li>拿到被加载模块中的 <code>module.exports</code> 接口对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><h3 id="模块化概念"><a href="#模块化概念" class="headerlink" title="模块化概念"></a>模块化概念</h3><ul>
+<li>开发生产效率高</li>
+<li>可维护性好</li>
+</ul>
+<p>每一个模块默认都是一个私有的作用域，互相独立，内部实现某一个具体的功能职责，<br>暴露接口成员，通过特定的规则将不同的模块组织到一起，就构成了一个<br>完整的模块系统。</p>
+<h3 id="自定义模块"><a href="#自定义模块" class="headerlink" title="自定义模块"></a>自定义模块</h3><h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><p>以下是Node中的一些核心模块及作用：</p>
+<table>
+<thead>
+<tr>
+<th>核心模块名</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fs</td>
+<td>文件操作</td>
+</tr>
+<tr>
+<td>http</td>
+<td>网络操作</td>
+</tr>
+<tr>
+<td>net</td>
+<td>更底层的网络操作</td>
+</tr>
+<tr>
+<td>os</td>
+<td>操作系统相关</td>
+</tr>
+<tr>
+<td>path</td>
+<td>文件路径操作</td>
+</tr>
+<tr>
+<td>querystring</td>
+<td>查询字符串处理</td>
+</tr>
+<tr>
+<td>url</td>
+<td>url操作处理</td>
+</tr>
+</tbody>
+</table>
+<h3 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h3><h3 id="模块加载机制规则"><a href="#模块加载机制规则" class="headerlink" title="模块加载机制规则"></a>模块加载机制规则</h3><p>require 方法中传递的参数叫做模块标识，其中涉及三种情况：</p>
+<ul>
+<li>以 <code>./</code> 后者 <code>../</code> 或者 <code>/</code> 或者 <code>C:/demo/a.js</code> 这种形式的文件模块</li>
+<li>加载核心模块<ul>
+<li>核心模块是Node内置的，例如：<code>fs</code>、<code>http</code>、<code>url</code> 等</li>
+<li>已经别编译到了可执行文件中了</li>
+<li>用的时候，必须通过一个特定的核心模块标识名称加载使用</li>
+</ul>
+</li>
+<li>加载第三方模块<ul>
+<li>通过 npm 下载的模块或者说包</li>
+<li>加载第三方模块也是通过指定第三方模块的标识名称加载的</li>
+<li>Node 会判定如果不是文件路径形式的模块，也不是核心模块</li>
+<li>Node 会基于当前文件模块同级目录中的 node_modules 目录去查找该第三方模块标识对应的目录</li>
+<li>如果在 node_modules 目录中能找到对应的目录，例如 mime</li>
+<li>则 Node 去 mime 目录下找 <code>package.json</code> 文件</li>
+<li>如果找到 <code>package.json</code> 文件，则找该文件中的 <code>main</code> 属性，然后根据该属性指向的文件模块进行加载</li>
+<li>如果上述条件某一个环节不成立，则 Node 进入上一级目录中的 <code>node_modules</code> 进行查找，规则同上</li>
+<li>如果一直到当前文件模块所属的磁盘根目录下都没有找到对应的 node_modules 中的第三方模块<ul>
+<li>则最后报错：<code>can not find module xxx</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="包与Npm"><a href="#包与Npm" class="headerlink" title="包与Npm"></a>包与Npm</h3><p>将一些相关功能的文件模块组织到一起就形成了一个包。</p>
+<hr>
+<h2 id="通过模块化改造-Hacker-News-案例"><a href="#通过模块化改造-Hacker-News-案例" class="headerlink" title="通过模块化改造 Hacker News 案例"></a>通过模块化改造 Hacker News 案例</h2><hr>
+<h2 id="总结基础概念"><a href="#总结基础概念" class="headerlink" title="总结基础概念"></a>总结基础概念</h2><hr>
+<h2 id="使用-Npm-安装全局命令行工具"><a href="#使用-Npm-安装全局命令行工具" class="headerlink" title="使用 Npm 安装全局命令行工具"></a>使用 Npm 安装全局命令行工具</h2><p>在 npm 社区中，除了有可以在项目中使用的第三方包之外，还有一些特殊的包：<br>这些特殊的包被称之为命令行工具，不是用于项目的，而是可以安装到计算机中，<br>然后通过命令行中的命令的形式来使用，这种工具有很多，例如：<code>http-server</code>、<code>gulp</code>、<br><code>browser-sync</code>、<code>nodemon</code> 等等等等很多。</p>
+<p>安装方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global 第三方命令行工具名字</span><br></pre></td></tr></table></figure>
+<p>卸载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall --global 第三方命令行工具名称</span><br></pre></td></tr></table></figure>
+<p>查看全局命令行安装目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm root --global</span><br></pre></td></tr></table></figure>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
+<li>能掌握 Node 中模块化交互 API（require、exports、module.exports）并解释每一个API的作用</li>
+<li>能详细概述 Node 中模块的分类以及加载规则（自己写的模块、核心模块、第三方模块）</li>
+<li>能完成将 Hacker-News 案例改造为模块化的形式并解释每一个模块的作用</li>
+<li>能掌握在Node中处理表单 POST 提交并详细概述在post类型表单中点击submit之后发生的事情（客户端与服务端都做了什么）</li>
+</ol>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&title=《对Node的理解以及简单使用》 — 人间客栈&pic=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&title=《对Node的理解以及简单使用》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对Node的理解以及简单使用》 — 人间客栈&url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&via=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/06/01/Express-MongoDB-package-json/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Express-MongoDB-package.json</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/05/15/npm介绍/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">npm介绍</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="对Node的理解以及简单使用" data-title="对Node的理解以及简单使用" data-url="https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&title=《对Node的理解以及简单使用》 — 人间客栈&pic=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&title=《对Node的理解以及简单使用》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《对Node的理解以及简单使用》 — 人间客栈&url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/&via=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/05/21/对Node的理解以及简单使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3awW4bMQwE0Pz/T7dATgVae2dIKUmBt6fAsTf7FECkh/r4iK9fn1fyyp+v//2e9+98f89Xdztw4eHh4Y0e/dWV8FpY/iTJcjwsAR4eHt413vtHabf7/LOz3xbLh4eHh/etvKSxzgvAponHw8PD+194OTVfiLwA4OHh4f00XhJGvI8DkuD1bEt9OGvBw8PDi3ntAOwn/HxxvoeHh4e3mKrnm+9sWJUHwbOnxcPDw7vBex8utKViNgBLAK/eExUMPDw8vGu8TVw727KTZW3/1j/AeHh4eBd47ciqbXZnbfE+9sXDw8O7x8tHWUm73I6skuZ+Fl7g4eHh3ebNBvmbsCBfiLwMPDTTeHh4eGveJjLIG+62IZ6N0KJmGg8PD+8Qb3O8KQ8L8ra4LSQvyxIeHh7eBV571Cl/f7L1byLj4lN4eHh4R3lng4NZSHFqbPbwf8PDw8M7ysvb3HbElTfZbeGpvzHg4eHhXeC1QUAOa4OG9rMP3xXw8PDwjvLOMjYNdBtSFCcj8PDw8L6c1+Lf37ltr/OBXFRC8PDw8Na8/IE223p7DCuPSB7ugIeHh3eBd+BI06jVnrXFeaHCw8PDu83Lm932yiPd/AhCHePi4eHhHeXlG3o+6DoVTLSjuIeSgIeHh3eIt48GZpv+phjkxxTw8PDwbvPamGBzSGvTgs/CYjw8PLyzvH1omx8IaAFtqXgZSeDh4eFd4OVbcH5MKifl+3neZOPh4eHd4M0OVOWbe75MbWmJDijg4eHhXeBtThycGpjlDX3LxsPDw7vHmxWDPH4tuvsyBMHDw8P7Xl4yjtq01O0QaxZG1AMwPDw8vC/kzULYWeGZ3QcPDw/vJ/CSoX6y6d84YnWgpcbDw8MreUkYsX/0diFmr+Dh4eHd5rUDsP3j5i379UMDeHh4eB3vNz1++T59nuoWAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

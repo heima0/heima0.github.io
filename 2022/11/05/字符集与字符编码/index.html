@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>字符集与字符编码 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="字符集与编码系列 字符集：要想在计算机中显示文字，必须把文字都收集起来放在一个表中，这个表叫字符集（Charset）。  码表：字符集中的每个文字，都分配一个数字号码，这叫码表（Code chart）。比如中文 ‘霸’字，在码表中对应的码是38712（十进制），或者9738（十六进制）。  编码方式：有了码表，就需要确定哪些文字用几个字节表示，以及如果有多个字节代表一个字，字节的读取顺序，这些就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符集与字符编码">
+<meta property="og:url" content="https://heima0.github.io/2022/11/05/字符集与字符编码/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="字符集与编码系列 字符集：要想在计算机中显示文字，必须把文字都收集起来放在一个表中，这个表叫字符集（Charset）。  码表：字符集中的每个文字，都分配一个数字号码，这叫码表（Code chart）。比如中文 ‘霸’字，在码表中对应的码是38712（十进制），或者9738（十六进制）。  编码方式：有了码表，就需要确定哪些文字用几个字节表示，以及如果有多个字节代表一个字，字节的读取顺序，这些就是">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符集与字符编码">
+<meta name="twitter:description" content="字符集与编码系列 字符集：要想在计算机中显示文字，必须把文字都收集起来放在一个表中，这个表叫字符集（Charset）。  码表：字符集中的每个文字，都分配一个数字号码，这叫码表（Code chart）。比如中文 ‘霸’字，在码表中对应的码是38712（十进制），或者9738（十六进制）。  编码方式：有了码表，就需要确定哪些文字用几个字节表示，以及如果有多个字节代表一个字，字节的读取顺序，这些就是">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">字符集与字符编码</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">字符集与字符编码</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-05T02:47:04.000Z" itemprop="datePublished" class="page-time">
+  2022-11-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#字符集与编码系列"><span class="post-toc-number">1.</span> <span class="post-toc-text">字符集与编码系列</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-字符集与字符编码"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">字符集与字符编码</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022年11月05日 10:47" datetime="2022-11-05T02:47:04.000Z"  itemprop="datePublished">2022-11-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="字符集与编码系列"><a href="#字符集与编码系列" class="headerlink" title="字符集与编码系列"></a>字符集与编码系列</h1><ul>
+<li><p>字符集：要想在计算机中显示文字，必须把文字都收集起来放在一个表中，这个表叫字符集（Charset）。</p>
+</li>
+<li><p>码表：字符集中的每个文字，都分配一个数字号码，这叫码表（Code chart）。比如中文 ‘霸’字，在码表中对应的码是38712（十进制），或者9738（十六进制）。</p>
+</li>
+<li><p>编码方式：有了码表，就需要确定哪些文字用几个字节表示，以及如果有多个字节代表一个字，字节的读取顺序，这些就是字符编码方式（Encoding）。</p>
+</li>
+</ul>
+<blockquote>
+<p>虽然为了严谨起见，上面我把字符集和码表分开说明，但实际上很多字符集也给每个字符分配了一个码（Code Point），所以很多人经常也把字符集叫做码表、码表叫做字符集。</p>
+</blockquote>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2022/11/05/字符集与字符编码/&title=《字符集与字符编码》 — 人间客栈&pic=https://heima0.github.io/2022/11/05/字符集与字符编码//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2022/11/05/字符集与字符编码/&title=《字符集与字符编码》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《字符集与字符编码》 — 人间客栈&url=https://heima0.github.io/2022/11/05/字符集与字符编码/&via=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/11/11/requestAnimationFrame/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">requestAnimationFrame</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/10/27/技术管理-如何保持判断力/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">技术管理-如何保持判断力</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="字符集与字符编码" data-title="字符集与字符编码" data-url="https://heima0.github.io/2022/11/05/字符集与字符编码/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2022/11/05/字符集与字符编码/&title=《字符集与字符编码》 — 人间客栈&pic=https://heima0.github.io/2022/11/05/字符集与字符编码//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2022/11/05/字符集与字符编码/&title=《字符集与字符编码》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《字符集与字符编码》 — 人间客栈&url=https://heima0.github.io/2022/11/05/字符集与字符编码/&via=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2022/11/05/字符集与字符编码/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aa06FQAwG0Lv/TeMCbsCvLRiZOfwyhMAcTWpfn098HV/X5MnkDZ8nLgwMjNcyjssreeb6uL3352fDwMDYh3Ed+L6fOfvY2Z2El3z39D4GBgZGkK5dHygJrBgYGBhPMPKDVoM1BgYGRq+ITQ5RbaLlKeZttTgGBsYLGXnX/e9/fmS+gYGB8SrGUbyug+x1mpgH4vKpMDAwlmb0WmmTsjNJ8nqtPQwMjLUZkzHkpOmWl8SFZBEDA2M5xmTZq0dNwnE+MChkuBgYGC9nXD9UHSjmad9daSIGBsbajCTkTRr61WFk0rArpIkYGBgLMSaAXuutN8J88O+AgYHx7xl3NcImxXCvbdfMfzEwMF7FyFOx6hHz8UBv/HDabsPAwFiUUW2rzZctqoljtC2CgYGxAWMyMEg2HybrHb/cwcDA2IyRFI3Vtn4SrCdvw8DAWJtR/cBkMDAphqP0EQMDY2lGs3QMgmByuOrUIsJjYGBswOildHcF6B4eAwNjbUbS9qouT5RbZsUlj3LTDQMDYzlGkurlQXOynJG0/zAwMPZhVAvIfLVrvngRfQUDA2NRxlG8qmlfr3GWfxcDA2MHRnVY2Ctlq2PLXgKKgYGxNqMaZPN1sfJqV6voxcDA2IfRC3y9YnWS9p0iMTAwMOJGfzXUThbRojUSDAyMjRl5YM2/ktx58P8GBgbGv2ckRWyvvLw3vGJgYOzJyEvHfACZ85Jf021DTQwMjPcxfgBi6kHP9ASA7gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

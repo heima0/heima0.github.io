@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-5 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-5">
+<meta property="og:url" content="https://heima0.github.io/2017/07/23/vue-5/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.951Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-5">
+<meta name="twitter:description" content="过滤器 条件渲染过滤器vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用 vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了 所以在vue中如果想要使用过滤器就需要自定义 自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用  全局定义  Vue.">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-5</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-5</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-23T09:29:45.000Z" itemprop="datePublished" class="page-time">
+  2017-07-23
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#过滤器-条件渲染"><span class="post-toc-number">1.</span> <span class="post-toc-text">过滤器 条件渲染</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#过滤器"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">过滤器</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#条件渲染"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">条件渲染</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#v-if-vs-v-show"><span class="post-toc-number">1.0.0.2.1.</span> <span class="post-toc-text">v-if vs v-show</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-5"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-5</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年07月23日 17:29" datetime="2017-07-23T09:29:45.000Z"  itemprop="datePublished">2017-07-23</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="过滤器-条件渲染"><a href="#过滤器-条件渲染" class="headerlink" title="过滤器 条件渲染"></a>过滤器 条件渲染</h2><h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><p>vue中可以设置filter(过滤器)来实现数据格式化，双花括号插值和 v-bind 表达式中使用</p>
+<p>vue1.0的有默认的过滤器，但是在2.0的时候全部给去掉了</p>
+<p>所以在vue中如果想要使用过滤器就需要自定义</p>
+<p>自定义的方法有两种：全局定义和局部定义，全局定义的过滤器在任意的实例、组件中都可以使用，局部定义就是在实例、组件中定义，只能在这个实例或组件中使用</p>
+<ol>
+<li><p>全局定义</p>
+<p> Vue.filter(name,handler)</p>
+<p> name是过滤器的名字，handler是数据格式化处理函数，接收的第一个参数就是要处理的数据，返回什么数据，格式化的结果就是什么</p>
+<p> 在模板中通过 | (管道符) 来使用,在过滤器名字后面加（）来传参，参数会在handler函数中第二个及后面的形参来接收</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;msg | firstUpper(3,2)&#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">Vue.filter(&apos;firstUpper&apos;,function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>局部定义</p>
+<p> 在实例、组件的配置项中设置 filters，键名为过滤器名，值为handler</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">    firstUpper:function (value,num=1,num2) &#123;</span><br><span class="line">    console.log(num2)</span><br><span class="line">    return value.substr(0,num).toUpperCase()+value.substr(num).toLowerCase()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>注意：</p>
+<pre><code>过滤器只能在mustache插值、v-bind里使用，其他的指令等地方都不能用
+</code></pre><h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><p>在Vue中可以使用v-if来控制模板里元素的显示和隐藏，值为true就显示，为false就隐藏</p>
+<p>v-if控制的是是否渲染这个节点</p>
+<p>当我们需要控制一组元素显示隐藏的时候，可以用template标签将其包裹，将指令设置在template上，等等vm渲染这一组元素的时候，不会渲染template</p>
+<p>当有else分支逻辑的时候，可以给该元素加上v-else指令来控制，v-else会根据上面的那个v-if来控制，效果与v-if相反，注意，一定要紧挨着</p>
+<p>还有v-else-if指令可以实现多分支逻辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;mode&quot;&gt;  </span><br><span class="line">  &lt;template  v-if=&quot;mode==&apos;A&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;1.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第一个P标签&lt;/p&gt;  </span><br><span class="line">  &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;B&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;2.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第二个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else-if=&quot;mode==&apos;C&apos;&quot;&gt;</span><br><span class="line">    &lt;h1&gt;3.title&lt;/h1&gt;</span><br><span class="line">    &lt;p&gt;我的第三个P标签&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br><span class="line"> &lt;template  v-else&gt;</span><br><span class="line">   </span><br><span class="line">    &lt;p&gt;不好意思，输入有误&lt;/p&gt;</span><br><span class="line"> &lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>需要注意的另一个地方是：Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这样确实能使Vue变得更快，性能更高，但是有的时候我们需要让实例去更新dom而不是复用，就需要给dom加上不同的key属性，因为vue在判断到底渲染什么的时候，包括哪些dom可以复用，都会参考key值，如果dom表现基本一致，符合复用的条件，但是key值不同，依然不会复用</p>
+<p>Vue还提供了v-show指令，用法和v-if基本一样，控制的是元素的css中display属性，从而控制元素的显示和隐藏 ， 不能和v-else配合使用,且不能使用在template标签上，因为template不会渲染，再更改它的css属性也不会渲染，不会生效</p>
+<h6 id="v-if-vs-v-show"><a href="#v-if-vs-v-show" class="headerlink" title="v-if vs v-show"></a>v-if vs v-show</h6><p>v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。<br>v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。<br>相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。<br>一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/07/23/vue-5/&title=《vue-5》 — 人间客栈&pic=https://heima0.github.io/2017/07/23/vue-5//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/07/23/vue-5/&title=《vue-5》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-5》 — 人间客栈&url=https://heima0.github.io/2017/07/23/vue-5/&via=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/09/vue-6/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-6</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/13/vue-4/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-4</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-5" data-title="vue-5" data-url="https://heima0.github.io/2017/07/23/vue-5/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/07/23/vue-5/&title=《vue-5》 — 人间客栈&pic=https://heima0.github.io/2017/07/23/vue-5//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/07/23/vue-5/&title=《vue-5》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-5》 — 人间客栈&url=https://heima0.github.io/2017/07/23/vue-5/&via=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/07/23/vue-5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxklEQVR42u3aQW7DMAwEwP7/0y7QaxNhScpyio5OBezI4x4Ia8mvr3hdP6v3d7Ln5oWLizvmXsu13vrdnb/vX++ZGHBxcc9zk+JVLU8JMTfg4uJ+Jndd/nplCxcX969z1+Vs/bnz7pVwcXE/mZscfvJN5y+24ayGi4s74N4dmE5C1QfyXVzcf8+9iiv/VQIqPx0XF/cId/2Bknya5A2V5Gr0qri4uAe5vUg0KUzz+QpcXNyT3F6gebVW9bcvJLi4uEe4E0oebVTLWVR3cXFxb+buKl55FDIZ48DFxb2b2xyASN67uGdUvHBxcY9wk9Czt2k1MM3/Bbi4uCe55ZbGYESjOpJVaKvg4uJu4lYf0ytn1bKFi4v7FHcNSoYzqoFpb+QCFxf3JDc5ilSbLgm3dz8uLu4ZbnXwIjkmJfcnRyBcXNxnub3maELpxSujJisuLu4mbm+MchKAbmis4uLi3satFpReUevFK6MiiIuLO+ZWP1DyIlVtz0RlDhcX9yC3mrP2xqqqrZfCZVxc3Ie4k9ZL7+kvruLi4n4ktxqyRGFoPpCBi4t7kNtrgu5qoN4Si+Di4g64vcC0ehzKH7mhQYuLi9vnfgMC6nadbSiJoAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

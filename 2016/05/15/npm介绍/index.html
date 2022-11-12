@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>npm介绍 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="npm介绍npm是什么两层含义 npm 是一个网站，这个网站上托管了几十万个使用 JavaScript 开发的功能模块库 npm 是一个基于Node开发的一个终端命令行包管理工具 可以使用这个工具去 npm 网站上下载对应的库    npm 安装只要安装了 node 就有了 npm。 通过 npm -v 测试是否有 npm 工具。 使用 npm 安装包 找到能解决自己问题的包，看文档使用说明 通过">
+<meta name="keywords" content="npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="npm介绍">
+<meta property="og:url" content="https://heima0.github.io/2016/05/15/npm介绍/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="npm介绍npm是什么两层含义 npm 是一个网站，这个网站上托管了几十万个使用 JavaScript 开发的功能模块库 npm 是一个基于Node开发的一个终端命令行包管理工具 可以使用这个工具去 npm 网站上下载对应的库    npm 安装只要安装了 node 就有了 npm。 通过 npm -v 测试是否有 npm 工具。 使用 npm 安装包 找到能解决自己问题的包，看文档使用说明 通过">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="npm介绍">
+<meta name="twitter:description" content="npm介绍npm是什么两层含义 npm 是一个网站，这个网站上托管了几十万个使用 JavaScript 开发的功能模块库 npm 是一个基于Node开发的一个终端命令行包管理工具 可以使用这个工具去 npm 网站上下载对应的库    npm 安装只要安装了 node 就有了 npm。 通过 npm -v 测试是否有 npm 工具。 使用 npm 安装包 找到能解决自己问题的包，看文档使用说明 通过">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">npm介绍</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">npm介绍</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-05-15T04:44:19.000Z" itemprop="datePublished" class="page-time">
+  2016-05-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#npm介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">npm介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#npm是什么"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">npm是什么</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两层含义"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">两层含义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm-安装"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">npm 安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用-npm-安装包"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">使用 npm 安装包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node-中的模块化"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Node 中的模块化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块通信交互规则"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">模块通信交互规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户自定义模块"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">用户自定义模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#核心模块"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">核心模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三方模块"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">第三方模块</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">目标</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-npm介绍"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">npm介绍</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年05月15日 12:44" datetime="2016-05-15T04:44:19.000Z"  itemprop="datePublished">2016-05-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="npm介绍"><a href="#npm介绍" class="headerlink" title="npm介绍"></a>npm介绍</h1><h2 id="npm是什么"><a href="#npm是什么" class="headerlink" title="npm是什么"></a>npm是什么</h2><h3 id="两层含义"><a href="#两层含义" class="headerlink" title="两层含义"></a>两层含义</h3><ul>
+<li>npm 是一个网站，这个网站上托管了几十万个使用 JavaScript 开发的功能模块库</li>
+<li>npm 是一个基于Node开发的一个终端命令行包管理工具<ul>
+<li>可以使用这个工具去 npm 网站上下载对应的库</li>
+</ul>
+</li>
+</ul>
+<h3 id="npm-安装"><a href="#npm-安装" class="headerlink" title="npm 安装"></a>npm 安装</h3><p>只要安装了 node 就有了 npm。</p>
+<p>通过 <code>npm -v</code> 测试是否有 npm 工具。</p>
+<h3 id="使用-npm-安装包"><a href="#使用-npm-安装包" class="headerlink" title="使用 npm 安装包"></a>使用 npm 安装包</h3><ol>
+<li>找到能解决自己问题的包，看文档使用说明</li>
+<li>通过 <code>npm install 包名</code> 下载到当前项目中的根目录</li>
+<li>在代码中通过 <code>require(&#39;第三方包名&#39;)</code> 使用你下载的包</li>
+</ol>
+<p>通过 <code>npm install 包名</code> 安装的包会自动下载到当前目录下的 <code>node_modules</code> 目录，<br>如果该目录不存在，则直接创建，如果已存在，则直接将文件下载进去。</p>
+<hr>
+<h2 id="Node-中的模块化"><a href="#Node-中的模块化" class="headerlink" title="Node 中的模块化"></a>Node 中的模块化</h2><h3 id="模块通信交互规则"><a href="#模块通信交互规则" class="headerlink" title="模块通信交互规则"></a>模块通信交互规则</h3><ul>
+<li>一个 JavaScript 文件就是一个模块</li>
+<li>模块天生就是一个私有的作用域，默认模块内定义的变量等成员只能被模块内部访问</li>
+<li>每一个模块中都有一个 <code>module.exports</code> 编程接口对象，默认是一个空对象<ul>
+<li>可以通过给 <code>module.exports</code> 编程接口对象添加成员向外暴露内部成员</li>
+<li>例如：<code>var foo = &#39;bar&#39; module.exports.foo = foo</code></li>
+<li>上面示例标识当前模块向外部暴露了一个接口对象，内部有一个 foo 成员，值是 bar</li>
+</ul>
+</li>
+<li><code>require</code> 方法可以用来加载模块，该方法是同步加载执行的，主要做两件事儿<ul>
+<li><ol>
+<li>执行被加载模块中所有的代码</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>拿到被加载模块中的 <code>module.exports</code> 接口对象</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="用户自定义模块"><a href="#用户自定义模块" class="headerlink" title="用户自定义模块"></a>用户自定义模块</h3><h3 id="核心模块"><a href="#核心模块" class="headerlink" title="核心模块"></a>核心模块</h3><p>核心模块就是 Node 提供的模块，例如 <code>fs</code>、<code>http</code>、<code>path</code>。。。，<br>这些模块其实也是文件模块，核心模块一般都是通过一个固定的标识名称进行加载的，<br>也就是说不能写错，固定的。用什么就加载什么，无论是程序执行效率还是可维护性都非常好。</p>
+<h3 id="第三方模块"><a href="#第三方模块" class="headerlink" title="第三方模块"></a>第三方模块</h3><p>也就是npm社区提供的第三方包，用的时候，先下载，然后也是通过 <code>require</code> 进行加载，<br>加载第三方模块的时候，就是通过 <code>require(&#39;第三方模块标识名&#39;)</code>，所以第三方模块不可能有和<br>核心模块重名的名称。</p>
+<p>第三方加载模块有自己的一套加载规则，node 会按照对应的加载机制去加载。<br>具体明天上午会给大家详细解析。</p>
+<h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ol>
+<li>能掌握基本的Web开发思想（没有Web容器、url只是标识、处理页面资源和静态资源）</li>
+<li>能掌握在Node中使用模板引擎（服务端渲染）</li>
+<li>能掌握解析处理表单 GET 提交并详细概述点击提交按钮之后发生的事情（客户端做了什么，后台如何解析处理的）</li>
+<li>能掌握基本的模块化交互规则（require、module.exports）</li>
+</ol>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/05/15/npm介绍/&title=《npm介绍》 — 人间客栈&pic=https://heima0.github.io/2016/05/15/npm介绍//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/05/15/npm介绍/&title=《npm介绍》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm介绍》 — 人间客栈&url=https://heima0.github.io/2016/05/15/npm介绍/&via=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/05/21/对Node的理解以及简单使用/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">对Node的理解以及简单使用</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/05/12/node.js介绍/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">node介绍</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="npm介绍" data-title="npm介绍" data-url="https://heima0.github.io/2016/05/15/npm介绍/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/05/15/npm介绍/&title=《npm介绍》 — 人间客栈&pic=https://heima0.github.io/2016/05/15/npm介绍//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/05/15/npm介绍/&title=《npm介绍》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《npm介绍》 — 人间客栈&url=https://heima0.github.io/2016/05/15/npm介绍/&via=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/05/15/npm介绍/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aQZKDMAwFUe5/aeYACU5/YaYKqb1KEWLzWCiW5OPA4/wYn9fXd17NdvXt8cSQIUPGaxnncqwXXi/JeWTdHy9IhgwZAxjkIUjQXAfT9Wxk3cvrMmTIkFGbOgymMmTIkLGXQRYm4ViGDBkyOIMksYREqmEk0X0wF5chQ8YLGbzq/v+fH+lvyJAh41WMMxx3yv1kI1h8KhkyZLRm8ABXQ6Yb0NrzyJAhYwIjTSnTb/nhsDswGTJkTGDwNDI9ZnGnbBeX+WTIkNGUwQPinYblruCLQq0MGTIaMXjQ5L/iLclaSwCdFpEhQ0ZTRlomS9PLWsqKDljIkCFjACOtyZFl0tYmeZWX12XIkDGAQbZ9fJk0HU2D/pcrMmTIGMaopZq1NiSf80ewliFDRmvGriMXpPS297CFDBky5jB2LUmKceTOYliXIUPGMEY6aoGyNhuqGsqQIaMpIw15aSMzbT+kYVeGDBm9GWn6mmJI85K/uCAXlyFDRjtGmoLyAM0B90OzDBkyJjDWC6cHvHjKSn6FNoUyZMgYzNh1tCvtNsbJsAwZMpoyam0Ano7uao6i4poMGTKaMmrBjqeyuw5VpH8AMmTI6MeoHfDivHQ7SO6XIUPGTMau1JRv++40A2TIkCGDb9HS4t0Tr0aGDBkyak2CdHO5fh5UyJMhQ8YABklieSqbbv7S4C5DhoxpDJ46rgNi2m7cG8RlyJDRlPEHpxNLqZywJygAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

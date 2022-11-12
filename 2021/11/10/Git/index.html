@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Git | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="一. 走入Git1.Git介绍 Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。   版本控制 版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="https://heima0.github.io/2021/11/10/Git/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="一. 走入Git1.Git介绍 Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。   版本控制 版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220907110331660.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220907110802124.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220907112424167.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220908074740564.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220908075826032.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/github%E5%BC%80%E8%BE%9F%E4%BB%93%E5%BA%931.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220910091354495.png">
+<meta property="og:image" content="https://heima0.github.io/img/git-img/image-20220910091438534.png">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="一. 走入Git1.Git介绍 Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。 Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。   版本控制 版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软">
+<meta name="twitter:image" content="https://heima0.github.io/img/git-img/image-20220907110331660.png">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Git</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-11-10T06:46:34.000Z" itemprop="datePublished" class="page-time">
+  2021-11-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一-走入Git"><span class="post-toc-number">1.</span> <span class="post-toc-text">一. 走入Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-Git介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1.Git介绍</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-Git对比SVN"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2.Git对比SVN</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Git安装"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.Git安装</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二-Git常用命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.Git常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-设置用户签名"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">1.设置用户签名</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-初始化本地库"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.初始化本地库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Git工作区、暂存区和版本库"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">3.Git工作区、暂存区和版本库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-git-add"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">4.git add</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-git-commit"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">5.git commit</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-git-revert-与-git-reset"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">6.git revert 与 git reset</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三-Git-分支"><span class="post-toc-number">3.</span> <span class="post-toc-text">三. Git 分支</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-初识分支"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">1.初识分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-创建分支"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">2.创建分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-切换分支"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">3.切换分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-合并分支"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">4.合并分支</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-删除分支"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">5.删除分支</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四-远程仓库"><span class="post-toc-number">4.</span> <span class="post-toc-text">四.远程仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-创建一个远程仓库"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1.创建一个远程仓库</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-添加仓库地址"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2.添加仓库地址</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-git-push"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3.git push</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-git-clone"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">4.git clone</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-git-pull"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">5.git pull</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#五-VScode集成Git"><span class="post-toc-number">5.</span> <span class="post-toc-text">五.VScode集成Git</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六-gitignore"><span class="post-toc-number">6.</span> <span class="post-toc-text">六. gitignore</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Git"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021年11月10日 14:46" datetime="2021-11-10T06:46:34.000Z"  itemprop="datePublished">2021-11-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="一-走入Git"><a href="#一-走入Git" class="headerlink" title="一. 走入Git"></a>一. 走入Git</h4><h5 id="1-Git介绍"><a href="#1-Git介绍" class="headerlink" title="1.Git介绍"></a>1.Git介绍</h5><blockquote>
+<p>Git 是一个开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
+</blockquote>
+<ul>
+<li><p>版本控制</p>
+<p>版本控制（Revision control）是一种在开发的过程中用于管理我们对文件、目录或工程等内容的修改历史，方便查看更改历史记录，备份以便恢复以前的版本的软件工程技术。</p>
+</li>
+<li><p>团队协作</p>
+<p>从单兵作战转换为团队开发。</p>
+</li>
+</ul>
+<h5 id="2-Git对比SVN"><a href="#2-Git对比SVN" class="headerlink" title="2.Git对比SVN"></a>2.Git对比SVN</h5><p><img src="/img/git-img/image-20220907110331660.png" alt="image-20220907110331660" style="zoom:67%;"></p>
+<ol>
+<li><p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己的代码推送到中央服务器。集中式版本控制系统是必须联网才能工作。</p>
+</li>
+<li><p>Git是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上，可以离线工作。</p>
+</li>
+</ol>
+<h5 id="3-Git安装"><a href="#3-Git安装" class="headerlink" title="3.Git安装"></a>3.Git安装</h5><blockquote>
+<p><a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a></p>
+</blockquote>
+<p><img src="/img/git-img/image-20220907110802124.png" alt="image-20220907110802124"></p>
+<ul>
+<li><p>下载好以后，直接双击进行安装就行</p>
+</li>
+<li><p>一直下一步就可以，安装再默认路径就行</p>
+</li>
+<li><p>安装完毕后检测一下安装是否成功</p>
+<ul>
+<li><p>打开 <code>cmd</code> 窗口，输入指令检查</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 检测 git 是否安装</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git --version</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>出现版本号，说明安装成功</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>安装完毕，接下来我们就可以开始使用了</p>
+</li>
+</ul>
+<h4 id="二-Git常用命令"><a href="#二-Git常用命令" class="headerlink" title="二.Git常用命令"></a>二.Git常用命令</h4><h5 id="1-设置用户签名"><a href="#1-设置用户签名" class="headerlink" title="1.设置用户签名"></a>1.设置用户签名</h5><blockquote>
+<p>签名的作用就是用来标识用户，以区分不同的开发人员。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  git config --global user.email "you@example.com"</span><br><span class="line">  git config --global user.name "Your Name"</span><br></pre></td></tr></table></figure>
+<h5 id="2-初始化本地库"><a href="#2-初始化本地库" class="headerlink" title="2.初始化本地库"></a>2.初始化本地库</h5><ul>
+<li><p>我们希望一个文件夹被 <code>git</code> 管理的话，那么就要在一个文件夹下进行 <strong>git 初始化</strong></p>
+</li>
+<li><p>找到一个希望被 <code>git</code> 管理的文件夹</p>
+</li>
+<li><p>在文件夹内单击鼠标右键，点开 <code>Git Bash Here</code></p>
+</li>
+<li><p>输入指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> git 初始化的指令</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git init</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后文件夹内会多一个 <code>.git</code> 的文件夹（这个文件夹是一个隐藏文件夹）</p>
+</li>
+<li><p>这个时候，我的这个 <code>git_demo</code> 文件夹就被 <code>git</code> 管理了</p>
+<ul>
+<li><code>git</code> 不光管理这一个文件夹，包括所有的子文件夹和子文件都会被管理</li>
+</ul>
+</li>
+<li><p>注意： <strong>只有当一个文件夹被 git 管理以后，我们才可以使用 git 的功能去做版本管理</strong></p>
+<ul>
+<li>也就是说，我们必须要把我们电脑中的某一个文件夹授权给 <code>git</code></li>
+<li><code>git</code> 才能对这个文件夹里面的内容进行各种操作</li>
+<li>而 <code>git init</code> 就是在进行这个授权的操作</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-Git工作区、暂存区和版本库"><a href="#3-Git工作区、暂存区和版本库" class="headerlink" title="3.Git工作区、暂存区和版本库"></a>3.Git工作区、暂存区和版本库</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/git-img/image-20220907112424167.png" alt="image-20220907112424167" title="">
+                </div>
+                <div class="image-caption">image-20220907112424167</div>
+            </figure>
+<p><strong>托管平台</strong></p>
+<ul>
+<li>局域网(内网)<ul>
+<li>gitlab</li>
+</ul>
+</li>
+<li>公网（外网）<ul>
+<li>gitlab</li>
+<li>github</li>
+<li>gitee 码云</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-git-add"><a href="#4-git-add" class="headerlink" title="4.git add"></a>4.git add</h5><ul>
+<li><p>我们要放入暂存区，要使用 <code>git add</code> 指令</p>
+</li>
+<li><p>把单独一个文件放在暂存区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 把文件夹下的 index.txt 文本放在暂存区</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add index.txt</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把单独一个文件夹放在暂存区（暂存区不能存放空文件夹）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 把文件夹下的 ceshi文件夹 放在暂存区</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add ceshi/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>把所有文件都放在暂存区</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 把文件夹下所有的内容都放在暂存区</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add --all</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> git add --all 有一个简单的写法</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git add .</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>全部存放的时候使用上面两个指令哪个都行</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-git-commit"><a href="#5-git-commit" class="headerlink" title="5.git commit"></a>5.git commit</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 把暂存区的内容放到历史区</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">"我是第一个版本"</span></span></span><br></pre></td></tr></table></figure>
+<p>我们使用 <code>git log</code> 这个指令查看版本信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看当前历史区版本信息</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>我们使用 <code>git reset --hard 版本编号</code> 进行历史回退</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 回退到上一次提交的版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD^</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 回退到上上次提交的版本</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD^^</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git reset --hard HEAD~2</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/img/git-img/image-20220908074740564.png" alt="image-20220908074740564" style="zoom:67%;float:left"></p>
+<h5 id="6-git-revert-与-git-reset"><a href="#6-git-revert-与-git-reset" class="headerlink" title="6.git revert 与 git reset"></a>6.git revert 与 git reset</h5><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/img/git-img/image-20220908075826032.png" alt="image-20220908075826032" title="">
+                </div>
+                <div class="image-caption">image-20220908075826032</div>
+            </figure>
+<ul>
+<li>git reset 是回滚到对应的commit-id，相当于是删除了commit-id以后的所有的提交，并且不会产生新的commit-id记录，如果要推送到远程服务器的话，需要强制推送-f</li>
+<li>git revert 是反做撤销其中的commit-id，然后重新生成一个commit-id。本身不会对其他的提交commit-id产生影响，如果要推送到远程服务器的话，就是普通的操作git push就好了</li>
+</ul>
+<h4 id="三-Git-分支"><a href="#三-Git-分支" class="headerlink" title="三. Git 分支"></a>三. Git 分支</h4><h5 id="1-初识分支"><a href="#1-初识分支" class="headerlink" title="1.初识分支"></a>1.初识分支</h5><ul>
+<li><code>git</code> 分支，就是我们自己把我们的整个文件夹分成一个一个独立的区域</li>
+<li><p>比如我在开发 <strong>登录</strong> 功能的时候，可以放在 <code>login</code> 分支下进行开发</p>
+<ul>
+<li>开发 <strong>列表</strong> 功能的时候，可以放在 <code>list</code> 分支下进行开发</li>
+<li>大家互不干扰，每一个功能都是一个独立的功能分支</li>
+</ul>
+</li>
+<li>这样开发就会好很多</li>
+<li><code>git</code> 在初始化的时候，会自动生成一个分支，叫做 <code>master</code> </li>
+<li>是表示主要分支的意思</li>
+<li>我们就可以自己开辟出很多独立分支</li>
+</ul>
+<h5 id="2-创建分支"><a href="#2-创建分支" class="headerlink" title="2.创建分支"></a>2.创建分支</h5><ul>
+<li><p>开辟一个分支使用 <code>git branch 分支名称</code> 指令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 开辟一个 login 分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch login</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看一下当前分支情况</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看当前分支情况</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>会看到，当前有两个分支了</li>
+<li>一个是 <code>master</code>，一个是 <code>login</code></li>
+<li>前面有个 <code>*</code> 号，并且有高亮显示的，表示你当前所处的分支</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-切换分支"><a href="#3-切换分支" class="headerlink" title="3.切换分支"></a>3.切换分支</h5><ul>
+<li><p>我们对 <strong>登录</strong> 功能的开发要移动到 <code>login</code> 分支去完成</p>
+</li>
+<li><p>我们切换所处分支使用 <code>git checkout 分支名称</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 切换到 login 分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout login</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后我们在整个分支上进行 <strong>登录</strong> 功能的开发</p>
+</li>
+<li><p>开发完毕以后，我们就在当前分支上进行提交</p>
+</li>
+<li><p>提交以后我们进行分支切换</p>
+<ul>
+<li>发现 <code>master</code> 上面还是最初始的状态</li>
+<li>而 <code>login</code> 分支上有我们新写的 <strong>登录</strong> 功能的代码</li>
+</ul>
+</li>
+<li><p>我们按照分支把所有功能都开发完毕了以后</p>
+<ul>
+<li>只要把所有代码都合并到 <code>master</code> 主分支上就行了</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-合并分支"><a href="#4-合并分支" class="headerlink" title="4.合并分支"></a>4.合并分支</h5><ul>
+<li><p><code>git</code> 的合并分支，只能是把别的分支的内容合并到自己的分支上</p>
+</li>
+<li><p>使用的指令是 <code>git merge</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 切换到 master 分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 把 login 的内容合并到自己的分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git merge login</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这个时候，我们刚才在 <code>login</code> 上开发的东西就都来到了 <code>master</code> 主分支上</p>
+</li>
+<li><p>如果是有多个分支的话，那么所有的最后都合并到 <code>master</code> 分支上的时候</p>
+</li>
+<li><p>我们的主分支上就有完整网站的所有页面</p>
+<ul>
+<li>各个分支上都是单独的页面和功能</li>
+</ul>
+</li>
+</ul>
+<h5 id="5-删除分支"><a href="#5-删除分支" class="headerlink" title="5.删除分支"></a>5.删除分支</h5><ul>
+<li><p>这个时候我们开辟的分支就没有什么用了，就可以删除分支了</p>
+<ol>
+<li><p>先切换到别的分支</p>
+</li>
+<li><p>使用指令 <code>git branch -d 分支名称</code> 来删除</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先切换到别的分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git checkout master</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 删除 login 分支</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git branch -d login</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="四-远程仓库"><a href="#四-远程仓库" class="headerlink" title="四.远程仓库"></a>四.远程仓库</h4><ul>
+<li>我们的所有内容已经全部保留在了本地历史区</li>
+<li>理论上是不会丢失了<ul>
+<li>但是如果把文件夹删除了，还是没有了</li>
+</ul>
+</li>
+<li>所以我们要使用 <code>git</code> 把我们所有的内容推送到 <code>github</code> 上面保存起来</li>
+<li>那么就本地文件夹就算删除了，那么远程上面还有一份，还可以拿回来使用</li>
+<li>所以我们现在就要把本地内容推送到远程</li>
+<li>这个时候我们接需要一个 <code>github</code> 的账号了</li>
+<li>先去 <a href="https://github.com/" target="_blank" rel="noopener">github官网</a> 注册一个账号</li>
+</ul>
+<h5 id="1-创建一个远程仓库"><a href="#1-创建一个远程仓库" class="headerlink" title="1.创建一个远程仓库"></a>1.创建一个远程仓库</h5><ul>
+<li><p>有了 <code>github</code>  账号以后</p>
+</li>
+<li><p>我们就登录 <code>github</code> 网站，开辟一个远程仓库</p>
+</li>
+<li><p><code>github</code> 的远程也是以一个仓库一个仓库的形式来保存代码</p>
+<ul>
+<li>我们可以在一个 <code>github</code> 上保存很多的项目</li>
+<li>只要一个项目一个仓库就可以了</li>
+</ul>
+</li>
+<li><p>按照下面步骤开辟仓库</p>
+<ol>
+<li><p>先点击新建仓库</p>
+<p><img src="/img/git-img/github%E5%BC%80%E8%BE%9F%E4%BB%93%E5%BA%931.png" alt=""></p>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="2-添加仓库地址"><a href="#2-添加仓库地址" class="headerlink" title="2.添加仓库地址"></a>2.添加仓库地址</h5><ul>
+<li><p>接下来，要使用 <code>git</code> 上传代码了</p>
+</li>
+<li><p>我们先要告诉 <code>git</code> 上传到哪里</p>
+</li>
+<li><p>也就是给 <code>git</code> 添加一个上传的地址</p>
+</li>
+<li><p>我们还是来到我们的项目文件夹</p>
+</li>
+<li><p>使用 <code>git remote add origin 仓库地址</code> 来添加</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在项目文件夹下打开 git base</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加仓库地址</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git remote add origin *********************</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>remote：远程的意思</li>
+<li>add：添加的意思</li>
+<li>origin：是一个变量名（就是指代后面一长串的地址）</li>
+</ul>
+</li>
+</ul>
+<h5 id="3-git-push"><a href="#3-git-push" class="headerlink" title="3.git push"></a>3.git push</h5><ul>
+<li><p>上传到哪里的地址我们已经添加好了</p>
+</li>
+<li><p>接下来就是上传内容了</p>
+<ul>
+<li>上传要保证 <strong>历史区</strong> 里面有内容</li>
+<li>上传的过程会把 <strong>历史区</strong> 里面所有的内容上传到远端</li>
+</ul>
+</li>
+<li><p>我们使用 <code>git push</code> 指令来上传</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 上传内容</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push -u origin master</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 表示把内容上传到 origin 这个地址</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> master 是上传到远程的 master 分支</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果当前分支与多个主机存在追踪关系，则可以使用-u选项指定一个默认主机，这样后面就可以不加任何参数使用git push。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>第二次上传</p>
+<ul>
+<li><p>第二次上传的时候，因为有刚才的记录，就不需要再写 <code>origin</code> 和 <code>master</code> 了</p>
+</li>
+<li><p>会默认传递到 <code>origin</code> 这个地址的 <code>master</code> 分支上</p>
+</li>
+<li><p>除非你要传递到别的分支上的时候再进行书写</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 第二次上传</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git push</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>到这里，就完成了一次 <code>git</code> 推送</p>
+</li>
+<li><p>这个时候本地的文件夹就真的可以删除了</p>
+</li>
+<li><p>因为远程有一份我们的内容，本地的删除了，可以直接把远程的拉回来就行</p>
+</li>
+</ul>
+<h5 id="4-git-clone"><a href="#4-git-clone" class="headerlink" title="4.git clone"></a>4.git clone</h5><ul>
+<li><p><code>git</code> 克隆是指把远程仓库里面的内容克隆一份到本地</p>
+</li>
+<li><p>可以克隆别人的 <strong>公开</strong> 的仓库，也可以克隆自己的仓库</p>
+</li>
+<li><p>克隆别人的仓库，我们只能拿下来用，修改后不能从新上传</p>
+</li>
+<li><p>克隆自己的仓库，我们修改后还可以再次上传更新</p>
+</li>
+</ul>
+<ul>
+<li><p>输入克隆指令 <code>git clone 仓库地址</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 直接克隆仓库</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">clone</span> *************</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="5-git-pull"><a href="#5-git-pull" class="headerlink" title="5.git pull"></a>5.git pull</h5><ul>
+<li><p>当人家的代码更新以后，你想获得最新的代码</p>
+</li>
+<li><p>我们不需要从新克隆</p>
+</li>
+<li><p>只要拉取一次代码就可以了</p>
+</li>
+<li><p>直接在项目文件夹里面使用指令下拉</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 拉取远程最新代码</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git pull</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样一来，你本地的仓库就可远程的仓库同步了</p>
+</li>
+</ul>
+<h4 id="五-VScode集成Git"><a href="#五-VScode集成Git" class="headerlink" title="五.VScode集成Git"></a>五.VScode集成Git</h4><p>VSCode内置版本控制机制，并自带对Git和Github的支持，你也可以安装插件以支持其他控制软件，如SVN(需要先安装 SVN )等。</p>
+<ol>
+<li><p>初始化</p>
+<p><img src="/img/git-img/image-20220910091354495.png" alt="image-20220910091354495" style="zoom:50%;float:left;"></p>
+</li>
+<li><p>可视化界面管理项目<br> <img src="/img/git-img/image-20220910091438534.png" alt="image-20220910091438534" style="zoom:67%;float:left;"></p>
+</li>
+</ol>
+<h4 id="六-gitignore"><a href="#六-gitignore" class="headerlink" title="六. gitignore"></a>六. gitignore</h4><blockquote>
+<p>在一些项目中，我们不想让本地仓库的所有文件都上传到远程仓库中，而是有选择的上传，比如：一些依赖文件（node_modules下的依赖）、bin 目录下的文件、测试文件等。一方面将一些依赖、测试文件都上传到远程传输量很大，另一方面，一些文件对于你这边是可用的，在另一个人那可能就不可用了，比如：本地配置文件。</p>
+</blockquote>
+<ul>
+<li><p>空行不匹配任何文件；</p>
+</li>
+<li><p>如果本地仓库文件已被跟踪，那么即使在 .gitignore 中设置了忽略，也不起作用。</p>
+</li>
+<li><p>.gitignore 文件也会被上传的到远程仓库，所以，同一个仓库的人可以使用同一个.gitignore 文件。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># See https://help.github.com/articles/ignoring-files/ for more about ignoring files.</span><br><span class="line"># dependencies</span><br><span class="line"># #开头的便是注释</span><br><span class="line"></span><br><span class="line"># 忽略文件和目录</span><br><span class="line">/node_modules</span><br><span class="line">/.pnp</span><br><span class="line">.pnp.js</span><br><span class="line"></span><br><span class="line"># testing</span><br><span class="line">/coverage</span><br><span class="line"></span><br><span class="line"># production</span><br><span class="line">/build</span><br><span class="line"></span><br><span class="line"># misc</span><br><span class="line">.DS_Store</span><br><span class="line">.env.local</span><br><span class="line">.env.development.local</span><br><span class="line">.env.test.local</span><br><span class="line">.env.production.local</span><br><span class="line"></span><br><span class="line"># 使用通配符</span><br><span class="line">npm-debug.log*</span><br><span class="line">yarn-debug.log*</span><br><span class="line">yarn-error.log*</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2021/11/10/Git/&title=《Git》 — 人间客栈&pic=https://heima0.github.io/2021/11/10/Git//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2021/11/10/Git/&title=《Git》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2021/11/10/Git/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 人间客栈&url=https://heima0.github.io/2021/11/10/Git/&via=https://heima0.github.io/2021/11/10/Git/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2021/11/10/Git/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/10/27/技术管理-如何保持判断力/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">技术管理-如何保持判断力</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/07/12/HTTP-Cache/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">HTTP Cache</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Git" data-title="Git" data-url="https://heima0.github.io/2021/11/10/Git/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2021/11/10/Git/&title=《Git》 — 人间客栈&pic=https://heima0.github.io/2021/11/10/Git//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2021/11/10/Git/&title=《Git》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2021/11/10/Git/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git》 — 人间客栈&url=https://heima0.github.io/2021/11/10/Git/&via=https://heima0.github.io/2021/11/10/Git/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2021/11/10/Git/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxUlEQVR42u3aS27DMAwFwNz/0u62RRP70RRVFxitgiS2RhtC/Lxe8Tp+rU/ff/81eedrYuHi4ra5x+lKuDmreuw378fFxd3ITbbJ//OJ0nk/Li7uk7nJheY85OUBERcX979wk/DUOQwuLu5zuEnykycwyVPjuRouLm6DWy1uTnweqe/i4uLe4h7FlTzbacBc7I6Li7uFW22HnBc9O83awr64uLjD3E5jNX921agHLi7uc7j5teYcl4fC8o0MFxd3mFstXiQF006B9cdnXFzcjdzqxskFKDlekg69CWS4uLhbuKvKmtV26fnIxYJcDRcXt8GtBpTOkEQrZcLFxd3OPb+C9Ae5qgnSRfKDi4s7zM0bIfml5DzA3QuguLi4e7gJLtmyQ8/HQ3Fxcf+Km4ee6jhFZ6+LWg4uLu4wNymkRg3RW0WQ6ClcXNzt3Px19wLcgv/g4uIOcyfaqNUmayE1wsXF3cKtJjDlgYlO+SPYFxcXd47bb5om7dj8kOXkBxcXd4xbDTT3WibLcjVcXNyHcTsJ0oJGLC4u7iO5ydDGqgbtyBUHFxc35vZDz6rvLw6Ji4u7hdspbuaDF8mARVIiwcXFHeZ+AYi6r45A1VI4AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-10 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="钩子函数、vue-cli脚手架组件的生命周期每一个组件或者实例都会经历一个完整的生命周期，总共分为三个阶段：初始化、运行中、销毁                                                                                              生命周期图示               实例、组件通过new Vue() 创建出来">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-10">
+<meta property="og:url" content="https://heima0.github.io/2018/01/30/vue-10/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="钩子函数、vue-cli脚手架组件的生命周期每一个组件或者实例都会经历一个完整的生命周期，总共分为三个阶段：初始化、运行中、销毁                                                                                              生命周期图示               实例、组件通过new Vue() 创建出来">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cn.vuejs.org/images/lifecycle.png">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-10">
+<meta name="twitter:description" content="钩子函数、vue-cli脚手架组件的生命周期每一个组件或者实例都会经历一个完整的生命周期，总共分为三个阶段：初始化、运行中、销毁                                                                                              生命周期图示               实例、组件通过new Vue() 创建出来">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/lifecycle.png">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-10</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-10</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-30T11:16:51.000Z" itemprop="datePublished" class="page-time">
+  2018-01-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#钩子函数、vue-cli脚手架"><span class="post-toc-number">1.</span> <span class="post-toc-text">钩子函数、vue-cli脚手架</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组件的生命周期"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">组件的生命周期</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#vue-cli脚手架"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">vue-cli脚手架</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-10"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-10</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月30日 19:16" datetime="2018-01-30T11:16:51.000Z"  itemprop="datePublished">2018-01-30</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="钩子函数、vue-cli脚手架"><a href="#钩子函数、vue-cli脚手架" class="headerlink" title="钩子函数、vue-cli脚手架"></a>钩子函数、vue-cli脚手架</h2><h5 id="组件的生命周期"><a href="#组件的生命周期" class="headerlink" title="组件的生命周期"></a>组件的生命周期</h5><p>每一个组件或者实例都会经历一个完整的生命周期，总共分为三个阶段：初始化、运行中、销毁</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://cn.vuejs.org/images/lifecycle.png" alt="生命周期图示" title="">
+                </div>
+                <div class="image-caption">生命周期图示</div>
+            </figure>
+<ol>
+<li><p>实例、组件通过new Vue() 创建出来之后会初始化事件和生命周期，然后就会执行beforeCreate钩子函数，这个时候，数据还没有挂载ね，只是一个空壳，无法访问到数据和真实的dom，一般不做操作</p>
+</li>
+<li><p>挂载数据，绑定事件等等，然后执行created函数，这个时候已经可以使用到数据，也可以更改数据,在这里更改数据不会触发updated函数，在这里可以在渲染前倒数第二次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取</p>
+</li>
+<li><p>接下来开始找实例或者组件对应的模板，编译模板为虚拟dom放入到render函数中准备渲染，然后执行beforeMount钩子函数，在这个函数中虚拟dom已经创建完成，马上就要渲染,在这里也可以更改数据，不会触发updated，在这里可以在渲染前最后一次更改数据的机会，不会触发其他的钩子函数，一般可以在这里做初始数据的获取</p>
+</li>
+<li><p>接下来开始render，渲染出真实dom，然后执行mounted钩子函数，此时，组件已经出现在页面中，数据、真实dom都已经处理好了,事件都已经挂载好了，可以在这里操作真实dom等事情…</p>
+</li>
+<li><p>当组件或实例的数据更改之后，会立即执行beforeUpdate，然后vue的虚拟dom机制会重新构建虚拟dom与上一次的虚拟dom树利用diff算法进行对比之后重新渲染，一般不做什么事儿</p>
+</li>
+<li><p>当更新完成后，执行updated，数据已经更改完成，dom也重新render完成，可以操作更新后的虚拟dom</p>
+</li>
+<li><p>当经过某种途径调用$destroy方法后，立即执行beforeDestroy，一般在这里做一些善后工作，例如清除计时器、清除非指令绑定的事件等等</p>
+</li>
+<li><p>组件的数据绑定、监听…去掉后只剩下dom空壳，这个时候，执行destroyed，在这里做善后工作也可以</p>
+</li>
+</ol>
+<h5 id="vue-cli脚手架"><a href="#vue-cli脚手架" class="headerlink" title="vue-cli脚手架"></a>vue-cli脚手架</h5><p>现在使用前端工程化开发项目是主流的趋势，也就是说，我们需要使用一些工具来搭建vue的开发环境，一般情况下我们使用webpack来搭建，在这里我们直接使用vue官方提供的，基于webpack的脚手架工具：vue-cli</p>
+<p>安装方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装 vue-cli</span><br><span class="line">npm install --global vue-cli</span><br><span class="line"># 创建一个基于 webpack 模板的新项目</span><br><span class="line">vue init webpack my-project</span><br><span class="line">//init之后可以定义模板的类型</span><br><span class="line"># 安装依赖，走你</span><br><span class="line">cd my-project</span><br><span class="line">npm install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>模板类型：</p>
+<p>simple 对应的是一个超级简单的html文件</p>
+<p>webpack 在配置的时候可以选择是否需要vue-router</p>
+<p>注意的是，模板创建的时候会询问使用需要使用ESLINT来标准化我们的代码</p>
+<p>在脚手架中，开发目录是src文件夹，build负责打包的，config是负责配置（内置服务器的端口、proxy代理），static是静态目录，test是测试</p>
+<p>src中main.js是入口文件，在里面创建了一个根实例，根实例的模板就是根组件App的模板，其他的组件都在根组件里面进行嵌套实现。</p>
+<p>每一个组件都是一个单文件组件，这种文件会被webpack利用vue-loader的工具进行编译</p>
+<p>template部分负责写组件的模板内容，script中创建组件。style里写组件的样式</p>
+<p>assets目录也是静态目录，在这个目标中的文件我们使用相对路径引入,而static目录中的文件使用绝对地址来引入</p>
+<p>在style上添加scoped能使这个style里的样式只作用于当前的组件，不加scoped就是全局样式</p>
+<p>习惯于在App.vue根组件的style里写全局样式，而每个组件的style最好都是局部的</p>
+<p>配置sass编译环境</p>
+<p>vue-cli没有内置sass编译，我们需要自己修改配置</p>
+<ol>
+<li><p>下载对应工具：node-sass(4.0.0) sass-loader</p>
+</li>
+<li><p>在build目录下的webpack.base.conf.js中的module.rule里添加如下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: /\.scss$/,</span><br><span class="line">    loader:&apos;style-loader!css-loader!sass-loader&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在需要使用scss代码的组件的style标签中添加 lang=’scss’</p>
+</li>
+</ol>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/01/30/vue-10/&title=《vue-10》 — 人间客栈&pic=https://heima0.github.io/2018/01/30/vue-10//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/01/30/vue-10/&title=《vue-10》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-10》 — 人间客栈&url=https://heima0.github.io/2018/01/30/vue-10/&via=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/03/15/vue-11/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-11</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/18/vue-9/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-9</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-10" data-title="vue-10" data-url="https://heima0.github.io/2018/01/30/vue-10/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/01/30/vue-10/&title=《vue-10》 — 人间客栈&pic=https://heima0.github.io/2018/01/30/vue-10//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/01/30/vue-10/&title=《vue-10》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-10》 — 人间客栈&url=https://heima0.github.io/2018/01/30/vue-10/&via=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/01/30/vue-10/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS27DMAxFUe9/0+60QGr3PtIOIOpqFCSCrZMBwY+OA6/z1yJ7PtfnzvvnHG8sGTJkLMsgr78/1hU1/Yb/+scZZMiQsQHjPvDdf74PrFeHS9/1z5llyJAho0TqhGAZMmTIeCPgdspgHpplyJCxM4MESt4g42GUpIkP1+IyZMhYkMG77t///Mp8Q4YMGUsxznDVUjoerM/SkiFDxmwGD3Cd9lltnBCXxDJkyBjKSEePnSK2djkDwWTIkDGaUWvid6h8wJDulyFDxlRG/zIEb8zxkjUdjsqQIWMHRtoIS5/WD83F2yIyZMgYweAhkoTddA8fKgT5rAwZMjZjpM0yng7ygB4MR2XIkDGa0Sky06QwfU6xxJUhQ8YgRm00yI+VJo5pSdyacMqQIWMpRr9w7bTYapctZMiQsRuDH5FfTq2NSItgGTJkjGZ0Lj2kw8j743aeL0OGjNmMTgn6VKrHE9PLX2XIkDGawZtinWth6R9RK6dlyJAxm5EmcOlOXtySoB9nuDJkyBjHSEMkB9RaaTzcy5AhYwcGScV48pemibXmnQwZMnZgnOEiKVoNw//KeP4gQ4aMxRmdtlf6Yp7qkeK21ryTIUPGuox+kE0HkLx4DkaqMmTI2IDBA1+6Mw2yrVJWhgwZMkB2mZLSi2ioayhDhgwZpaBJksVWO0+GDBkbMDoNNV7Q1vY/XIvLkCFjQQYvHXl5mZa7JMimpbUMGTJGMH4ATwK8KmmNnuYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

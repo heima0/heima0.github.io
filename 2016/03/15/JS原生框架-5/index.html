@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JS原生框架-5 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原生框架-5">
+<meta property="og:url" content="https://heima0.github.io/2016/03/15/JS原生框架-5/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原生框架-5">
+<meta name="twitter:description" content="常见问题 1&amp;gt; 代码结构 2&amp;gt; 总结: $( &amp;apos;&amp;lt;div&amp;gt;123&amp;lt;/div&amp;gt;&amp;apos; ).appendTo( $( &amp;apos;div&amp;apos; ) ) 1) 如果左边的html字符串是多个元素什么结果, 规律是什么 2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律 3) 如果两边都是多个元素, 又是什么结果, 什么规律">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JS原生框架-5</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JS原生框架-5</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-15T10:46:00.000Z" itemprop="datePublished" class="page-time">
+  2016-03-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-JS原生框架-5"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JS原生框架-5</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年03月15日 18:46" datetime="2016-03-15T10:46:00.000Z"  itemprop="datePublished">2016-03-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>常见问题<br> 1&gt; 代码结构<br> 2&gt; 总结:</p>
+<pre><code>$( &apos;&lt;div&gt;123&lt;/div&gt;&apos; ).appendTo( $( &apos;div&apos; ) )
+1) 如果左边的html字符串是多个元素什么结果, 规律是什么
+2) 如果右边的选择器得到的是多个元素, 结果又是什么, 有什么规律
+3) 如果两边都是多个元素, 又是什么结果, 什么规律
+</code></pre><p> 3&gt; 实现代码 appendTo() 参数为 dom 数组的情况<br> 4&gt; dom 操作整理</p>
+</li>
+<li><p>jq 案例<br> <div id="dv"></div><br> …<br> // 鼠标移入的时候有颜色高亮, 鼠标移开的时候颜色恢复<br> $( ‘#dv’ ).mouseenter(function () {</p>
+<pre><code>$( this ).addClass...
+</code></pre><p> }).mouseleave(function () {</p>
+<pre><code>$( this ). ...
+</code></pre><p> });</p>
+<p> iQuery.select = function ( selector ) { </p>
+<pre><code>return slice.call( document.querySelectorAll( selector ) ); 
+</code></pre><p> };<br> //这里直接return document.querySelectorAll( selector)行吗？一定要返回一个真数组吗？ </p>
+<p> //构造函数中push.apply(this, iQuery.select(selector));传入伪数组也是可以的吧？</p>
+<p> var init = iQuery.prototype.init = function (selector) { </p>
+<pre><code>return [].push.apply(this, iQuery.select(selector)); 
+</code></pre><p> }<br> iQuery.select = function (selector) { </p>
+<pre><code>return [].slice.call(document.querySelectorAll(selector)); 
+</code></pre><p> }<br> 为什么要分成两步，直接[].push.apply(this,document.querySelectorAll(selector))不就好了，<br> 为什么[].slice.call(document.querySelectorAll(selector))转换成真数组再<br> [].push.apply(this, iQuery.select(selector))</p>
+</li>
+</ol>
+<pre><code>核心结构中
+    iQuery.fn = iQuery.prototype = {}; 
+    iQuery.prototype.init.prototype = iQuery.fn; 
+这两句连写成iQuery.prototype.init.prototype = iQuery.fn = iQuery.prototype = {}; 
+会报错Cannot set property &apos;prototype&apos; of undefined，为什么？ 
+
+parseHTMl方法中为什么不使用Children？ 当用childNodes时，如果传入的字符串
+‘ &lt;div&gt;&lt;/div&gt; ’两端有空格，得到的数组就会有文本节点存在，
+难道不会造成使用问题和性能问题吗？
+
+
+iQuery.select = function(selector){
+    slice.call(document.querySelectorAll(selector));
+}
+用来获取dom对象, 
+var init = iQuery.fn.init = function(){
+    push.apply(this,iQuery);
+}
+用来初始化函数,是不是多此一举?为什么不直接: 
+var init = iQuery.fn.init = function(){
+    slice.apply(this,document.querySelectorAll(selector));
+}
+不是一样么?
+</code></pre><ol start="3">
+<li><p>如果appendTo方法右边是多个元素, 如何处理</p>
+ <div></div><br> <div></div>
+
+<p> …<br> $( ‘</p><p>ppp</p>‘ ).appendTo( ‘div’ );<p></p>
+<p> 首先实现 假如 appendTo 方法的参数为 div 数组的时候, 如何处理</p>
+<p> 处理了 dom 元素, 简答<br> 处理了 dom 数组, 相对容易, 而且就解决了 传入的是 iQuery 对象的情况</p>
+<p> appendTo 还可以使用 字符串选择器</p>
+<p> function appendTo( selector ) {</p>
+<pre><code>&lt;!--if ( selector.nodeType ) {
+
+} else if( selecto.length &gt;=0 ) {
+
+} else if ( typeof selector == &apos;string&apos; ) {
+    var iObj = iQuery( selector )
+}--&gt;
+</code></pre></li>
+</ol>
+<pre><code>    var IObj= iQuery( selector );
+
+}
+</code></pre><ol start="4">
+<li><p>说明<br>  appendTo: function ( array ) {</p>
+<pre><code>var that = this;
+</code></pre></li>
+</ol>
+<pre><code>    var arr = I.map( array, function ( v, i ) {
+        return that.map(function ( v1, i1 ) {
+            var node = i === array.length - 1 ? v1 
+                                              : v1.cloneNode( true );  
+            v.appendChild( node );
+
+            return node;
+        });
+    });
+
+    arr = arr.concat,apply( [],  arr ); // [ [] ] -&gt; []
+
+
+    return iQuery( arr );
+}
+</code></pre><ol start="5">
+<li><p>实现 prepend 与 prependTo 方法<br> 区别:</p>
+<pre><code>1&gt; appendTo 和 prependTo
+ $( &apos;&lt;div&gt;&lt;/div&gt;&apos; ).appendTo( &apos;div&apos; ); 将新创建的 div 加到页面中已有的 div 中的子元素中的结尾处( 追加 )
+ $( &apos;&lt;div&gt;&lt;/div&gt;&apos; ).prependTo( &apos;div&apos; ); 将新创建的 div 标签加到页面中已有的 div 中的子元素的最前面.
+2&gt; append 和 prepend 
+ $( &apos;div&apos; ).append( &apos;&lt;p&gt;ppp&lt;/p&gt;&apos; )
+ $( &apos;div&apos; ).prepend( &apos;&lt;p&gt;ppp&lt;/p&gt;&apos; )
+</code></pre></li>
+<li><p>insertBefore 等方法<br> 用法:</p>
+<pre><code>$( &apos;&lt;p&gt;pppp&lt;/p&gt;&apos; ).insertBefore( &apos;div&apos; );
+将新创建的 p 标签, 插入到 页面中的 所有的 div 元素的前面
+    如果是单个元素:
+        div.parentNode.insertBefore( newNode, div ); -&gt; f( div, newNode )
+    如果是一个数组
+        div[ i ].parentNode.insertBefore( newNodes[ j ], div[ i ] )
+</code></pre></li>
+<li><p>insertAfter<br> 用法:</p>
+<pre><code>$( &apos;&lt;p&gt;pppp&lt;/p&gt;&apos; ).insertAfter( &apos;div&apos; );
+首先判断是不是最后一个元素: parent.lastChild === currentNode
+如果是最后一个元素则 append
+如果不是则找到后一个元素, 往前加: currentNode.nextSibling... insertBefore...
+</code></pre></li>
+<li><p>after 与 before</p>
+</li>
+</ol>
+<ol start="9">
+<li>其他的亲属节点访问方法<br> .parent()<br> .next()<br> .nextAll()<br> .prev()<br> .prevAll()<br> .siblings()</li>
+</ol>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/15/JS原生框架-5/&title=《JS原生框架-5》 — 人间客栈&pic=https://heima0.github.io/2016/03/15/JS原生框架-5//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/15/JS原生框架-5/&title=《JS原生框架-5》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-5》 — 人间客栈&url=https://heima0.github.io/2016/03/15/JS原生框架-5/&via=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/21/JS原生框架-6/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JS原生框架-6</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/09/JS原生框架-4/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS原生框架-4</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="JS原生框架-5" data-title="JS原生框架-5" data-url="https://heima0.github.io/2016/03/15/JS原生框架-5/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/15/JS原生框架-5/&title=《JS原生框架-5》 — 人间客栈&pic=https://heima0.github.io/2016/03/15/JS原生框架-5//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/15/JS原生框架-5/&title=《JS原生框架-5》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-5》 — 人间客栈&url=https://heima0.github.io/2016/03/15/JS原生框架-5/&via=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/15/JS原生框架-5/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACF0lEQVR42u3aQZLjMAgF0Nz/0jMXaCsfUBaWnlepdCzruasoEHw+8fVvcD2ttn7W5xcXBgbGaxnJJp62tf7N01/X6yd3/UHFwMC4gLEOfE+fq4CclO8NAwMDIw+dSZjO78LAwMDYxZiUxNXkEgMDA6MXBNfF7a4yeHMtjoGB8ULGPET+7vNP+hsYGBivYsybkflx2/qobtIoxcDAOJuRB7jqIMU6WVyvU90PBgbG2YzJgEUPkySdZRgGBsYFjOrmJmVw/lIKAxwYGBgXMPKg2XvYpHkZvTgMDIyjGXnCV03yeivnR3sYGBj3MPL0K186H+pKksKotYmBgXENI7+tGo4nQxXRyhgYGEczJkMP1aJ3b5vh8fcYGBiHMpKA2ytr8zCdr//l/4CBgXEoYxJwe0F2PmyBgYFxD6OaqFW/qR6lNcEYGBhHM3rH9FVkfvWSTgwMjLMZk8Ov6itICtFe6omBgXE2YxJw9w5kzJNUDAyM2xh5OToJlHkgjnJCDAyMCxjJdqsFanVzo8M+DAyMixnJEVhvVKJ6xPblLgwMjEMZvYP7/AGTzRWoGBgYRzMmbc5qIM5fzbpU7pW7GBgYb2dMBiCqYXreEsDAwLiZMW869ma0es0ADAwMjJyRtDajcBn/5ktFjoGBgREXq73SNPlmW8DFwMB4IWPXwES1HO2FVwwMjNsY+YaSg7b5mhvSRAwMjHMY/wGRJ/oI8cX36wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

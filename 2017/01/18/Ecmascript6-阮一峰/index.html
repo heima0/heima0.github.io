@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Ecmascript6-阮一峰 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Ecmascript 6-阮一峰  Ecmascript 6 ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。 Ecmascript 是 JavaScript 语言的标注规范 JavaScript 是 Ecmascript 规范的具体实现 具体实现取决于各大浏览器厂商的支持进度   Ecmascript 6 也被称作 Ecma">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ecmascript6-阮一峰">
+<meta property="og:url" content="https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Ecmascript 6-阮一峰  Ecmascript 6 ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。 Ecmascript 是 JavaScript 语言的标注规范 JavaScript 是 Ecmascript 规范的具体实现 具体实现取决于各大浏览器厂商的支持进度   Ecmascript 6 也被称作 Ecma">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.944Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ecmascript6-阮一峰">
+<meta name="twitter:description" content="Ecmascript 6-阮一峰  Ecmascript 6 ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。 Ecmascript 是 JavaScript 语言的标注规范 JavaScript 是 Ecmascript 规范的具体实现 具体实现取决于各大浏览器厂商的支持进度   Ecmascript 6 也被称作 Ecma">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Ecmascript6-阮一峰</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Ecmascript6-阮一峰</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-18T00:44:25.000Z" itemprop="datePublished" class="page-time">
+  2017-01-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Ecmascript-6"><span class="post-toc-number">1.</span> <span class="post-toc-text">Ecmascript 6</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#let-和-const"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">let 和 const</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解构赋值"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">解构赋值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数组"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">数组</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对象"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#babel"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">babel</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Ecmascript6-阮一峰"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Ecmascript6-阮一峰</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月18日 8:44" datetime="2017-01-18T00:44:25.000Z"  itemprop="datePublished">2017-01-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li>Ecmascript 6-阮一峰</li>
+</ul>
+<h2 id="Ecmascript-6"><a href="#Ecmascript-6" class="headerlink" title="Ecmascript 6"></a>Ecmascript 6</h2><ul>
+<li>ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，已经在2015年6月正式发布了。</li>
+<li>Ecmascript 是 JavaScript 语言的标注规范</li>
+<li>JavaScript 是 Ecmascript 规范的具体实现<ul>
+<li>具体实现取决于各大浏览器厂商的支持进度</li>
+</ul>
+</li>
+<li>Ecmascript 6 也被称作 Ecmascript 2015</li>
+<li>各大浏览器厂商对于最新的 Ecmascript 6 标准支持可以参照：<ul>
+<li><a href="http://kangax.github.io/compat-table/es6/" target="_blank" rel="noopener">http://kangax.github.io/compat-table/es6/</a></li>
+</ul>
+</li>
+<li>对于不支持 ES6 的环境，可以使用一些编译转码工具做转换处理再使用<ul>
+<li>例如 babel</li>
+</ul>
+</li>
+</ul>
+<h3 id="let-和-const"><a href="#let-和-const" class="headerlink" title="let 和 const"></a>let 和 const</h3><ul>
+<li>let 类似于 var，也是用来定义变量的</li>
+<li>通过 let 定义的变量是块级作用域，只在当前代码块有效</li>
+<li>const 也类似于 var，用来定义常量</li>
+<li>通过 const 定义的常量，定义的时候必须初始化</li>
+<li>const 定义的变量一旦定义，不能修改</li>
+<li>let 和 const 都没有作用域提升</li>
+<li>let 和 const 在一个块级作用域中都不能重复定义</li>
+</ul>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>数组解构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c] = [<span class="number">123</span>, <span class="number">456</span>, <span class="number">789</span>]</span><br><span class="line"><span class="built_in">console</span>.log(a, b, c) <span class="number">123</span> <span class="number">456</span> <span class="number">789</span></span><br></pre></td></tr></table></figure>
+<p>对象解构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123; name, age &#125; = &#123; <span class="attr">name</span>: <span class="string">'Jack'</span>, <span class="attr">age</span>: <span class="number">18</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(name, age) Jack <span class="number">18</span></span><br></pre></td></tr></table></figure>
+<p>函数参数解构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span> (<span class="params">p1, &#123; p2 = <span class="string">'aa'</span>, p3 = <span class="string">'bb'</span> &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(p1, p2, p3)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">f(<span class="string">'p1'</span>, &#123; <span class="attr">p2</span>: <span class="string">'p2'</span> &#125;) p1 p2 bb</span><br></pre></td></tr></table></figure>
+<p>字符串解构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a, b, c, d, e] = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">console</span>.log(a, b, c, d, e) h e l l o</span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>模板字符串：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 将一个伪数组转为一个真正的数</span><br><span class="line">Array.from()</span><br><span class="line"></span><br><span class="line">// Array.of方法用于将一组值，转换为数组</span><br><span class="line">Array.of()</span><br><span class="line"></span><br><span class="line">// 查找某个元素</span><br><span class="line">Array.find()</span><br><span class="line"></span><br><span class="line">// 查找某个元素的索引下标</span><br><span class="line">Array.findIndex()</span><br></pre></td></tr></table></figure>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><h3 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h3><hr>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&title=《Ecmascript6-阮一峰》 — 人间客栈&pic=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&title=《Ecmascript6-阮一峰》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ecmascript6-阮一峰》 — 人间客栈&url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&via=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/23/Es6-babel/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Es6+babel</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/08/13/Git-bash、Git基本命令/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Git-bash、Git基本命令</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Ecmascript6-阮一峰" data-title="Ecmascript6-阮一峰" data-url="https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&title=《Ecmascript6-阮一峰》 — 人间客栈&pic=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&title=《Ecmascript6-阮一峰》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Ecmascript6-阮一峰》 — 人间客栈&url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/&via=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/01/18/Ecmascript6-阮一峰/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3awbKDIAxGYd//pb3bztwRz5/gAjisOhUrnwuakFwXHvfPeLr6fyaZn15tDRkyZCzLuIeDzOHL4r/M1yZDhoxzGOTxYzzZmjmMr02GDBkySPCXBo48oJQhQ4aMWRsuv4t8L0OGDBmdJJYvtL99f5iLy5AhY0FGfxHfff6kviFDhoylGHc4amFiem+8KhkyZGzN4BscLwCQBHUc5NXWI0OGjL0Z6TY6nj8+6E/LmXGwKEOGjO0YJCzrBHlpqYDf+xjhypAhY2tG54f4Rjm3veyqLUWGDBlLMXhwVgslZzWToTBRhgwZxzBmtVPMSpuDBgsZMmQczOg0XnRKm+lKZMiQsSsjbmjAmzIPNycUUGXIkHEYI25uCMsGtRfxshIZMmQcwCAH9J02iy+aLWTIkHEOgxcDeFLKiwGdgujLv4cMGTI2ZdQeXOt/qG2ywamhDBkyNmWkaWSn/EleTXqvDBky9mZ0pvKlpJ/JHwDq5pAhQ8YWjHT7S4M8koLy5BaFhjJkyDiGQQ7C0m9qR3sohZYhQ8YBjAuMWRFo5/DuJTSUIUPGdow7HOSRnJSGg4/PlSFDxtYMPmpH+eMNmhc+eQOZDBkydmXM2mTTw7hOkVKGDBlnMtKmirQYkBYvi6msDBkyZJQO4GoHc6hsSS7IkCHjSAbPgzsvIg09ZciQcQKDN1XwrfOLmRNycRkyZCzISNss+oloJ3Gt/YIMGTKWZfwBqYdLqY1X5oAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

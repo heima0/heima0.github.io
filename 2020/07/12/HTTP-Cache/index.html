@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>HTTP Cache | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="简析强制缓存和协商缓存背景介绍  浏览器和服务器进行交互的过程， 时间开销的瓶颈往往出现在数据的传输的过程之中。   这个场景类似介于 A城 到 B城 之间只有一座 “通道” ， 每次想从A城 到 B城 ，必须按照人数交付高昂的路费， 那么如果要减少这种高昂的路费开销的话， 核心思想就是尽可能的减少通过这座 “通道” 的次数又或者减少通过这座通道的“人数”。基于这种理念，在 http协议的基础上，">
+<meta name="keywords" content="浏览器,缓存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP Cache">
+<meta property="og:url" content="https://heima0.github.io/2020/07/12/HTTP-Cache/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="简析强制缓存和协商缓存背景介绍  浏览器和服务器进行交互的过程， 时间开销的瓶颈往往出现在数据的传输的过程之中。   这个场景类似介于 A城 到 B城 之间只有一座 “通道” ， 每次想从A城 到 B城 ，必须按照人数交付高昂的路费， 那么如果要减少这种高昂的路费开销的话， 核心思想就是尽可能的减少通过这座 “通道” 的次数又或者减少通过这座通道的“人数”。基于这种理念，在 http协议的基础上，">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTTP Cache">
+<meta name="twitter:description" content="简析强制缓存和协商缓存背景介绍  浏览器和服务器进行交互的过程， 时间开销的瓶颈往往出现在数据的传输的过程之中。   这个场景类似介于 A城 到 B城 之间只有一座 “通道” ， 每次想从A城 到 B城 ，必须按照人数交付高昂的路费， 那么如果要减少这种高昂的路费开销的话， 核心思想就是尽可能的减少通过这座 “通道” 的次数又或者减少通过这座通道的“人数”。基于这种理念，在 http协议的基础上，">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">HTTP Cache</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">HTTP Cache</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-07-12T12:32:58.000Z" itemprop="datePublished" class="page-time">
+  2020-07-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#简析强制缓存和协商缓存"><span class="post-toc-number">1.</span> <span class="post-toc-text">简析强制缓存和协商缓存</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#背景介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">背景介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#http缓存机制简介"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">http缓存机制简介</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#强制缓存"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">强制缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#协商缓存"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">协商缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#强制缓存-协商缓存"><span class="post-toc-number">1.2.0.3.</span> <span class="post-toc-text">强制缓存 + 协商缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#缓存机制之间的一些区别"><span class="post-toc-number">1.2.0.4.</span> <span class="post-toc-text">缓存机制之间的一些区别</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用小结"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">使用小结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-HTTP-Cache"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">HTTP Cache</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020年07月12日 20:32" datetime="2020-07-12T12:32:58.000Z"  itemprop="datePublished">2020-07-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="简析强制缓存和协商缓存"><a href="#简析强制缓存和协商缓存" class="headerlink" title="简析强制缓存和协商缓存"></a>简析强制缓存和协商缓存</h1><h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>  浏览器和服务器进行交互的过程， 时间开销的瓶颈往往出现在数据的传输的过程之中。</p>
+<p>  这个场景类似介于 A城 到 B城 之间只有一座 “通道” ， 每次想从A城 到 B城 ，必须按照人数交付高昂的路费， 那么如果要减少这种高昂的路费开销的话， 核心思想就是尽可能的减少通过这座 “通道” 的次数又或者减少通过这座通道的“人数”。基于这种理念，在 http协议的基础上， 提出了一种协议缓存， 这种协议缓存又可以细分为 强制缓存 和 协商缓存 两种，分别对应上述减少过桥次数和减少过桥人数的理念。</p>
+<h2 id="http缓存机制简介"><a href="#http缓存机制简介" class="headerlink" title="http缓存机制简介"></a>http缓存机制简介</h2><h4 id="强制缓存"><a href="#强制缓存" class="headerlink" title="强制缓存"></a>强制缓存</h4><p>  强制缓存的思想是，在浏览器内置数据库中缓存每次请求中 “可以被缓存” （受到一些关键字的管控）的静态资源如 image, css, js 文件， 当第二次请求被缓存过的资源时候，会通过校验两个字段 Expires 和 Cache-Control 的max-age字段（注意，Expires 是 http1.0 的产物， Cache-Control 则是 http1.1 的产物。 两者同时存在， 或者只存在其中之一， 都可以触发强制缓存）</p>
+<p>  当满足字段约束的情况下， 浏览器就不会向服务器发送请求而是直接从服务器返回数据， 同时其状态码为 200</p>
+<p>  当不满足字段约束的情况下， 浏览器则会向服务器正常发送请求</p>
+<p>  强制缓存主要取决于两个字段 Expires 和 Cache-Control 中的 max-age 字段， 在两个响应头都存在的情况下， Cache-Control 中的 max-age 字段字段优先级会稍微高一点， 当 Cache-Control 中的 max-age 字段校验成功，会直接返回浏览器内置数据库的缓存， 失效时才会将决策权传递给 Expires 字段判断。</p>
+<p>  这样设计的原因，大概是因为 Expires 字段在设计时存在了这么一个缺陷——Expires字段返回的是服务器的时间， 而非客户端的本机时间。 当存在时差， 或者客户修改本地时间的情况下 Expires 字段会存在失效的可能性，比如 当同一时刻下的服务器时间为 2022/4/26 06:00:00 客户端时间为 2022/4/26 12:00:00 过期时间为两个小时之后， 则服务器会返回 2022/4/26 08:00:00 这个时间对应的值。由于浏览器运行在客户环境下，对于客户而言， 这个缓存已经过期了，虽然缓存确实有效， 但是对于浏览器而言这个缓存确确实实是 “过期了”， 这会导致强制缓存永远不会生效！</p>
+<p>  那么为了解决这个问题， http 1.1 协议中添加了 Cache-Control 中的 max-age， 他是一个相对值， 即客户端获取到这个文件多少秒后失效， 其判别权力全权交由浏览器， 这会相对更准确些。</p>
+<h4 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h4><p>  协商缓存主要由 ETag 和 Last-Modified 两个字段来实现</p>
+<p>  ETag 是一个用于映射 web 资源的映射 token，这个 token 应该满足唯一对应到一 个web服务器上的静态资源（具体实现通常是提取文件相关信息进行hash和base64编码等操作）</p>
+<p>  Last-Modified 则通常是文件最后更新的日期时间戳</p>
+<p>  （通过上述两个字段就可以判断当前文件是否是最新的数据）</p>
+<p>  与上述两个字段配对的分别是 If-None-Match 和 If-Modified-Since 这两个字段</p>
+<p>  浏览器首次向服务器请求数据 A， 服务器正常返回数据，同时在响应头中放入 ETag 和 Last-Modified 两个新字段。</p>
+<p>  当浏览器第二次向服务器请求数据 A 时， 浏览器会自动地在请求头附上 If-None-Match 和 If-Modified-Since 两个字段（分别对应的是 ETag 和 Last-Modified 的值，两两相等）， 然后由服务器端进行校验， 校验通过的话（表明数据有效）， 服务器会直接返回 状态码 304 ，且不携带响应体的报文段， 这相当于告诉浏览器：当前缓存有效， 可以直接使用！ 校验失败则会和首次请求一样， 返回状态码为200且携带数据响应体的报文段， 同时这个响应头会带上新的ETag 和Last-Modified， 为下一次协商缓存做好铺垫 。</p>
+<blockquote>
+<p>注意， 在不用框架的情况下， 协商缓存需要由后端开发人员手动实现，因此 ETag 和 Last-Modified 两个字段的优先级取决于开发者， 但是 Last-Modified 这个字段可以记录的时间戳精确度是有一定限制的，如果连续多次数据更新在精确度范围外， 会产生精确度丢失， 因此通常会让ETag 的优先级高于 Last-Modified 字段（类似于Cache-control中max-age一样， 属于是后续改进协议的一个新字段， 因此优先级一般会高点）</p>
+</blockquote>
+<h4 id="强制缓存-协商缓存"><a href="#强制缓存-协商缓存" class="headerlink" title="强制缓存 + 协商缓存"></a>强制缓存 + 协商缓存</h4><ol>
+<li><p>默认情况下， 浏览器会优先考量强制缓存的情况， 当强制缓存生效的情况下， 请求并不会到达服务器， 因此也就不会触发协商缓存。 当强制缓存失效的时候， 浏览器便会将请求传递到服务器， 于是服务器又会开始校验 If-Modified-Since 和 If-None-math 两个字段， 重复上述协商缓存的一个执行流程</p>
+</li>
+<li><p>乍一看，两者并存的情况， 有点像是两个协议的简单叠加，此时的协商缓存更像是强制缓存的兜底策略， 很可能协商缓存很长一段时间都不会生效（强制缓存过期时间设置过长的情况下）， 因为强制缓存的优先级是要高于协商缓存的。 当然这并不是我们想看到的， 比方说当后端数据确实变更了， 而此时的浏览器由于使用了强制缓存，则会出现数据不一致的情况， 因此在这里引入了请求头中的两个字段 no-cache， 当使用了 no-cache 字段的时候， 浏览器将不再使用强制缓存， 而是直接去请求服务器， 这个时候就会用到协商缓存了（顺带一提的是， 还有一个 no-store 字段， 用了这个字段浏览器则不会在使用缓存的数据也不缓存数据，即强制缓存和协商缓存都失效了）</p>
+</li>
+</ol>
+<h4 id="缓存机制之间的一些区别"><a href="#缓存机制之间的一些区别" class="headerlink" title="缓存机制之间的一些区别"></a>缓存机制之间的一些区别</h4><ul>
+<li>强制缓存在缓存有效的情况下不会去请求服务器， 其数据来源则是浏览缓存的本地磁盘。而协商缓存会向服务器请求，但是在协商缓存成功的情况下， 服务器只会返回一个不带响应体的报文，结合开头的背景来说 强制缓存选择“减少过桥次数”的策略， 而协商缓存则是采用 ‘减少过桥人数’的策略</li>
+<li>强制缓存在浏览器强制刷新的情况下不会生效， 而协商缓存则不受影响。（调试代码测试时候，要注意）</li>
+<li>强制缓存返回的报文状态码为 200， 协商缓存返回的报文状态码为 304 （前端使用fetch请求的情况， 协商缓存的 状态码304 会转成 200）</li>
+<li>强制缓存发生在浏览器端， 协商缓存发生在服务器端</li>
+</ul>
+<h2 id="使用小结"><a href="#使用小结" class="headerlink" title="使用小结"></a>使用小结</h2><p>  强制缓存和协商缓存需要具体条件下来用</p>
+<ul>
+<li>强制缓存存在一个瓶颈， 当浏览器用户强刷新时，浏览器会直接跳过强制缓存， 这点不注意很容易会被忽视掉。</li>
+<li>强制缓存不适合 SPA 应用的入口文件， 因为重新部署后， 用户如果没有强制刷新， 则无法在第一时间内看到新的网页内容。</li>
+<li>作为一个前端开发者可以通过设置请求头中的 no-cache 和 no-store 字段选择使用协商缓存或者不使用缓存！！！</li>
+</ul>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/浏览器/">浏览器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/缓存/">缓存</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2020/07/12/HTTP-Cache/&title=《HTTP Cache》 — 人间客栈&pic=https://heima0.github.io/2020/07/12/HTTP-Cache//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2020/07/12/HTTP-Cache/&title=《HTTP Cache》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HTTP Cache》 — 人间客栈&url=https://heima0.github.io/2020/07/12/HTTP-Cache/&via=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/11/10/Git/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Git</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/04/10/标签marquee/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">标签marquee</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="HTTP-Cache" data-title="HTTP Cache" data-url="https://heima0.github.io/2020/07/12/HTTP-Cache/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2020/07/12/HTTP-Cache/&title=《HTTP Cache》 — 人间客栈&pic=https://heima0.github.io/2020/07/12/HTTP-Cache//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2020/07/12/HTTP-Cache/&title=《HTTP Cache》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《HTTP Cache》 — 人间客栈&url=https://heima0.github.io/2020/07/12/HTTP-Cache/&via=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2020/07/12/HTTP-Cache/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3avZLDIAxFYb//S2ebLVKs8blC3hngUGXyg/VRKAhxXXh8vsbd++NBZvv+9HpjyJAhY1kGefw4rLvg0nf4p3/EIEOGjAMY48Q3fs3T8XiG8bMeYpYhQ4YMkGRr6ZUvmQwZMmSkjPE2MS2DSfKVIUOGDJI65wtaMtvrtbgMGTIWZPB0+f+vX+lvyJAhYynGJxxp+UrCmmmL/v5WhgwZWzN4guPXI9JilReuD/HIkCFjUwY/yq8FzQPiS4DWWIYMGRsx+ETxpOHM6YI+/G/IkCFjOwafrlbc8nZpcwNAhgwZGzH4z8g2kc/PUzAqcWXIkLE1gx/Qp4+ZbyfEyVeGDBlbM8hhWXqBLL1gQRoPU6eJMmTIWJbBy07ewkzZDdtKGTJkHMNI8zTfwNU2kcG1DxkyZBzDqI1eGCHJkCHjHEbvprDWEOX4W7AMGTK2ZsxfsBhPnaZpfjWt+Z6IDBkyFmGkbcv0uI2n8nThZMiQcQ6jlnZnStZayg5qcRkyZGzKSLePJGnOhBtgZMiQcRijqz1QK0p5e6ChFpchQ8ZSjPnERxoJte+j5ZAhQ8amjFpK5QdqHFMsXGXIkHEAY77NyR+cHszVWg4yZMjYldF1qWK+DUC2pzJkyDiZwRMfvxiRhpWmfhkyZMhIN4IkuK7LGbeHbjJkyJAx0Wjk3+cbyob/DRkyZCzFIEVs1xFbim+uxWXIkLEgg5eOXW1LfiGjltxlyJCxEeMHC9RW5NwDvb4AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JS原生框架-6 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="常见问题 这几个模块的js文件，除了第一个core.js，其他的沙箱是不是不需要暴露接口了 这几个模块就存在了一个依赖关系 iquery.core.js  去重函数为什么不能是实例方法而是工具方法不太明白 一般情况, 需要实现某些通用功能的时候, 都是实现一个静态方法, 然后再用这个静态方法 实现一个实例方法, 类似于 map 或 each. 上次的案例有一个算法上的缺陷.     iQuery">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原生框架-6">
+<meta property="og:url" content="https://heima0.github.io/2016/03/21/JS原生框架-6/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="常见问题 这几个模块的js文件，除了第一个core.js，其他的沙箱是不是不需要暴露接口了 这几个模块就存在了一个依赖关系 iquery.core.js  去重函数为什么不能是实例方法而是工具方法不太明白 一般情况, 需要实现某些通用功能的时候, 都是实现一个静态方法, 然后再用这个静态方法 实现一个实例方法, 类似于 map 或 each. 上次的案例有一个算法上的缺陷.     iQuery">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原生框架-6">
+<meta name="twitter:description" content="常见问题 这几个模块的js文件，除了第一个core.js，其他的沙箱是不是不需要暴露接口了 这几个模块就存在了一个依赖关系 iquery.core.js  去重函数为什么不能是实例方法而是工具方法不太明白 一般情况, 需要实现某些通用功能的时候, 都是实现一个静态方法, 然后再用这个静态方法 实现一个实例方法, 类似于 map 或 each. 上次的案例有一个算法上的缺陷.     iQuery">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JS原生框架-6</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JS原生框架-6</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-21T00:46:21.000Z" itemprop="datePublished" class="page-time">
+  2016-03-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-JS原生框架-6"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JS原生框架-6</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年03月21日 8:46" datetime="2016-03-21T00:46:21.000Z"  itemprop="datePublished">2016-03-21</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>常见问题<br> 这几个模块的js文件，除了第一个core.js，其他的沙箱是不是不需要暴露接口了</p>
+<pre><code>这几个模块就存在了一个依赖关系
+iquery.core.js
+</code></pre><p> 去重函数为什么不能是实例方法而是工具方法不太明白</p>
+<pre><code>一般情况, 需要实现某些通用功能的时候, 都是实现一个静态方法, 然后再用这个静态方法
+实现一个实例方法, 类似于 map 或 each.
+上次的案例有一个算法上的缺陷.
+    iQuery.unique = function ( array ) {
+        var arr = [];
+        // 循环, 将唯一的元素加到 这个数组中
+        return arr;
+    }
+iquery 对象包含: [ i ] 索引元素外, 还有 prevObject, 其他方法, ...
+
+如果一定要实现, 必须保证保留 除 索引元素外的所有数据
+    iQUery.unique = function ( iObj ) {
+        var iTmp, arr = [];
+        iObj.each( function ( i, v ) {
+            if ( arr.indexOf( v ) == -1 ) {
+                arr.push( v );
+            }
+        });
+        iTmp = iQuery( arr );
+        iTmp.prevObject = iObj.prevObject;
+        return iTmp;
+    };
+    iQuery.fn.unique = function () {
+        return iQUery.unique( this );
+    };
+</code></pre><p> pushStack 与 end</p>
+<pre><code>var o1 = { name: &apos;jim&apos; };
+假如有一个功能 func( o1, name ) 返回的对象 名字就改了, 改成传入的名字
+要求, 返回新对象, 同时要求可以记录旧对象.
+    function func( o, name ) {
+        o.name = name;
+        return o;
+    }
+如何记录以前的信息呢? 在当前对象中记录以前的信息
+    function func( o, name ) {
+        o.prevName = o.name;
+        o.name = name;
+        return o;
+    }
+如果要访问以前的名字, 即访问 prevName 属性即可.
+如果要访问以前的名字: o.prevName || o.name
+
+我们的逻辑是在链发生改变的时候记录下以前的对象
+    var oldObj = ...;
+    // 新元素一定是一个由数组构成的对象
+    var arr = [ ... ];
+    var newObj = iQuery( arr );
+
+    newObj.prevObject = oldObj;
+
+    return newObj;
+
+$( &apos;div&apos; ).css( &apos;border&apos;, &apos;1px solid red&apos; )
+          .css( &apos;width&apos;, &apos;100px&apos; )
+          .css( ... )
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>推荐书籍<br> 1, dom 程序xxx的艺术<br> 2, js 语言精粹<br> 3, js 权威指南( 犀牛 )<br> 4, js 模式</p>
+</li>
+<li><p>事件操作<br> 在 jq 中如何使用事件?<br> 以 点击事件为例</p>
+<pre><code>$( &apos;.btn&apos; ).click( function () { 
+    ...
+});
+
+$( &apos;#btn&apos; ).on( &apos;click&apos;, function () {
+
+});
+</code></pre><p> iQuery.fn.on = function ( type, callback ) {</p>
+<pre><code>return this.each(function () {
+    this.addEventListener( type, callback );
+});
+</code></pre><p> }<br> iQuery.fn.off = function ( type, callback ) {</p>
+<pre><code>return this.each(function () {
+    this.removeEventListener( type, callback );
+});
+</code></pre><p> }</p>
+<p> iQuery.fn.click = function ( callback ) {</p>
+<pre><code>return this.on( &apos;click&apos;, callback );
+</code></pre><p> }</p>
+</li>
+<li><p>属性操作与样式操作<br> 常用的方法:</p>
+<pre><code>.attr(  )
+.prop(  )
+.html(  )
+.text(  )
+.val(  ) 
+
+.css(  )
+.addClass()
+.removeClass()
+.hasClass()
+.toggleClass()
+</code></pre></li>
+</ol>
+<ol start="5">
+<li><p>压缩合并代码<br> 前段发展的有一批工具可以被使用, 这里的所有工具有一个共同的特征, 就是需要 node 平台</p>
+<p> 谷歌给出了世界上最快的 js 解析引擎, chrome v8</p>
+<p> 将 v8 引擎分离出来, 是的 js 可以脱离 浏览器来运行, 这个就是 node 平台</p>
+<p> 安装 node 环境<br> 1) 在网站 nodejs.org 中下载对应的版本<br> 2) 双击安装<br> 3) 在命令行中输入</p>
+<pre><code>node -v
+和
+npm -v
+检查是否安装成功
+</code></pre></li>
+</ol>
+<pre><code>压缩的准备工作
+-&gt; npm, node 的包管理器
+    包 package, 就是 js 库
+    使用 
+        npm install 包名          安装包, 安装到当前目录的 node_modules 文件夹中
+        如果没有梯子, 就是用: 
+            npm install 包名 --registry=https://registry.npm.taobao.org
+        如果是 mac 系统, 会在 家目录下( ~ ) 创建一个 node_modules 会下载到这来. 如果
+            想要下载到当前目录, 需要手动创建 node_modules 文件夹
+    还可以将包安装到全局
+        npm install -g 包名
+        一般将可执行的或通用的一些包安装到全局
+
+-&gt; 构建工具
+    这些工具都是开源的有很多种, grunt, gulp, webpack 等
+    在这里我们使用 gulp 来实现
+    gulp官网:
+        www.gulpjs.com.cn
+        www.gulpjs.com
+
+-&gt; gulp 的基本使用
+    -&gt; 安装
+        1. 安装全局 gulp 项目
+            npm install -g gulp
+        2. 安装本地的依赖项
+            npm install gulp
+    -&gt; 使用
+        1. 在当前目录下建一个文件 命名为 gulpfile.js
+        2. 在里面编写需要处理的代码
+
+    -&gt; 首先
+        var gulp = require( &apos;gulp&apos; );
+        相当于 html 文件中的 script 标签
+
+        gulp.task( 名字, function () {
+            // 处理代码
+        });
+</code></pre>
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/21/JS原生框架-6/&title=《JS原生框架-6》 — 人间客栈&pic=https://heima0.github.io/2016/03/21/JS原生框架-6//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/21/JS原生框架-6/&title=《JS原生框架-6》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-6》 — 人间客栈&url=https://heima0.github.io/2016/03/21/JS原生框架-6/&via=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/05/10/node的知识点整理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">node的知识点整理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/15/JS原生框架-5/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS原生框架-5</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="JS原生框架-6" data-title="JS原生框架-6" data-url="https://heima0.github.io/2016/03/21/JS原生框架-6/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/03/21/JS原生框架-6/&title=《JS原生框架-6》 — 人间客栈&pic=https://heima0.github.io/2016/03/21/JS原生框架-6//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/03/21/JS原生框架-6/&title=《JS原生框架-6》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-6》 — 人间客栈&url=https://heima0.github.io/2016/03/21/JS原生框架-6/&via=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/03/21/JS原生框架-6/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACE0lEQVR42u3aQW7DMAwEQP//0+0DiiS7lF0g0vgUtG6s8WErkbyu+PpZuF592/tnXU9cGBgYX8tIFtHe83dB7ffnz8XAwDiH8T74Xn1uATkpXxsGBgZGu/QZAAMDA+OJwE0Oq8kxNd9cYmBgYMxC8P1j8mPqSkBjYGCcwFiPyOc+P9LfwMDA+CrGXc3I2UE033R+WBUGBsbWjDzgZrB2AzpbDwYGxjmMlahtf5sEbj0ohoGBcRijPcq2J818c5kX5jAwME5gzIpr7fF11hKoK4IYGBgbMdbLavnQRrLta0MfAwPjHMYs8vJltQmZRDkGBsZpjHZj15bDVoYqomMtBgbG1ox86GFWAssblm24v7wfAwNjU0ZeXKvbiqOiXr6trHMdAwPjaxnJRrCN4JW2aELCwMA4h5GXumblubaUNgRjYGAcwGijs43F/JptOjEwME5g5F+xfn/78yiyMTAwtmbM2oR3bexy0lLzEgMDY1NGXsq/twyXvI4PRTcMDIytGUkg5ve0cdwW+zAwME5mtJG3MirRltg+/BUGBsamjLsK93eF7JCKgYGxNWPWJWwPrm2sJ4fq2T8GDAyM72WsDECsDGTkLYGoOYqBgXEAIw++9s4nmgEYGBgYd+00i7gsR8qu9mEYGBiHMYqeQ/lSZkMeGBgY5zBmAxN5aN4brxgYGKcxVsYp/n9EI3+JGBgYWzB+AUmfiYci157rAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

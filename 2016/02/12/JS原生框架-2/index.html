@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JS原生框架-2 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原生框架-2">
+<meta property="og:url" content="https://heima0.github.io/2016/02/12/JS原生框架-2/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原生框架-2">
+<meta name="twitter:description" content="迭代 就是循环 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本. 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本. 这个过程就是迭代过程.  例如使用 DOM-Core 方法设置 div 的样式     设置 div 的宽度为 300px  div.style.width = ‘300px’;  div.setAttribute( ‘style’, ‘w">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JS原生框架-2</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JS原生框架-2</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-02-12T11:41:29.000Z" itemprop="datePublished" class="page-time">
+  2016-02-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-JS原生框架-2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JS原生框架-2</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年02月12日 19:41" datetime="2016-02-12T11:41:29.000Z"  itemprop="datePublished">2016-02-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>迭代<br> 就是循环<br> 产品迭代, 将一个产品做出来, 做出一个 “稳定” 版本.<br> 在其基础上通过需求调整, 算法的调整等等一系列调整得到一个新的 “稳定” 版本.<br> 这个过程就是迭代过程.</p>
+<p> 例如使用 DOM-Core 方法设置 div 的样式</p>
+ <div style="width: 200px; height: 100p; border: 1px dashed red;"></div>
+
+<p> 设置 div 的宽度为 300px</p>
+<p> div.style.width = ‘300px’;</p>
+<p> div.setAttribute( ‘style’, ‘width: 300px; height: 100p; border: 1px dashed red;’ )</p>
+<p> var style = div.getAttribute( ‘style’ );<br> var styles = style.split( ‘;’ );<br> var styleObj = {};<br> styles.forEach(function ( v ) {</p>
+<pre><code>var tmp = v.split( &apos;:&apos; );
+// 要修改样式只需要修改对象的属性即可
+styleObj[ tmp[ 0 ] ] = tmp[ 1 ];
+</code></pre><p> });</p>
+<p> // …<br> // 要修改样式只需要修改对象的属性即可, 最后要修改标签的时候<br> var style2 = $.map( styleObj, function ( v, k ) {</p>
+<pre><code>return k + &apos;:&apos; + v;
+</code></pre><p> }).join( ‘;’ );     //将返回的数组 join成字符串，之间用 ; 连接。<br> // …</p>
+</li>
+</ol>
+<pre><code>在 jq 中 
+append 表示的是追加, 含义是将 后面参数中的 DOM 追加到 前面 对象的 子元素的结尾处. 与
+    appendChild 一致.
+$( &apos;body&apos; ).append( $( &apos;&lt;img src=&quot;....jpg&quot;/&gt;&apos; ) )
+与
+body.appendChild( img ) 
+是一样的
+
+appendTo 表示追加, 含义讲前面的元素 追加到 后面的元素的子元素的结尾处.
+$( &apos;&lt;img src=&quot;...jpg&quot;/&gt;&apos; ).appendTo( &apos;body&apos; )
+
+function each( arr, callback ) {
+
+} 
+
+each( [ 1, 2, 3 ], function ( v, i ) { 
+
+    // ...
+
+})
+
+1&gt; 函数中如果没有代码 数组的每一项就什么也不做
+2&gt; 函数中写什么代码 数组中的每一项就做什么事情
+3&gt; 也就是说函数在处理数组的每一项
+
+由于要处理每一项, 因此必须要遍历数组的每一个元素
+即有
+function each( arr, callback ) {
+    for ( var i= 0; i &lt; arr.length; i++ ) {
+        var item = arr[ i ];
+    }
+} 
+使用函数处理每一项就是用函数处理 item 就是说将 item 传入函数处理
+function each( arr, callback ) {
+    for ( var i= 0; i &lt; arr.length; i++ ) {
+        var item = arr[ i ];
+        callback( item );
+    }
+}
+
+// 按照 数组的 forEach 方法实现 自己的 each 方法
+// 要求 有两个参数, 一个是需要遍历的数组, 一个是回调函数, 要求回调函数有两个参数, 分别是 v, i
+function each( arr, callback ) {
+    for ( var i = 0; i &lt; arr.length; i++ ) {
+        callback( arr[ i ], i );
+    }
+}
+
+// 改良第一步, 添加 this 的引用, 参数向 jq 靠拢
+function each( arr, callback ) {
+    for ( var i = 0; i &lt; arr.length; i++ ) {
+        callback.call( arr[ i ], i, arr[ i ] );
+    }
+}
+// 第二次改良, 在返回 false 的时候跳出循环, 注意, 返回 undefined, 0, 等不会跳出
+// 所以这里一定有一个 完全等于 , 跳出循环就是跳出 each 函数内的 for 即需要 break
+function each( arr, callback ) {
+    for ( var i = 0; i &lt; arr.length; i++ ) {
+        if ( callback.call( arr[ i ], i, arr[ i ] ) === false ) break;
+    }
+}
+// 第三个改良就是返回被遍历的对象
+function each( arr, callback ) {
+    for ( var i = 0; i &lt; arr.length; i++ ) {
+        if ( callback.call( arr[ i ], i, arr[ i ] ) === false ) break;
+    }
+    return arr;
+}
+
+遍历对象与遍历数组 有什么区别?
+-&gt; 遍历对象是将对象的所有键值对遍历出来( 包括自然数项, 如果有的话 )
+-&gt; 遍历数组就是在遍历自然数项
+
+让我们的 each 方法可以遍历对象
+要求, 不考虑数组, 只用 each 遍历对象 代码怎么写?
+function each( obj, callback ) {
+    for ( var k in obj ) {
+        if ( callback.call( obj[ k ], k, obj[ k ] ) === false ) break;
+    }
+    return obj;
+}
+
+判断是不是 数组或伪数组 的依据就是 length &gt;= 0
+对象没有length属性;
+
+function each( arr, callback ) {
+    if ( arr.length &gt;= 0 ) {
+        for ( var i = 0; i &lt; arr.length; i++ ) {
+            if ( callback.call( arr[ i ], i, arr[ i ] ) === false ) break;
+        }
+    } else {
+        for ( var k in arr ) {
+            if ( callback.call( arr[ k ], k, arr[ k ] ) === false ) break;
+        }
+    }
+    return arr;
+}
+</code></pre><ol start="3">
+<li><p>封装 map</p>
+<p> 首先考虑, 只是处理 v 返回 结果( 实现一个 与 数组 的 map 一样的方法 )<br> function map( arr, callback ) {</p>
+<pre><code>var rest = [];
+for ( var i = 0; i &lt; arr.length; i++ ) {
+    // 要返回的数据是 回调函数的 返回值
+    rest.push( callback( arr[ i ], i ) );
+}
+return rest;
+</code></pre><p> }<br> // 向 jq 靠拢<br> // 1&gt; 不返回则不加到数组中<br> // 2&gt; 遍历对象<br> function map( arr, callback ) {</p>
+<pre><code>var rest = [], tmp;
+if ( arr.length &gt;= 0 ) {
+    for ( var i = 0; i &lt; arr.length; i++ ) {
+        //为什么是 null，如果 return undefined；jq中没有return 是【】。
+        tmp = callback( arr[ i ], i );
+        if ( tmp != null ) {
+            rest.push( tmp );
+        }
+    }
+} else {
+    for ( var k in arr ) {
+        tmp = callback( arr[ k ], k );
+        if ( tmp != null ) {
+            rest.push( tmp );
+        }
+    }
+}
+return rest;
+</code></pre><p> }</p>
+</li>
+</ol>
+<ol start="4">
+<li><p>再回到原始的问题<br> 使用 jq 来实现, 应该怎么写<br> $( ‘div, p’ ).each( … )</p>
+<p> 在 jq 中有两组遍历方法, 一个是静态的 each 和 map, 例如</p>
+<pre><code>$.map( arr, callback )
+$.each( arr, callback )
+</code></pre><p> 静态的方法遍历的是传入的对象或数组<br> 除此之外 jq 还提供了一组实例方法</p>
+<pre><code>$( ... ).each( function () { ... } )
+$( ... ).map( function () { ... } )
+</code></pre><p> 实例方法中遍历当前 jq 对象.</p>
+<pre><code>$( &apos;div&apos; ) 
+</code></pre><p> jq 的本质就是 伪数组<br> 利用 jq 判断页面中某一个元素是否存在: $( ‘…’ ).length &gt; 0</p>
+</li>
+<li><p>框架的核心结构<br> 需求:<br> 1&gt; 有一个函数, 可以实现元素的获取功能( select -&gt; Array )<br> 2&gt; 这个函数返回的对象具有 each 方法. 该方法只有一个 回调函数的 参数, 用于遍历每一个对象.</p>
+<p> 先把函数写出来<br> function I( selector ) {</p>
+<p> }<br> 该函数可以获取元素<br> function I( selector ) {</p>
+<pre><code>var list = document.querySelectorAll( selector ); // 伪数组
+</code></pre><p> }<br> 返回的数据应该就是这个 list, 但是又需要有 each<br> 所以可以考虑直接让 list 带有 each 方法</p>
+<p> //list.each = function(callback){</p>
+<pre><code>//将其每一项传到回调函数中，each(this,callback);
+</code></pre><p> //};</p>
+<p> function I( selector ) {</p>
+<pre><code>var list = document.querySelectorAll( selector ); // 伪数组
+list.each = function ( callback ) {
+    // 调用 该方法就是在 遍历 list 并将每一个元素用 callback 进行处理
+    each( this, callback );
+}
+return list
+</code></pre><p> }</p>
+</li>
+<li><p>引入构造函数( init )<br> 知道 list 是一个有 qsa 方法返回的对象, 每次提供 each 方法不合理, 而且 jq 有很多方法<br> 所以借助 oop 的知识应该使用 继承. 利用构造函数来创建 “list 对象”, 但是继承自提供<br> each 等方法的原型对象.</p>
+<p> function F( selector ) {</p>
+<pre><code>// 给 this 加 伪数组项
+</code></pre><p> }<br> F.prototype.each = function () {</p>
+<p> }</p>
+<p> 考虑到 list 中每次都添加方法不合理, 而且冗余, 因此使用构造函数创建对象( 伪数组 ).<br> 让构造函数.prototype 提供各种方法, 那么实例对象( 伪数组 )就可以使用这些方法了.</p>
+<p> function F( selector ) {</p>
+<pre><code>// 给 this 加 伪数组项
+var list = document.querySelectorAll( selector );
+for( var i = 0; i &lt; list.length; i++ ) {
+    this[ i ] = list[ i ];
+}
+this.length = list.length;
+</code></pre><p> }<br> F.prototype.each = function ( callback ) {</p>
+<pre><code>each( this, callback );
+</code></pre><p> };</p>
+<p> 升级一下<br> function F( selector ) {</p>
+<pre><code>// 给 this 加 伪数组项
+//这一步是给 新建对象初始化，将伪数组每一项附给 this。
+[].push.apply( this, document.querySelectorAll( selector ) );
+</code></pre><p> }<br> F.prototype.each = function ( callback ) {</p>
+<pre><code>each( this, callback );
+</code></pre><p> };</p>
+<p> 如何使用呢?<br> new F( ‘div, p’ ).each( … )</p>
+</li>
+</ol>
+<ol start="7">
+<li><p>隐藏 new 关键字<br> 考虑引入函数<br> function iQuery( selector ) {</p>
+<pre><code>return new F( selector );
+</code></pre><p> }<br> var I = iQuery;</p>
+<p> 引入沙箱<br> 从沙箱中如果要暴露一些函数或对象采用方法有三种( 常用 )<br> 1&gt; 利用 window 参数</p>
+<pre><code>(function ( window ) {
+
+    window.xxx = vvv;
+})( window );
+</code></pre><p> 2&gt; 利用 返回值( 例如 Sizzle )</p>
+<pre><code>var Sizzle =
+(function () {
+
+    return xxx;
+})();
+</code></pre><p> 3&gt; 利用 this 映射</p>
+<pre><code>(function () {
+    // 这里的this 代表window。
+    this.xxx = vvv;
+})();
+</code></pre></li>
+</ol>
+<p>  缺点:<br>     1&gt; 代码结构凌乱. 优化结构.<br>     2&gt; 无法实现扩展, 只有在该文件中实现代码结构.  // ?不是引入沙箱模式了吗？</p>
+<ol start="8">
+<li><p>可扩展性<br> 1&gt; 可以将 iQuery 的一个属性指向构造函数</p>
+<pre><code>var iQuery = function ( selector ) {
+    return new F( selector );
+};
+...
+iQuery.F = F;
+...
+
+此时对外的扩展
+iQuery.F.prototype.xxx = vvv;
+</code></pre><p> 2&gt; 在 jq 中采用是原型映射的办法, jq 中将 对外公开的 jquery 函数 与 构造函数 的原型用一个对象表示</p>
+<pre><code>// 类比
+F.prototype = {};
+iQuery.prototype = F.prototype;
+
+//===============================================================
+
+var jQuery = function ( selector ) {
+    return ...( selector );
+};
+
+jQuery.prototype = {
+    // 对象
+    constructor: jQuery,
+    each: function () ....
+};  
+
+var init = function ( selector ) {
+    // ... 构造函数 ...
+    // [].push.apply( this, document.querySelectorAll( selector ) );
+};
+
+init.prototype = jQuery.prototype;
+
+//===============================================================
+
+// 在 jq 中又 进一步处理
+// 将 init 函数作为 jquery 的原型的一个方法
+// 将所有的方法挂载到 jQuery 上, 便于优化与更新
+
+//init应该指的是构造函数，目的是为了在外面能够直接修改方法。
+
+// jquery 1.7 以后的写法
+var jQuery = function ( selector ) {
+    return new init1( selector );
+    return new jQuery.fn.init( selector );
+};
+
+jQuery.fn = jQuery.prototype = {
+    // 对象
+    constructor: jQuery
+};  
+
+var init1 = jQuery.fn.init = function ( selector ) {
+    // ...
+};
+
+//静态成员？
+
+//这一步存在的意义？
+//答：因为在外界如果要改构造函数方法。需要jQuery.fn.init 才能访问到 构造函数，那么问题来了，因为外界不知道有这么一个 init方法。所以，可以让构造函数的原型和 jQuery 公用一个原型，这样就能通过修改jQuery的原型，进而对构造函数进行修改。
+init1.prototype = jQuery.fn;
+
+等价的写法
+
+// jquery 1.7 以前的写法
+var jQuery = function ( selector ) {
+    return new jQuery.fn.init( selector );
+};
+
+jQuery.fn = jQuery.prototype = {
+    // 对象
+    constructor: jQuery,
+    init: function ( selector ) {
+        // ...
+    }
+};  
+
+jQuery.fn.init.prototype = jQuery.fn;
+</code></pre></li>
+</ol>
+<ol start="9">
+<li>代码结构</li>
+</ol>
+<p> 1.为什么 forEach 中的回调函数会有第三个参数<br>    arr.forEach( function ( v, i, arr ){<br>        1) 代码要运行就会被解析，一解析就会创建对象<br>    }</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/02/12/JS原生框架-2/&title=《JS原生框架-2》 — 人间客栈&pic=https://heima0.github.io/2016/02/12/JS原生框架-2//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/02/12/JS原生框架-2/&title=《JS原生框架-2》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-2》 — 人间客栈&url=https://heima0.github.io/2016/02/12/JS原生框架-2/&via=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/02/14/JS原生框架-3/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JS原生框架-3</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/02/08/JS原生框架-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS原生框架-1</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="JS原生框架-2" data-title="JS原生框架-2" data-url="https://heima0.github.io/2016/02/12/JS原生框架-2/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/02/12/JS原生框架-2/&title=《JS原生框架-2》 — 人间客栈&pic=https://heima0.github.io/2016/02/12/JS原生框架-2//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/02/12/JS原生框架-2/&title=《JS原生框架-2》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-2》 — 人间客栈&url=https://heima0.github.io/2016/02/12/JS原生框架-2/&via=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/02/12/JS原生框架-2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aSZbCMAwFQO5/6e4D8BK+JLJArqx4DI4rC2ENr1d8/Q2uq9Xu7/V64sLAwPhZRrKJ6nfeN1RdP78vBgbGOYz7wHf1ugrISfneMDAwMKpb7wEwMDAwngi492lqkm/moRkDAwNjEgSvMNU0dRKgMTAwTmDMQ+Rzrx/pb2BgYPwU47vNyGp5Lm8efNgVBgbGakYe4HJe8n6yQr4fDAyM3Yzq8ESy3eTT++BbhmFgYBzMmGwu/+18yAwDA2M3o1dom4xK9FoCj9QLMTAwfopRLasl4Hz96tYvP8XAwFjKqA5gVRPOHFYdy8DAwDiNkQN6B7jJUEW0MgYGxmpGNVm9T03z8dPewTR6fBgYGEsZk8JZXg6rHiLLzVEMDIzVjGoDIC/o9w6OCQkDA+McRqGkFQ9A5Ee6eTJ8mYtjYGAsZczL9EmCWh3XiA6aGBgYBzB6hfg8ROYJcO/oiYGBsZvRazr2WpK9oY1JUMbAwNjESIYtqsF33s6sptAYGBjnMPII3Ru5SAL9qD2AgYGxmlFdotcpnZfYPgRcDAyMdYxe4T6/wWRzBSoGBsZqRn4lS9+H3fzRJOvnjwkDA2MHozoA0RvOmLQEouYoBgbGAYw88H3rPNb7B7hcDQMDA6M1mFUIl/F3PmTkGBgYGHFA7KWmvWQYAwPjHEaemuahc9JaKIdsDAyM1YxeGK22Ob81ohEdEzEwMPYw/gF1Q5NhCbgDtwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

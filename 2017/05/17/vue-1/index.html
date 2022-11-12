@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-1 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-1">
+<meta property="og:url" content="https://heima0.github.io/2017/05/17/vue-1/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://image.beekka.com/blog/2015/bg2015020105.png">
+<meta property="og:image" content="http://image.beekka.com/blog/2015/bg2015020108.png">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.949Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-1">
+<meta name="twitter:description" content="Vue的介绍、性能与AngularJS的对比Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低 AngularJS是强主张的，而Vue更灵活 Vue的数据流是单向的，数据流行更清晰 Angular">
+<meta name="twitter:image" content="http://image.beekka.com/blog/2015/bg2015020105.png">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-1</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-1</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-17T07:58:49.000Z" itemprop="datePublished" class="page-time">
+  2017-05-17
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Vue的介绍、性能"><span class="post-toc-number">1.</span> <span class="post-toc-text">Vue的介绍、性能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#与AngularJS的对比"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">与AngularJS的对比</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vue的使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Vue的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Vue的实例"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">Vue的实例</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mvc-mvvm"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">mvc/mvvm</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-1"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-1</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年05月17日 15:58" datetime="2017-05-17T07:58:49.000Z"  itemprop="datePublished">2017-05-17</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="Vue的介绍、性能"><a href="#Vue的介绍、性能" class="headerlink" title="Vue的介绍、性能"></a>Vue的介绍、性能</h2><h3 id="与AngularJS的对比"><a href="#与AngularJS的对比" class="headerlink" title="与AngularJS的对比"></a>与AngularJS的对比</h3><p>Vue的很多api、特性都与angularJS相似，其实是因为Vue在开发的时候借鉴了很多AngularJS中的特点，而AngularJS中固有的缺点，在Vue中已经解决，也就是青出于蓝而胜于蓝，Vue的学习成本比AngularJS低很多，因为复杂性就低</p>
+<p>AngularJS是强主张的，而Vue更灵活</p>
+<p>Vue的数据流是单向的，数据流行更清晰</p>
+<p>Angular里指令可以是操作dom的，也可以封装一段结构逻辑代码，例如：广告展示模块</p>
+<p>Vue中的指令只是操作dom的，用组件来分离结构逻辑</p>
+<p>AngularJS的性能比不上Vue</p>
+<h3 id="Vue的使用"><a href="#Vue的使用" class="headerlink" title="Vue的使用"></a>Vue的使用</h3><p>Vue不支持IE8，因为使用了ES5的很多特性</p>
+<p>可以直接通过script标签来引入vue.js，有开发版本和生产版本，开发版本一般我们在开发项目的时候引入，当最后开发完成上线的时候引入生产版本，开发版本没有压缩的，并且有很多提示，而生产版本全部删掉了</p>
+<p>在Vue中提供了一个脚手架（命令行工具）可以帮我们快速的搭建基于webpack的开发环境…</p>
+<h4 id="Vue的实例"><a href="#Vue的实例" class="headerlink" title="Vue的实例"></a>Vue的实例</h4><p>每一个应用都有一个根实例，在根实例里我们通过组件嵌套来实现大型的应用</p>
+<p>也就是说组件不一定是必须的，但是实例是必须要有的</p>
+<p>在实例化实例的时候我们可以传入一个；配置项，在配置项中设置很多属性方法可以实现复杂的功能</p>
+<p>在配置中可以设置el的属性，el属性代表的是此实例的作用范围</p>
+<p>在配置中同过设置data属性来为实例绑定数据</p>
+<h3 id="mvc-mvvm"><a href="#mvc-mvvm" class="headerlink" title="mvc/mvvm"></a>mvc/mvvm</h3><p><a href="http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html" target="_blank" rel="noopener">阮大神博客</a></p>
+<p>mvc 分为三层，其实M层是数据模型层，它是真正的后端数据在前端js中的一个映射模型，他们的关系是：数据模型层和视图层有映射关系，model改变，view展示也会更改，当view产生用户操作或会反馈给controller，controller更改model，这个时候view又会进行新的数据渲染</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://image.beekka.com/blog/2015/bg2015020105.png" alt="MVC" title="">
+                </div>
+                <div class="image-caption">MVC</div>
+            </figure>
+<p>这是纯纯的MVC的模式，但是很多框架都会有一些更改</p>
+<p>前端mvc框架，如angularjs，backbone：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://image.beekka.com/blog/2015/bg2015020108.png" alt="前端MVC" title="">
+                </div>
+                <div class="image-caption">前端MVC</div>
+            </figure>
+<p>会发现，用户可以直接操作controller（例如用户更改hash值，conrtoller直接监听hash值变化后执行逻辑代码，然后通知model更改）</p>
+<p>控制器可以直接操作view，如果，让某一个标签获得进入页面获得焦点，不需要model来控制，所以一般会直接操作（angularJS，指令）</p>
+<p>view可以直接操作model （数据双向绑定）</p>
+<p>MVP:</p>
+<p><a href="http://image.beekka.com/blog/2015/bg2015020109.png" target="_blank" rel="noopener">mvp</a></p>
+<p>view和model不能直接通信，所有的交互都由presenter来做，其他部分的通信都是双向的</p>
+<p>view较薄 ，presenter较为厚重</p>
+<p>MVVM：</p>
+<p><a href="http://image.beekka.com/blog/2015/bg2015020110.png" target="_blank" rel="noopener">mvvm</a></p>
+<p>MVVM和MVP及其相似，只是view和viewmodel的通信是双向绑定，view的操作会自动的像viewmodel通过</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/05/17/vue-1/&title=《vue-1》 — 人间客栈&pic=https://heima0.github.io/2017/05/17/vue-1//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/05/17/vue-1/&title=《vue-1》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-1》 — 人间客栈&url=https://heima0.github.io/2017/05/17/vue-1/&via=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/06/05/vue-2/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-2</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/27/浅谈tap-highlight-color/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">浅谈tap-highlight-color与::selection</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-1" data-title="vue-1" data-url="https://heima0.github.io/2017/05/17/vue-1/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2017/05/17/vue-1/&title=《vue-1》 — 人间客栈&pic=https://heima0.github.io/2017/05/17/vue-1//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2017/05/17/vue-1/&title=《vue-1》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-1》 — 人间客栈&url=https://heima0.github.io/2017/05/17/vue-1/&via=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2017/05/17/vue-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3aQY7CMAwFUO5/6c4WCRW+7dbqSC8rREP6wsKK7bxe8Tg+Rj7zfX6+zmjg4uKOucfX8T7n81fVp/k2TreEi4u7yD2LGMkr8+CVb/j0e1xc3Edyv/+2NxMXF/f/cqvHmu8r4+LiPp/bK2dUk6XVXA0XF3fAzauU932+pb6Li4vb4h7F0WuxVMPW6dtxcXFXuL1WSl4KSeh5soSLi7vJzRsnvSJINfxFfwcuLu5t3Pw1k0ZpvsKPAgouLu4it3rBIi+dJCsUrnDh4uKucPPUJS9/9IJX0m7BxcXd4faCS/W61SQ1Gp2zcHFxB9wkYFULJTmlkDLh4uIucqvtjeom86sYPzaDi4u7wp1cpJjPmfxluLi4O9xqQWQS4JLiyKs3cHFxV7iTYkee2FwQwnBxcS/lJqnLPLHJr2sUGiq4uLiL3EnbYxLaojm4uLg3c4/i6CUnySEmeoqLi7vCvaM4kudb1eMOLi7uJjcPXtVg1wtV0Q1TXFzcFW5eJO01XOclWlxc3Cdz89ZpcjAqN2JxcXEfzO2VQedBDRcXd5Pba6lWg9QFl7RwcXFXuJNUJN9e0pqtroOLi3sD9w9tSJp5yEmO3gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

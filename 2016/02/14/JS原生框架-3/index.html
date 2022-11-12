@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JS原生框架-3 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="每天坚持多看看 今天主要内容：复习经常会遇到的问题整理一下正则表达式的用法 问题  1.为什么 forEach 中的回调函数有第三个参数  arr.forEach( function ( v, i, arr ) { ... } ) 1) 代码要运行就会被解析, 已解析就会创建对象     for ( var i = 0; i &amp;lt; 10; i++  ){         var o = {}">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS原生框架-3">
+<meta property="og:url" content="https://heima0.github.io/2016/02/14/JS原生框架-3/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="每天坚持多看看 今天主要内容：复习经常会遇到的问题整理一下正则表达式的用法 问题  1.为什么 forEach 中的回调函数有第三个参数  arr.forEach( function ( v, i, arr ) { ... } ) 1) 代码要运行就会被解析, 已解析就会创建对象     for ( var i = 0; i &amp;lt; 10; i++  ){         var o = {}">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.947Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS原生框架-3">
+<meta name="twitter:description" content="每天坚持多看看 今天主要内容：复习经常会遇到的问题整理一下正则表达式的用法 问题  1.为什么 forEach 中的回调函数有第三个参数  arr.forEach( function ( v, i, arr ) { ... } ) 1) 代码要运行就会被解析, 已解析就会创建对象     for ( var i = 0; i &amp;lt; 10; i++  ){         var o = {}">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JS原生框架-3</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JS原生框架-3</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-02-14T02:44:45.000Z" itemprop="datePublished" class="page-time">
+  2016-02-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#今天主要内容：复习经常会遇到的问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">今天主要内容：复习经常会遇到的问题</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#整理一下正则表达式的用法"><span class="post-toc-number">2.</span> <span class="post-toc-text">整理一下正则表达式的用法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-JS原生框架-3"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JS原生框架-3</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年02月14日 10:44" datetime="2016-02-14T02:44:45.000Z"  itemprop="datePublished">2016-02-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ol>
+<li><p>每天坚持多看看</p>
+<h6 id="今天主要内容：复习经常会遇到的问题"><a href="#今天主要内容：复习经常会遇到的问题" class="headerlink" title="今天主要内容：复习经常会遇到的问题"></a>今天主要内容：复习经常会遇到的问题</h6><h6 id="整理一下正则表达式的用法"><a href="#整理一下正则表达式的用法" class="headerlink" title="整理一下正则表达式的用法"></a>整理一下正则表达式的用法</h6></li>
+<li><p>问题<br>  1.为什么 forEach 中的回调函数有第三个参数 </p>
+<pre><code>arr.forEach( function ( v, i, arr ) { ... } )
+1) 代码要运行就会被解析, 已解析就会创建对象
+    for ( var i = 0; i &lt; 10; i++  ){
+        var o = {};
+    } 
+2) forEach 与 setInterval 等函数一样, 回调函数会被多次解析
+    因此会造成一定的 性能问题, 因此应该考虑将函数独立的书写在外面,
+    使用的时候作为参数传入.
+
+    // 设置一个非常限制级的条件
+    // ...
+    function getFoo () {
+
+        return function foo( v, i, arr ) {
+            // 可以访问到被遍历的数组么?
+        }
+
+    }
+    // ...
+    function mainFunc( foo ) {
+        // ...
+        arr.forEach( foo );
+    } 
+    // ...
+    mainFunc( getFoo() )
+</code></pre></li>
+</ol>
+<pre><code>2.jq 中 map 与 each 中回调函数的参数为什么不同
+   1) 数组中的参数全部都是 v, i
+   2) jq 中 map 是 v, i; each 是 i, v
+
+   arr.forEach(function ( v, i ) {
+       // 操作元素
+       // 使用 v
+   })
+
+   jq 中 map 也是因为使用的频率, 所以 i 在后面, v 在前面
+   但是 each 呢? 因为 this 就是遍历的对象, 开发的时候基本不会写参数
+   $.each( nodeList, function () {
+       this.style...
+   } )
+
+3.$(&quot;&lt;p/&gt;&quot;).appendTo(&quot;div&quot;).addClass(&quot;test&quot;).end().addClass(&quot;test2&quot;)
+   执行过程
+       $(&quot;&lt;p/&gt;&quot;)           创建 DOM 对象 -&gt; 包装成 jq 对象
+       .appendTo(&quot;div&quot;)    追加到页面中的 div 中( 注意: 标签的拷贝 )
+       .addClass(&quot;test&quot;)   将所有的 p 标签增加 class 演示
+       .end()              恢复最近的一次破坏, 即一个 p 标签的情况
+       .addClass(&quot;test2&quot;)  给这一个 p 标签, 添加 类演示 
+
+   链式编程就是工厂的流水线
+</code></pre><ol start="3">
+<li><p>工具<br> everything<br> rquickExpr=/^(?:\s<em>(&lt;[\w\W]+&gt;)[^&gt;]</em>|#([\w-]*))$/, 老师这个正则表达式能不能讲讲<br> 正则表达式( regular expression )<br> RegExp<br> 用处: 匹配, 验证; 替换, 截取, 分析<br> 要求:<br> 1&gt; 记住元字符</p>
+<pre><code>基本元字符:
+    .               匹配任意的非换行字符, 常常表示通用元字符使用 [\s\S]
+    []              匹配一个出现在 [] 中的字符, [123456789123456789123456789], [a-z0-9A-Z]
+                    计算机只认识 数字, 所以我们写的字符串计算机其实不是以字符串的形式存储
+                    有一个编码系统: unicode
+                        &apos;0&apos;                 48
+                        &apos;1&apos;                 49
+                        ...
+                        &apos;9&apos;                 57
+                    写上:  &apos;012&apos; , 在内存中存储: 48 49 50 
+                    需要记住的是:
+                        &apos;0&apos;                 48
+                        &apos;a&apos;                 97
+                        &apos;A&apos;                 65
+                        \u0030
+    ()              1&gt; 分组; 2&gt; 提升优先级
+    |               或者
+                    匹配 foot 或者 food
+                    foot|food
+                    注意: | 具有最低优先级
+                    ^(foot|food)$
+                    常见的用法
+                    例如要匹配jq的属性选择器: 
+                        [name]
+                        [name=value]
+                    用正则: \[\w+=\w+\]|\[\w+\]
+                    jq 的写法: \[\w+(=\w+|)\]
+
+                    (foot|food)     匹配: &apos;foot&apos; 或者 &apos;food&apos;
+                    (foot|)         匹配: &apos;foot&apos; 或者 &apos;&apos;
+                    food(=food|)    匹配: &apos;food=food&apos; 或者 &apos;food&apos;
+                    \w+(=\w+|)      匹配: &apos;字符=字符&apos; 或 &apos;字符&apos;
+                    \[\w+(=\w+|)\]  匹配: &apos;[xxx]&apos; 或 &apos;[xxx=vvv]&apos;
+
+                    \[\s*(\w+)\s*(?:([|!^$~]?=)\s*(\w+)|)\s*\]
+                    =&gt;
+                    \[   \s*     (\w+)  \s*   (?:   ([|!^$~]?=)     \s*    (\w+)   |)   \s*   \]
+</code></pre></li>
+</ol>
+<pre><code>    限定元字符
+        +                   (abc)+              {1,}
+        *                                       {0,}
+        ?
+        {n}
+        {n,}
+        {n,m}
+    首尾元字符
+        ^                   必须以 xxx 开头
+                            表示否定:
+                                [abc]           用来匹配 一个 字符 a, 或 b, 或 c
+                                [^abc]          用来匹配一个字符, 要求不允许是 a, b, c
+        $                   必须以 xxx 结尾
+                            表示组引用
+                                a(b)c
+    简写元字符
+        \w                  word
+        \W
+        \s                  space
+        \S
+        \d                  digit
+        \D
+    其他:
+        (?: )
+        \1
+2&gt; 基本的匹配案例
+    如何匹配
+    1) 匹配任意的自然数, 就是 0, 1, 2, 3, ...
+        [0-9]  等价于 \d
+        分类讨论
+            -&gt; 一位数字: \d
+            -&gt; 两位: [1-9]\d
+            -&gt; 任意位( 除了一位 ): [1-9]\d+
+        合并: 
+            \d|[1-9]\d+
+        可以进行演变( 用不同的方法写同一个例子 )
+            [1-9]\d*|0
+            [1-9][0-9]*|0
+            ...
+    2) 匹配任意的整数, 0, +1, -1, +2, -2, ...
+        [+-]?[1-9][0-9]*|0
+        (+|-|)[1-9][0-9]*|0
+        ...
+
+    3) 匹配任意的实数, 0.01, 0.0000123, -0.1234567
+        整数 + 小数部分
+        分类( 划归 )
+            ((+|-|)[1-9][0-9]*|0)(\.\d+|)
+
+        无法匹配 -0.1
+        无非就是不允许匹配 -0.0+
+
+        使用正则的原则: 够用即可, 尽可能写成多步的判断, 要保证正则表达式的尽可能简洁
+        -0+(\.|)0*
+        if ( !... ) {
+            if ( ... )
+        }
+        \d{17}|[\dxX]
+        \d{11}
+
+
+
+    4) 匹配邮箱
+        [^@]+@[^@]+
+        如果想要严谨一点
+        邮箱分成用户名 和 域名
+        用户名: 可以有数字, 字母下划线组成( 还有一些特殊字符 )
+            [\w\-]+
+        域名: xxx.com.cn.xxxx
+            [\w\-]+(\.[\w\-]+)+
+
+    5) 匹配 ip 地址
+        采用数字点分的方法描述, 而且每一个数字的取值在 0-255 之间, 都可以取到
+        0.0.0.0
+        255.255.255.255
+        123.124.125.126
+        ...
+        \d{1,3}(\.\d{1,3}){3} 或者: \d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} 
+
+        利用正则实现匹配 0 到 255 的数字
+        分类:
+        一位: [0-9]
+        两位: 10-99
+              [1-9][0-9]
+        三位: 100-255
+              开始为 1 的: 100-199: 1[0-9][0-9]
+              开始为 2 的: 200-255: 
+                中间为 0-4 的: 2[0-4][0-9]
+                中间为 5 的: 25[0-5]
+
+        [0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]
+
+        IP:
+        [0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]\.[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]\.[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]\.[0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5]
+
+        练习: 如配匹配计算机中的一个文件路径全名
+        例如: C:\myMusics\list\myFavorite\rain.MP3
+            盘符: 一个字符: a-z, 简单的写 . 如果想要严格处理 [a-z]
+            冒号和斜线: :\\
+            路径(文件夹的名字): .+\\ 如果想要精确: ([^|:\?\*&gt;&lt;\\\/\&quot;]+\\)*
+            文件名: .+\..+ 如果想要精确一点: [^|:\?\*&gt;&lt;\\\/\&quot;]+\.[^|:\?\*&gt;&lt;\\\/\&quot;]+
+
+            组合起来:
+                .:.*\\.+\..+
+            注意: 正则表达式有贪婪模式
+                 C:\myMusics\list\myFavorite\rain.MP3
+                .:(.*)\\.+\..+
+                .:.*\\.+.+
+            如果一个正则表达式中有多个 .+ 或 .* 的结构, 如果造成了匹配的歧义, 满足一个规则. 即贪婪模式
+            从左往右 匹配个数的能力是左强又弱, 而且只有两个级别, 要么强, 要么弱
+
+                例如: 
+                    var s = &apos;1234567890&apos;;
+                    //        1 2 3
+                    var r = /(.+)(.+)(.+)/;
+
+                    var res = r.exec( s );
+            例如匹配 div 标签
+                    var r = /&lt;div.*?&gt;.*&lt;\/div&gt;/;
+            如果不希望有贪婪模式在 限定元字符( +, * 等 )后写上 ?
+3&gt; 字符串提取( 解析 )
+    .exec 方法
+    利用正则表达式, 去处理字符串, 并将字符串中符合正则表达式的数据取出来 
+    var s = &apos;1234567&apos;;
+    var r = /\d/;
+    var m = r.exec( s );   // m 是 match 的简写, 表示捕获
+    // 如果匹配上了, 就返回数组, 第 0 项 就是匹配到的结果, 如果正则表达式中有 分组
+    // 分组都是从 1 开始的编号, 那么对应的 第 n 组匹配到的结果就在这个数组的第 n 项
+    // 注意: 是真数组
+    // 如果没有匹配到 则返回 null
+
+    分组: 就是 ()
+    从左往右数 (, 第一个开始编号, 从 1 开始编号, 此时编号完成以后, 对应圆括号组成的就是对应的组
+    //         1   2  34       5
+    例如: r = /(\d)(\d((\d)\d))(\d)/;
+
+
+    做坏事: 
+    想要做一个推广, 在论坛中发布我有XXX的视频, 如果想要的留下邮箱
+    如果有人留下的是 QQ 号, 将其拉到一个群里
+
+    注意: exec 匹配提取, 只能匹配提取第一个被捕获的数据
+    如果需要匹配字符串中所有符合要求的字符串
+    1) 开启全局模式, 在正则后面写上一个 g, 或在构造函数的 第二个参数中提供 &apos;g&apos;
+        创建正则:
+            -&gt; 字面量:   /.+\\.+/g
+            -&gt; 构造函数: new RegExp( &apos;.+\\\\.+&apos;, &apos;g&apos; )
+    2) 开启全局模式后, 使用 正则表达式对象 调用 exec 方法一次, 就会从 0 位置或上一次结束的位置开始
+        查找下一个匹配结果, 如果查找到结果则返回对应数组, 如果没有查找到( 即, 找完了 )就会返回 null.
+        如果还继续调用 exec, 那么就从头开始再查一次.
+    例如:
+        var s = &apos;123&apos;;
+        var r = /\d/g;
+
+        r.exec( s );   // [ &apos;1&apos; ]
+        r.exec( s );   // [ &apos;2&apos; ]
+        r.exec( s );   // [ &apos;3&apos; ]
+        r.exec( s );   // null
+        r.exec( s );   // [ &apos;1&apos; ]
+        ...
+
+        一般要取到所有的数据, 可以使用下面的代码结构
+        var m;
+        while ( ( m = r.exec( s ) ) != null ) {
+            // 此时 m 就是找到的结果
+        }
+
+    练习:
+        1) 将文章中所有的数字提取出来
+        2) 将文章中所有的邮箱提取出来
+        ...
+4&gt; 字符串替换
+    .replace( 正则表达式, 需要替换的字符串 )
+    1) 将一个字符串中所有的 - 换成一个连线
+        var s = &apos;a-----------------------------------b----------------------c----d&apos;;
+        // =&gt; a-b-c-d
+        var res = s.replace( /-+/g, &apos;-&apos; );
+        应用背景
+
+            /\*.*?([\r\n]+.*?)*\*/
+
+        换行: \r\n
+        因此 \r 是回车的意思
+             \n 是换行的意思
+        平时在处理换行的时候要注意: 在 有些时候是 \r\n, 有些时候是 \n
+        在 类 Unix 操作系统中( unix, linux, mac ) 换行都是 \n
+        在 windows 中是 换行是 \r\n
+    2) 在替换中还可以使用组
+        var s = &apos;2012-3-4&apos;;
+        // 在不同的系统中想要显示成
+        // 2012年3月4日
+        // 3月4日2012年
+        // 4/3/2012
+        // ...
+        var r = /(\d+)\-(\d+)\-(\d+)/;
+
+        var res = s.replace( r, &apos;$1年$2月$3日&apos; )
+    3) 替换的时候, 第二参数可以是函数, 函数的参数为, 匹配到的数组的散列值
+        利用函数的返回值替换匹配到的结果
+
+        var s = &apos;2012-3-4&apos;;
+        var r = /(\d+)\-(\d+)\-(\d+)/;
+
+        s.replace( r, function ( match, g1, g2, g3 ) { 
+            return g1 + &apos;年&apos; + g2 + &apos;月&apos; + g3 + &apos;日&apos;;
+        });
+
+        电话号码的加密
+        var list = [
+            &apos;12345678901&apos;,
+            &apos;12345678912&apos;,
+            &apos;12345678923&apos;,
+            &apos;12345678934&apos;,
+            &apos;12345678945&apos;,
+            &apos;12345678956&apos;
+        ];
+
+        var res = list.map( function ( v ) {
+            //                 电话号码的前4位
+            //                              电话号码的后 2 位
+            return v.replace( /(\d{4})(\d+)(\d{2})/, function ( a, b, c, d ) {
+                // a 就是匹配到的 电话号码
+                // b 就是匹配到的 电话号码的前 4 位
+                // c 就是匹配到的电话号码的 中间 5 位
+                // d 就是匹配到的电话号码的 后 2 位
+                return b + &apos;***********&apos;.slice( 0, c.length ) + d;
+                // return b + &apos;*****&apos; + d;
+            });
+        });
+
+
+    (?:)
+    var s = &apos;1234567&apos;;
+    //        1   2       3     4
+    var r1 = /(\d)(\d\d\d)(\d\d)(\d)/;
+    r1.exec( s ); // =&gt; [ &apos;1234567&apos;, &apos;1&apos;, &apos;234&apos;, &apos;56&apos;, &apos;7&apos; ]
+    \
+    //        1             2     3
+    var r2 = /(\d)(?:\d\d\d)(\d\d)(\d)/;
+    r2.exec( s ); // =&gt; [ &apos;1234567&apos;, &apos;1&apos;, &apos;56&apos;, &apos;7&apos; ]
+</code></pre>
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/02/14/JS原生框架-3/&title=《JS原生框架-3》 — 人间客栈&pic=https://heima0.github.io/2016/02/14/JS原生框架-3//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/02/14/JS原生框架-3/&title=《JS原生框架-3》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-3》 — 人间客栈&url=https://heima0.github.io/2016/02/14/JS原生框架-3/&via=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/09/JS原生框架-4/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">JS原生框架-4</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/02/12/JS原生框架-2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS原生框架-2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="JS原生框架-3" data-title="JS原生框架-3" data-url="https://heima0.github.io/2016/02/14/JS原生框架-3/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/02/14/JS原生框架-3/&title=《JS原生框架-3》 — 人间客栈&pic=https://heima0.github.io/2016/02/14/JS原生框架-3//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/02/14/JS原生框架-3/&title=《JS原生框架-3》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JS原生框架-3》 — 人间客栈&url=https://heima0.github.io/2016/02/14/JS原生框架-3/&via=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/02/14/JS原生框架-3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aS1LDMBAFwNz/0rCFhc2bGZkqS+0VRSpBzeJF8/l84udr8Fx92v3f+jzxYGBgvJaRHGLym/u/cvVqfjYMDIxzGPfBl0RkAshJ+dkwMDAwkujshTIGBgbG/zOq9WYezRgYGBiTELzCJOE7uURiYGCcxphH5HM/PzLfwMDAeBVj1TCyWohWhwd/nAoDA2NrRh5wPVj1Ato7DwYGxt6M6oJFctzk1byIjWAYGBhbM/LrXfVwkyDuLXBgYGCcwJiMGNeWr81/GQYGxgGMyapWryWXXw2jayIGBsamjN7qw3wYmRfP0WgTAwPjAEYehQm+t6hR/pb4+SoGBsbWjCRqq224/HOStCyXuBgYGJsyeoFYbYflgZ5fKxfkOgYGxksYeeAmjbZ8gWyybIGBgXEaoxqy84Zdb2DZvBpiYGBsxOg9vfCtFsmFRhsGBsZ2jMkyVh6R+XJGvnb26/cYGBhbM+ZrEL1rZV645mUtBgbG3oz7Fvx98E3K1zyIoxIaAwPjAEYvEKsxnV83y+MBDAyMAxiTFYreqkSvxXb5LgwMjE0ZkzFAtU3We29ExcDA2JqRP73RY7WITRpzvS8GDAyMtzMmR6wWrvORAAYGxsmMXvDlbbLeMKDQksPAwMCoLmbFTbdVjTwMDAyM/ECr4jsvhjEwMM5hzIvS6vLEqlEoBgbGCYy8dKw2ziafObomYmBg7MP4BpeuslDSkuA4AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

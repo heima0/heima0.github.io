@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-9 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="slot-transition-渲染函数和jsxslotvue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现  匿名插槽123&amp;lt;aaa&amp;gt;abc&amp;lt;/aaa&amp;gt;template:&amp;quot;&amp;lt;h1&amp;gt;&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/h1&amp;gt;&amp;quot;   在父组件中使用子组件的时候，在子组件标签内部">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-9">
+<meta property="og:url" content="https://heima0.github.io/2018/01/18/vue-9/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="slot-transition-渲染函数和jsxslotvue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现  匿名插槽123&amp;lt;aaa&amp;gt;abc&amp;lt;/aaa&amp;gt;template:&amp;quot;&amp;lt;h1&amp;gt;&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/h1&amp;gt;&amp;quot;   在父组件中使用子组件的时候，在子组件标签内部">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://cn.vuejs.org/images/transition.png">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-9">
+<meta name="twitter:description" content="slot-transition-渲染函数和jsxslotvue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现  匿名插槽123&amp;lt;aaa&amp;gt;abc&amp;lt;/aaa&amp;gt;template:&amp;quot;&amp;lt;h1&amp;gt;&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;&amp;lt;/h1&amp;gt;&amp;quot;   在父组件中使用子组件的时候，在子组件标签内部">
+<meta name="twitter:image" content="https://cn.vuejs.org/images/transition.png">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-9</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-9</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-18T01:13:55.000Z" itemprop="datePublished" class="page-time">
+  2018-01-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#slot-transition-渲染函数和jsx"><span class="post-toc-number">1.</span> <span class="post-toc-text">slot-transition-渲染函数和jsx</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#slot"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">slot</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#transition"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">transition</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#渲染函数和jsx"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">渲染函数和jsx</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-9"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-9</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月18日 9:13" datetime="2018-01-18T01:13:55.000Z"  itemprop="datePublished">2018-01-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="slot-transition-渲染函数和jsx"><a href="#slot-transition-渲染函数和jsx" class="headerlink" title="slot-transition-渲染函数和jsx"></a>slot-transition-渲染函数和jsx</h2><h5 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h5><p>vue里提供了一种将父组件的内容和子组件的模板整合的方法：内容分发，通过slot插槽来实现</p>
+<ol>
+<li>匿名插槽<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;aaa&gt;abc&lt;/aaa&gt;</span><br><span class="line"></span><br><span class="line">template:&quot;&lt;h1&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/h1&gt;&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>在父组件中使用子组件的时候，在子组件标签内部写的内容，在子组件的模板中可以通过<slot></slot>来使用</p>
+<ol start="2">
+<li>具名插槽</li>
+</ol>
+<p>父组件在子组件标签内写的多个内容我们可以给其设置slot属性来命名，在子组件的模板通过通过使用带有name属性的slot标签来放置对应的slot，当slot不存在的时候，slot标签内写的内容就出现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;my-button&gt;提交&lt;/my-button&gt;</span><br><span class="line">&lt;my-button&gt;重置&lt;/my-button&gt;</span><br><span class="line">&lt;my-button&gt;&lt;/my-button&gt;</span><br><span class="line"></span><br><span class="line">template:&quot;&lt;button&gt;&lt;slot&gt;按钮&lt;/slot&gt;&lt;/button&gt;&quot;</span><br></pre></td></tr></table></figure></p>
+<h5 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h5><p>Vue提供了transition组件来帮助我们实现过渡效果，依据就是在控制元素显示隐藏的时候为dom在指定的时刻添加上对应的类名</p>
+<p>而我们只要在这些类名里写上对应的css样式</p>
+<p>在进入/离开的过渡中，会有 6 个 class 切换(v代表的是transition的name属性的值)。</p>
+<p>v-enter：定义进入过渡的开始状态。在元素被插入时生效，在下一个帧移除。</p>
+<p>v-enter-active：定义过渡的状态。在元素整个过渡过程中作用，在元素被插入时生效，在 transition/animation 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</p>
+<p>v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入一帧后生效 (于此同时 v-enter 被删除)，在 transition/animation 完成之后移除。</p>
+<p>v-leave: 定义离开过渡的开始状态。在离开过渡被触发时生效，在下一个帧移除。</p>
+<p>v-leave-active：定义过渡的状态。在元素整个过渡过程中作用，在离开过渡被触发后立即生效，在 transition/animation 完成之后移除。这个类可以被用来定义过渡的过程时间，延迟和曲线函数。</p>
+<p>v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过渡被触发一帧后生效 (于此同时 v-leave 被删除)，在 transition/animation 完成之后移除。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://cn.vuejs.org/images/transition.png" alt="className" title="">
+                </div>
+                <div class="image-caption">className</div>
+            </figure>
+<p>如果有多个元素需要用transition-group包裹，并且需要有key值做标记</p>
+<p>animate.css:</p>
+<p>引入animate.css之后，按照下面的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition</span><br><span class="line">    leave-active-class=&quot;animated fadeOut&quot;</span><br><span class="line">    enter-active-class=&quot;animated slideInLeft&quot;&gt;</span><br><span class="line">        &lt;p v-if=&quot;isShow&quot; class=&quot;box&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/transition&gt;</span><br></pre></td></tr></table></figure></p>
+<h5 id="渲染函数和jsx"><a href="#渲染函数和jsx" class="headerlink" title="渲染函数和jsx"></a>渲染函数和jsx</h5><p>在vue中我们可以不用template来指定组件的模板，而是用render函数来创建虚拟dom结构，用这种方法优点就是性能高，缺点就是使用成本高，代码可读性较低，可以使用jsx来在render函数中创建，这样既提高了性能，又减少了成本</p>
+<p>但是，我们在使用了vue-cli脚手架之后，因为脚手架中有对template标签转换虚拟dom的处理，所以，不需要使用jsx，我们也能高效的转换为createElement形式</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/01/18/vue-9/&title=《vue-9》 — 人间客栈&pic=https://heima0.github.io/2018/01/18/vue-9//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/01/18/vue-9/&title=《vue-9》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-9》 — 人间客栈&url=https://heima0.github.io/2018/01/18/vue-9/&via=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/01/30/vue-10/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vue-10</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/10/24/vue-8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-8</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-9" data-title="vue-9" data-url="https://heima0.github.io/2018/01/18/vue-9/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/01/18/vue-9/&title=《vue-9》 — 人间客栈&pic=https://heima0.github.io/2018/01/18/vue-9//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/01/18/vue-9/&title=《vue-9》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-9》 — 人间客栈&url=https://heima0.github.io/2018/01/18/vue-9/&via=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/01/18/vue-9/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3awa7CMAwEQP7/p/uuSE8t67gxRZqcUCnNhMOqdvJ6xeN4G2fX37/9f+fZM187Bi4ubpt7XI4zbj7Z2XOur5/9Qbi4uJPcZJpqwiQhmBtwcXGfzE1C7fqePBZxcXF/hZtPf/1kXFzc53OT4if5VV72bK/VcHFxG9y11sa9n7f0d3FxcZe4R3Hcu9FSnh0XF3eEu9YMrQZfsoDCvLi4uIPcapDtK11atRouLm6bmxyMyCOm8xoUNVxwcXFHuNUN0eoRis5hr9Mn4+Libub2N06SYKrG1mn84eLijnCrRyuqzdO1hUW1Gi4u7jZuNYbyRW4pmXBxcce51dedHJEUPNGxMFxc3Adwq02QvPFabbvg4uJOcvOJ8ytrJVPhT8HFxR3k9vdk1g5q5DGHi4s7z+1MsFYULbZOcHFxB7l5uPQboNVWbKu6wsXFLd5zFEdSnFQ3WQulES4u7gg3H/lGy4d2Z6P9iouLO8nthFcnqq7nWnzRwcXFvZWbB03+MrSxVsPFxX0Yt7qAtftxcXF/kZvXUtWtlA9CXFzcQW4SQ9UDFv3CCRcX91vccpQUN2byrdlyiwQXF/d+7h/T0QsJ0KKJWwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

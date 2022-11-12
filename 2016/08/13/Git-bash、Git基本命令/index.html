@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Git-bash、Git基本命令 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Git-bash、Git基本命令 Git-bash 文件操作相关命令 touch：创建文件 cat：查看文件 less：查看大文本文件 vi：visual interface Esc 退出到命令模式 i 进入插入模式 :q 退出vi :w 保存编辑 :wq 保存并退出 :q! 强制退出不保存修改 vi 的所有操作基本全部是命令，这里掌握基本使用基于可以了 有时候使用 git commit 进行提交">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git-bash、Git基本命令">
+<meta property="og:url" content="https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Git-bash、Git基本命令 Git-bash 文件操作相关命令 touch：创建文件 cat：查看文件 less：查看大文本文件 vi：visual interface Esc 退出到命令模式 i 进入插入模式 :q 退出vi :w 保存编辑 :wq 保存并退出 :q! 强制退出不保存修改 vi 的所有操作基本全部是命令，这里掌握基本使用基于可以了 有时候使用 git commit 进行提交">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git-bash、Git基本命令">
+<meta name="twitter:description" content="Git-bash、Git基本命令 Git-bash 文件操作相关命令 touch：创建文件 cat：查看文件 less：查看大文本文件 vi：visual interface Esc 退出到命令模式 i 进入插入模式 :q 退出vi :w 保存编辑 :wq 保存并退出 :q! 强制退出不保存修改 vi 的所有操作基本全部是命令，这里掌握基本使用基于可以了 有时候使用 git commit 进行提交">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Git-bash、Git基本命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Git-bash、Git基本命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-08-13T10:50:04.000Z" itemprop="datePublished" class="page-time">
+  2016-08-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-bash、Git基本命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git-bash、Git基本命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git-bash-文件操作相关命令"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Git-bash 文件操作相关命令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Git"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Git</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">基本命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加-删除文件"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">添加/删除文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#代码提交"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">代码提交</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回退撤销"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">回退撤销</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#分支管理"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">分支管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#远程操作"><span class="post-toc-number">1.2.6.</span> <span class="post-toc-text">远程操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Git-工作流程：分支策略"><span class="post-toc-number">1.2.7.</span> <span class="post-toc-text">Git 工作流程：分支策略</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Git-Flow"><span class="post-toc-number">1.2.7.1.</span> <span class="post-toc-text">Git Flow</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Github-Collabrators"><span class="post-toc-number">1.2.7.2.</span> <span class="post-toc-text">Github Collabrators</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Github-Flow"><span class="post-toc-number">1.2.7.3.</span> <span class="post-toc-text">Github Flow</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Gitlab-flow"><span class="post-toc-number">1.2.7.4.</span> <span class="post-toc-text">Gitlab flow</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gitlab"><span class="post-toc-number">1.2.8.</span> <span class="post-toc-text">Gitlab</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#与-Github-进行多人协作"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">与 Github 进行多人协作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Collaborators"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Collaborators</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Pull-Request"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Pull Request</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Git-bash、Git基本命令"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Git-bash、Git基本命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年08月13日 18:50" datetime="2016-08-13T10:50:04.000Z"  itemprop="datePublished">2016-08-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Git-bash、Git基本命令"><a href="#Git-bash、Git基本命令" class="headerlink" title="Git-bash、Git基本命令"></a>Git-bash、Git基本命令</h1><hr>
+<h2 id="Git-bash-文件操作相关命令"><a href="#Git-bash-文件操作相关命令" class="headerlink" title="Git-bash 文件操作相关命令"></a>Git-bash 文件操作相关命令</h2><ul>
+<li>touch：创建文件</li>
+<li>cat：查看文件</li>
+<li>less：查看大文本文件</li>
+<li>vi：visual interface<ul>
+<li>Esc 退出到命令模式</li>
+<li>i 进入插入模式</li>
+<li>:q 退出vi</li>
+<li>:w 保存编辑</li>
+<li>:wq 保存并退出</li>
+<li>:q! 强制退出不保存修改</li>
+<li>vi 的所有操作基本全部是命令，这里掌握基本使用基于可以了</li>
+<li>有时候使用 git commit 进行提交的时候希望能多写几行提交日志，这时候可以省略 -m 参数进入 vi 编辑模式</li>
+</ul>
+</li>
+</ul>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><ul>
+<li>git init</li>
+<li>git status</li>
+<li>git add</li>
+<li>git commit</li>
+<li>git log</li>
+</ul>
+<h3 id="添加-删除文件"><a href="#添加-删除文件" class="headerlink" title="添加/删除文件"></a>添加/删除文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加指定文件到暂存区</span></span><br><span class="line">git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加指定目录到暂存区，包括子目录</span></span><br><span class="line">git add [dir]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加当前目录的所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除工作区文件，并且将这次删除放入暂存区</span></span><br><span class="line">git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"><span class="comment"># 停止追踪指定文件，但该文件会保留在工作区</span></span><br><span class="line">git rm --cached [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改名文件，并且将这个改名放入暂存区</span></span><br><span class="line">git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
+<h3 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提交暂存区到仓库区</span></span><br><span class="line">git commit -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交暂存区的指定文件到仓库区</span></span><br><span class="line">git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交工作区自上次commit之后的变化，直接到仓库区</span></span><br><span class="line">git commit -a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用一次新的commit，替代上一次提交</span></span><br><span class="line"><span class="comment"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></span><br><span class="line">git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重做上一次commit，并包括指定文件的新变化</span></span><br><span class="line">git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
+<h3 id="回退撤销"><a href="#回退撤销" class="headerlink" title="回退撤销"></a>回退撤销</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 恢复暂存区的指定文件到工作区</span></span><br><span class="line">git checkout [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复某个commit的指定文件到暂存区和工作区</span></span><br><span class="line">git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复暂存区的所有文件到工作区</span></span><br><span class="line">git checkout .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></span><br><span class="line">git reset [file]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置暂存区与工作区，与上一次commit保持一致</span></span><br><span class="line">git reset --hard</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></span><br><span class="line">git reset [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></span><br><span class="line">git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></span><br><span class="line">git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 新建一个commit，用来撤销指定commit</span></span><br><span class="line"><span class="comment"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span></span><br><span class="line">git revert [commit]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暂时将未提交的变化移除，稍后再移入</span></span><br><span class="line">git stash</span><br><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p>默认在 git 的仓库中，会有个分支的原点：master</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有本地分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于当前分支新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于当前分支新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到指定分支，并更新工作区</span></span><br><span class="line">git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到上一个分支，交替和上一个分支进行切换</span></span><br><span class="line">git checkout -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并指定分支到当前分支</span></span><br><span class="line">git merge [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d [branch-name]</span><br></pre></td></tr></table></figure>
+<h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载一个远程仓库</span></span><br><span class="line">$ git <span class="built_in">clone</span> [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示所有远程仓库</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示某个远程仓库的信息</span></span><br><span class="line">git remote show [remote]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增加一个新的远程仓库，并命名</span></span><br><span class="line">git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取回远程仓库的变化，并与本地分支合并</span></span><br><span class="line">git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 上传本地指定分支到远程仓库</span></span><br><span class="line">git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强行推送当前分支到远程仓库，即使有冲突</span></span><br><span class="line">git push [remote] --force</span><br></pre></td></tr></table></figure>
+<h3 id="Git-工作流程：分支策略"><a href="#Git-工作流程：分支策略" class="headerlink" title="Git 工作流程：分支策略"></a>Git 工作流程：分支策略</h3><ul>
+<li><a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="noopener">Git 工作流程</a></li>
+</ul>
+<h4 id="Git-Flow"><a href="#Git-Flow" class="headerlink" title="Git Flow"></a>Git Flow</h4><h4 id="Github-Collabrators"><a href="#Github-Collabrators" class="headerlink" title="Github Collabrators"></a>Github Collabrators</h4><p>这种方式公司团队项目使用居多</p>
+<h4 id="Github-Flow"><a href="#Github-Flow" class="headerlink" title="Github Flow"></a>Github Flow</h4><p>这种方式开源项目使用居多</p>
+<ul>
+<li>fork</li>
+<li>clone 到你的本地</li>
+<li>在clone下来的项目中拉出一个新的分支<ul>
+<li>修改的时候最好是基于 master 拉出一个修改的分支，例如这个分支是用来添加某个功能的</li>
+</ul>
+</li>
+<li>在新分支上开发或者修改完成之后，提交到本地仓库，然后 push 推到自己的账户中 fork 过来的仓库</li>
+<li>最后，在 Github 上你 fork 过来的仓库界面中找到 New Pull Request 发起提交请求</li>
+<li>对方就会在仓库的 Pull Requests 中收到你发起的提交请求<ul>
+<li>然后双方就可以使用社会化交流方式进行沟通协作</li>
+<li>例如 Code Review 代码审查</li>
+</ul>
+</li>
+<li>最后对方审查通过没有问题之后，选择 Merge Request</li>
+<li>到此，一个完整的 Github 工作流结束</li>
+<li>这种方式开源项目更多一些（大家都不认识）</li>
+</ul>
+<h4 id="Gitlab-flow"><a href="#Gitlab-flow" class="headerlink" title="Gitlab flow"></a>Gitlab flow</h4><h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p>对于第三方代码仓库托管服务有很多，其中 Github 最火，但是如果想要托管私有项目收费比较高，<br>而且在国内受限于网络环境影响，鲜少有公司使用。</p>
+<p>也有的公司，例如京东、淘宝这种级别的公司，也不太常用别的第三方的托管服务。</p>
+<p>Gitlab 是一个开源的类似于 Github 的一个系统，开源免费部署到自己的公司内容。</p>
+<hr>
+<h2 id="与-Github-进行多人协作"><a href="#与-Github-进行多人协作" class="headerlink" title="与 Github 进行多人协作"></a>与 Github 进行多人协作</h2><h3 id="Collaborators"><a href="#Collaborators" class="headerlink" title="Collaborators"></a>Collaborators</h3><h3 id="Pull-Request"><a href="#Pull-Request" class="headerlink" title="Pull Request"></a>Pull Request</h3>
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&title=《Git-bash、Git基本命令》 — 人间客栈&pic=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&title=《Git-bash、Git基本命令》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git-bash、Git基本命令》 — 人间客栈&url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&via=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/18/Ecmascript6-阮一峰/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ecmascript6-阮一峰</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/08/11/版本控制（SVN、Git）和Github整理/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">版本控制（SVN、Git）和Github整理</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Git-bash、Git基本命令" data-title="Git-bash、Git基本命令" data-url="https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&title=《Git-bash、Git基本命令》 — 人间客栈&pic=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&title=《Git-bash、Git基本命令》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Git-bash、Git基本命令》 — 人间客栈&url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/&via=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2016/08/13/Git-bash、Git基本命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQXLjMAwEQP//08k1qZjyACBlV6p1cmntiK0DiR3g8Yivr8X1919Xv/p5p/p59fe3XXh4eHibln79mGRx13fyF5Swl68ADw8P7xhvtaMmi55v68mzrr+zvI+Hh4f3AbyktM2/k+Px8PDw/hPveivPC+hekIGHh4f3Lt48bjgX1+bhCB4eHt49vLyL9Dmfj/T38PDw8MZd9XlBPBksqDa9nqwWDw8P7wBvErn2hgx2HUh5hIGHh4e3l5fEAXlEex2t5q9jEhz/+oyHh4d3jNeLa6+L5usyOi+1e09p9tDw8PDw0tzgkccKvSGqamstHwtI7uDh4eGd4+UjTb1vTqKKJgwPDw/vAC85EvLRqPlh0ztUXvT38PDw8G7hVZv9SRE8aZjlR9EypcbDw8PbxJtszXngm99PlpvHvnh4eHj38CYDT9VXVv08D4Lx8PDw5rzeBj0pf6sF8egv4OHh4R3j5SVyrzU13/TzWKQwy4CHh4fX4s2bTEmMm3+nWvWXh67w8PDwxrzC9tqKJJLiO2+hJbAnYQQeHh7eVl615K0OGfTaY70DCQ8PD+8eXrVhf2LRee1fPkLw8PDwDvOq41B5OV7d3Cel+bK/h4eHh3eM1xufqt7Pg4zqMMGTGBcPDw9vK29+APQOkt4LSlYSZS14eHh4Y16vATZh9F5HOZnGw8PDO8ybjFtVt+zJkFY5YsbDw8O7kRdFpcVH5kMJu8ILPDw8vL28+aafB775oidtMDw8PLzTvPzKN/GksK7+qtoSK194eHh4RV4vXKgGDb1XmYe2hRgXDw8PbxOvOvZUjQl6B8YoZcHDw8P7MF61IK4+qxo9vEip8fDw8N7KSxZ0TcrL5XyUYdvBgIeHhxfzkp8l4WnO7g0clJ+Ch4eHd4DX+w9/dbBgvqC9YTEeHh5e61ffVYDkKR7+ppAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

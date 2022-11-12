@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>vue-11 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="路由简单路由实现： 引入vue-router，如果是在脚手架中，引入VueRouter之后，需要通过Vue.use来注册插件 123import Vue from &amp;apos;vue&amp;apos;import Router from &amp;apos;vue-router&amp;apos;Vue.use(Router)  创建router路由器 1new Router(options)  创建路由表并配置在路由">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue-11">
+<meta property="og:url" content="https://heima0.github.io/2018/03/15/vue-11/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="路由简单路由实现： 引入vue-router，如果是在脚手架中，引入VueRouter之后，需要通过Vue.use来注册插件 123import Vue from &amp;apos;vue&amp;apos;import Router from &amp;apos;vue-router&amp;apos;Vue.use(Router)  创建router路由器 1new Router(options)  创建路由表并配置在路由">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-12T14:02:35.950Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vue-11">
+<meta name="twitter:description" content="路由简单路由实现： 引入vue-router，如果是在脚手架中，引入VueRouter之后，需要通过Vue.use来注册插件 123import Vue from &amp;apos;vue&amp;apos;import Router from &amp;apos;vue-router&amp;apos;Vue.use(Router)  创建router路由器 1new Router(options)  创建路由表并配置在路由">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="http://localhost:4000/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue-11</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue-11</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-03-15T12:12:31.000Z" itemprop="datePublished" class="page-time">
+  2018-03-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#路由"><span class="post-toc-number">1.</span> <span class="post-toc-text">路由</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#简单路由实现："><span class="post-toc-number">1.0.0.0.1.</span> <span class="post-toc-text">简单路由实现：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#多级路由"><span class="post-toc-number">1.0.0.0.2.</span> <span class="post-toc-text">多级路由:</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#默认路由和重定向："><span class="post-toc-number">1.0.0.0.3.</span> <span class="post-toc-text">默认路由和重定向：</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#命名路由"><span class="post-toc-number">1.0.0.0.4.</span> <span class="post-toc-text">命名路由</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#动态路由匹配"><span class="post-toc-number">1.0.0.0.5.</span> <span class="post-toc-text">动态路由匹配</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#router-link"><span class="post-toc-number">1.0.0.0.6.</span> <span class="post-toc-text">router-link</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#编程式导航"><span class="post-toc-number">1.0.0.1.</span> <span class="post-toc-text">编程式导航</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#路由模式"><span class="post-toc-number">1.0.0.2.</span> <span class="post-toc-text">路由模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#路由钩子"><span class="post-toc-number">1.0.0.3.</span> <span class="post-toc-text">路由钩子</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#命名视图"><span class="post-toc-number">1.0.0.4.</span> <span class="post-toc-text">命名视图</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#prop将路由与组件解耦"><span class="post-toc-number">1.0.0.5.</span> <span class="post-toc-text">prop将路由与组件解耦</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-vue-11"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue-11</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年03月15日 20:12" datetime="2018-03-15T12:12:31.000Z"  itemprop="datePublished">2018-03-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h2><h6 id="简单路由实现："><a href="#简单路由实现：" class="headerlink" title="简单路由实现："></a>简单路由实现：</h6><ol>
+<li><p>引入vue-router，如果是在脚手架中，引入VueRouter之后，需要通过Vue.use来注册插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Router from &apos;vue-router&apos;</span><br><span class="line">Vue.use(Router)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建router路由器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Router(options)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建路由表并配置在路由器中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var routes = [</span><br><span class="line">    &#123;path,component&#125;//path为路径，component为路径对应的路由组件</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">new Router(&#123;</span><br><span class="line">    routes</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在根实例里注入router,目的是为了让所有的组件里都能通过this.$router、this.$route来使用路由的相关功能api</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">el: &apos;#app&apos;,</span><br><span class="line">router,</span><br><span class="line">template: &apos;&lt;App/&gt;&apos;,</span><br><span class="line">components: &#123; App &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用router-view来指定路由切换的位置</p>
+</li>
+<li><p>使用router-link来创建切换的工具，会渲染成a标签，添加to属性来设置要更改的path信息，且会根据当前路由的变化为a标签添加对应的router-link-active/router-link-exact-active（完全匹配成功）类名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&quot;main&quot;&gt;main&lt;/router-link&gt;</span><br><span class="line">&lt;router-link to=&quot;news&quot;&gt;news&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">.router-link-active&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h6 id="多级路由"><a href="#多级路由" class="headerlink" title="多级路由:"></a>多级路由:</h6><p>在创建路由表的时候，可以为每一个路由对象创建children属性，值为数组，在这个里面又可以配置一些路由对象来使用多级路由，注意：一级路由path前加’/‘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const routes = [</span><br><span class="line">  &#123;path:&apos;/main&apos;,component:AppMain&#125;,</span><br><span class="line">  &#123;path:&apos;/news&apos;,component:AppNews,children:[</span><br><span class="line">    &#123;path:&apos;inside&apos;,component:AppNewsInside&#125;,</span><br><span class="line">    &#123;path:&apos;outside&apos;,component:AppNewsOutside&#125;</span><br><span class="line">  ]&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>二级路由组件的切换位置依然由router-view来指定（指定在父级路由组件的模板中）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=&apos;inside&apos;&gt;inside&lt;/router-link&gt;</span><br><span class="line">&lt;router-link to=&apos;outside&apos;&gt;outside&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="默认路由和重定向："><a href="#默认路由和重定向：" class="headerlink" title="默认路由和重定向："></a>默认路由和重定向：</h6><p>当我们进入应用，默认像显示某一个路由组件，或者当我们进入某一级路由组件的时候想默认显示其某一个子路由组件，我们可以配置默认路由：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;path:&apos;&apos;,component:Main&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当我们需要进入之后进行重定向到其他路由的时候，或者当url与路由表不匹配的时候：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;path:&apos;&apos;,redirect:&apos;/main&apos;&#125;</span><br><span class="line">///...放在最下面</span><br><span class="line">&#123;path:&apos;**&apos;,redirect:&apos;/main&apos;&#125;,</span><br></pre></td></tr></table></figure></p>
+<h6 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h6><p>我们可以给路由对象配置name属性，这样的话，我们在跳转的时候直接写name:main就会快速的找到此name属性对应的路由，不需要写大量的urlpath路径了</p>
+<h6 id="动态路由匹配"><a href="#动态路由匹配" class="headerlink" title="动态路由匹配"></a>动态路由匹配</h6><p>有的时候我们需要在路由跳转的时候跟上参数，路由传参的参数主要有两种：路径参数、queryString参数</p>
+<p>路由参数需要在路由表里设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;path:&apos;/user/:id&apos;,component:User&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码就是给User路由配置接收id的参数，多个参数继续在后面设置</p>
+<p>在组件中可以通过this.$route.params来使用</p>
+<p>queryString参数不需要在路由表设置接收，直接设置？后面的内容，在路由组件中通过this.$route.query接收</p>
+<h6 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h6><p><router-link> 组件支持用户在具有路由功能的应用中（点击）导航。 通过 to 属性指定目标地址，默认渲染成带有正确链接的 <a> 标签，可以通过配置 tag 属性生成别的标签.。另外，当目标路由成功激活时，链接元素自动设置一个表示激活的 CSS 类名。</a></router-link></p>
+<p>router-link的to属性，默认写的是path（路由的路径），可以通过设置一个对象，来匹配更多<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:to=&apos;&#123;name:&quot;detail&quot;,params:&#123;id:_new.id&#125;,query:&#123;content:_new.content&#125;&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>name是要跳转的路由的名字，也可以写path来指定路径，但是用path的时候就不能使用params传参，params是传路径参数，query传queryString参数</p>
+<p>replace属性可以控制router-link的跳转不被记录\</p>
+<p>active-class属性可以控制路径切换的时候对应的router-link渲染的dom添加的类名</p>
+<h5 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h5><p>有的时候需要在跳转前进行一些动作，router-link直接跳转，需要在方法里使用$router的方法</p>
+<p>router.push = router-link:to<br>router.replace = router-link:to.replace<br>router.go() = window.history.go</p>
+<h5 id="路由模式"><a href="#路由模式" class="headerlink" title="路由模式"></a>路由模式</h5><p>路由有两种模式：hash、history，默认会使用hash模式，但是如果url里不想出现丑陋hash值，在new VueRouter的时候配置mode值为history来改变路由模式，本质使用H5的histroy.pushState方法来更改url，不会引起刷新，但是需要后端进行路由的配置</p>
+<h5 id="路由钩子"><a href="#路由钩子" class="headerlink" title="路由钩子"></a>路由钩子</h5><p>在某些情况下，当路由跳转前或跳转后、进入、离开某一个路由前、后，需要做某些操作，就可以使用路由钩子来监听路由的变化</p>
+<p>全局路由钩子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转前执行，next一定要记着执行，不然路由不能跳转了</span><br><span class="line">  console.log(&apos;beforeEach&apos;)</span><br><span class="line">  console.log(to,from)</span><br><span class="line">  //</span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br><span class="line">//</span><br><span class="line">router.afterEach((to, from) =&gt; &#123;</span><br><span class="line">    //会在任意路由跳转后执行</span><br><span class="line">  console.log(&apos;afterEach&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>单个路由钩子：<br>只有beforeEnter，在进入前执行，to参数就是当前路由<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">routes: [</span><br><span class="line">   &#123;</span><br><span class="line">     path: &apos;/foo&apos;,</span><br><span class="line">     component: Foo,</span><br><span class="line">     beforeEnter: (to, from, next) =&gt; &#123;</span><br><span class="line">       // ...</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure></p>
+<p>路由组件钩子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">beforeRouteEnter (to, from, next) &#123;</span><br><span class="line">  // 在渲染该组件的对应路由被 confirm 前调用</span><br><span class="line">  // 不！能！获取组件实例 `this`</span><br><span class="line">  // 因为当守卫执行前，组件实例还没被创建</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteUpdate (to, from, next) &#123;</span><br><span class="line">  // 在当前路由改变，但是该组件被复用时调用</span><br><span class="line">  // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，</span><br><span class="line">  // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;,</span><br><span class="line">beforeRouteLeave (to, from, next) &#123;</span><br><span class="line">  // 导航离开该组件的对应路由时调用</span><br><span class="line">  // 可以访问组件实例 `this`</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="命名视图"><a href="#命名视图" class="headerlink" title="命名视图"></a>命名视图</h5><p>有时候想同时（同级）展示多个视图，而不是嵌套展示，例如创建一个布局，有 sidebar（侧导航） 和 main（主内容） 两个视图，这个时候命名视图就派上用场了。你可以在界面中拥有多个单独命名的视图，而不是只有一个单独的出口。如果 router-view 没有设置名字，那么默认为 default。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view class=&quot;view one&quot;&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;router-view class=&quot;view two&quot; name=&quot;a&quot;&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;router-view class=&quot;view three&quot; name=&quot;b&quot;&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure></p>
+<p>一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。确保正确使用 components 配置（带上 s）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const router = new VueRouter(&#123;</span><br><span class="line">  routes: [</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/&apos;,</span><br><span class="line">      components: &#123;</span><br><span class="line">        default: Foo,//默认的，没有name的router-view</span><br><span class="line">        a: Bar,</span><br><span class="line">        b: Baz</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h5 id="prop将路由与组件解耦"><a href="#prop将路由与组件解耦" class="headerlink" title="prop将路由与组件解耦"></a>prop将路由与组件解耦</h5><p>在组件中接收路由参数需要this.$route.params.id,代码冗余，现在可以在路由表里配置props：true<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;path:&apos;detail/:id&apos;,component:AppNewsDetail,name:&apos;detail&apos;,props:true&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在路由自己中可以通过props接收id参数去使用了</p>
+<p>props:[‘id’]</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://heima0.github.io">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/03/15/vue-11/&title=《vue-11》 — 人间客栈&pic=https://heima0.github.io/2018/03/15/vue-11//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/03/15/vue-11/&title=《vue-11》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-11》 — 人间客栈&url=https://heima0.github.io/2018/03/15/vue-11/&via=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/04/07/数组filter方法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">数组filter方法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/01/30/vue-10/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-10</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="vue-11" data-title="vue-11" data-url="https://heima0.github.io/2018/03/15/vue-11/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢赏赐~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://heima0.github.io/2018/03/15/vue-11/&title=《vue-11》 — 人间客栈&pic=https://heima0.github.io/2018/03/15/vue-11//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://heima0.github.io/2018/03/15/vue-11/&title=《vue-11》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue-11》 — 人间客栈&url=https://heima0.github.io/2018/03/15/vue-11/&via=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://heima0.github.io/2018/03/15/vue-11/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQW7DMAwEwPz/0+m5aOLuim0AS+NTESe2x4etSOrxiI/njyP5zrvvv7tCcnZ0YGBg3JaR3D5/uHe/Sj7Jz76gYmBgHMC4Dr48ZJOz1xGc3xcDAwPj+tLt0UYwBgYGxpzRFpxtAYyBgYGxVsTmDbI8RpNl4h/X4hgYGDdk5HH5+b//Zb6BgYFxK8ZaIdou6fKwXiyPMTAwtmbkATdpnyWP2262wMDAOIeRh2lSsubNtckrGHXyMDAwbsvIP79ewLVJPx9tfgtcDAyMYxhrGyaSxlxesuaRHeU9BgbGzRmTAWS+gJtHc/TPAAMD4xhG+3D5eGBtY0fxCjAwMA5g5A/R9rjyDRZt2+7FfAMDA2NTRhKj7QJuEq9ro1MMDIxdGUUzqyxx21+1c8l6twgGBsbNGZMbz4vPtUYeBgbGaYxJaLbr0OtPFsEYGBhbM9Y2PbQBnWwjywcSxWAAAwNjO0a+/SJv3ycPPbnXLxU5BgbGdozJ5om8fdbGaLEFDQMD42BGXqy2w4PF7V957xADA2M7xnww0L6UpJVW8DAwMI5htE2xvPicbLyIro+BgbEp41keeSnbYtZKaAwMjBMYk7ZXPtRMBqVJC69dbmJgYOzEmIfsWkO/HlJeXx8DA+MAxlrwJSnehuyolMXAwMAIFnntlq8iUq9fGQYGBkZZsq4tFkftPAwMjAMYSYy2o81228QojjEwMLZm5KVj3vpPrtOORfPox8DA2IjxBQzHA/HTGZC/AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>
