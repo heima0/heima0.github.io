@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://heima0.github.io/"/>
-  <updated>2022-11-12T14:02:35.944Z</updated>
+  <updated>2022-11-13T04:27:24.713Z</updated>
   <id>https://heima0.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络协议-01</title>
+    <link href="https://heima0.github.io/2022/11/13/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE-01/"/>
+    <id>https://heima0.github.io/2022/11/13/网络协议-01/</id>
+    <published>2022-11-13T03:43:31.000Z</published>
+    <updated>2022-11-13T04:27:24.713Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="网络协议-01"><a href="#网络协议-01" class="headerlink" title="网络协议-01"></a>网络协议-01</h1><p>《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。</p><h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul><li><p>语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分号等。</p></li><li><p>语义，就是这一段内容要代表某种意义。例如数字减去数字是有意义的，数字减去文本一般来说就没有意义。</p></li><li><p>顺序，就是先干啥，后干啥。例如，可以先加上某个数值，然后再减去某个数值。</p></li></ul><h3 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h3><blockquote><p>Windows 上是 ipconfig，在 Linux 上是 ifconfig。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;网络协议-01&quot;&gt;&lt;a href=&quot;#网络协议-01&quot; class=&quot;headerlink&quot; title=&quot;网络协议-01&quot;&gt;&lt;/a&gt;网络协议-01&lt;/h1&gt;&lt;p&gt;《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟
+      
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="https://heima0.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>ES6</title>
