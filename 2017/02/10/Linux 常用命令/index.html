@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Linux 常用命令 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="常用命令arch 显示机器的处理器架构 uname -m 显示机器的处理器架构 uname -r 显示正在使用的内核版本 dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) hdparm -i /dev/hda 罗列一个磁盘的架构特性 hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 cat /proc/cpuinfo 显示CPU info的信息 cat">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 常用命令">
+<meta property="og:url" content="https://hanjinbao.cn/2017/02/10/Linux 常用命令/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="常用命令arch 显示机器的处理器架构 uname -m 显示机器的处理器架构 uname -r 显示正在使用的内核版本 dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) hdparm -i /dev/hda 罗列一个磁盘的架构特性 hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 cat /proc/cpuinfo 显示CPU info的信息 cat">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-14T02:34:20.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 常用命令">
+<meta name="twitter:description" content="常用命令arch 显示机器的处理器架构 uname -m 显示机器的处理器架构 uname -r 显示正在使用的内核版本 dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI) hdparm -i /dev/hda 罗列一个磁盘的架构特性 hdparm -tT /dev/sda 在磁盘上执行测试性读取操作 cat /proc/cpuinfo 显示CPU info的信息 cat">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux 常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Linux 常用命令</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-02-10T02:32:26.000Z" itemprop="datePublished" class="page-time">
+  2017-02-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">常用命令</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Linux 常用命令"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux 常用命令</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年02月10日 10:32" datetime="2017-02-10T02:32:26.000Z"  itemprop="datePublished">2017-02-10</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><p>arch 显示机器的处理器架构</p>
+<p>uname -m 显示机器的处理器架构</p>
+<p>uname -r 显示正在使用的内核版本</p>
+<p>dmidecode -q 显示硬件系统部件 - (SMBIOS / DMI)</p>
+<p>hdparm -i /dev/hda 罗列一个磁盘的架构特性</p>
+<p>hdparm -tT /dev/sda 在磁盘上执行测试性读取操作</p>
+<p>cat /proc/cpuinfo 显示CPU info的信息</p>
+<p>cat /proc/interrupts 显示中断</p>
+<p>cat /proc/meminfo 校验内存使用</p>
+<p>cat /proc/swaps 显示哪些swap被使用</p>
+<p>cat /proc/version 显示内核的版本</p>
+<p>cat /proc/net/dev 显示网络适配器及统计</p>
+<p>cat /proc/mounts 显示已加载的文件系统</p>
+<p>lspci -tv 罗列 PCI 设备</p>
+<p>lsusb -tv 显示 USB 设备</p>
+<p>date 显示系统日期</p>
+<p>cal 2007 显示2007年的日历表</p>
+<p>date 041217002007.00 设置日期和时间 - 月日时分年.秒</p>
+<p>clock -w 将时间修改保存到 BIOS</p>
+<p>关机 (系统的关机、重启以及登出 )</p>
+<p>shutdown -h now 关闭系统</p>
+<p>init 0 关闭系统</p>
+<p>telinit 0 关闭系统</p>
+<p>shutdown -h hours:minutes &amp; 按预定时间关闭系统</p>
+<p>shutdown -c 取消按预定时间关闭系统</p>
+<p>shutdown -r now 重启</p>
+<p>reboot 重启</p>
+<p>logout 注销</p>
+<p>文件和目录</p>
+<p>cd /home 进入 ‘/ home’ 目录’</p>
+<p>cd .. 返回上一级目录</p>
+<p>cd ../.. 返回上两级目录</p>
+<p>cd 进入个人的主目录</p>
+<p>cd ~user1 进入个人的主目录</p>
+<p>cd - 返回上次所在的目录</p>
+<p>pwd 显示工作路径</p>
+<p>ls 查看目录中的文件</p>
+<p>ls -F 查看目录中的文件</p>
+<p>ls -l 显示文件和目录的详细资料</p>
+<p>ls -a 显示隐藏文件</p>
+<p>ls <em>[0-9]</em> 显示包含数字的文件名和目录名</p>
+<p>tree 显示文件和目录由根目录开始的树形结构</p>
+<p>lstree 显示文件和目录由根目录开始的树形结构</p>
+<p>mkdir dir1 创建一个叫做 ‘dir1’ 的目录’</p>
+<p>mkdir dir1 dir2 同时创建两个目录</p>
+<p>mkdir -p /tmp/dir1/dir2 创建一个目录树</p>
+<p>rm -f file1 删除一个叫做 ‘file1’ 的文件’</p>
+<p>rmdir dir1 删除一个叫做 ‘dir1’ 的目录’</p>
+<p>rm -rf dir1 删除一个叫做 ‘dir1’ 的目录并同时删除其内容</p>
+<p>rm -rf dir1 dir2 同时删除两个目录及它们的内容</p>
+<p>mv dir1 new_dir 重命名/移动 一个目录</p>
+<p>cp file1 file2 复制一个文件</p>
+<p>cp dir/* . 复制一个目录下的所有文件到当前工作目录</p>
+<p>cp -a /tmp/dir1 . 复制一个目录到当前工作目录</p>
+<p>cp -a dir1 dir2 复制一个目录</p>
+<p>cp -r dir1 dir2 复制一个目录及子目录</p>
+<p>ln -s file1 lnk1 创建一个指向文件或目录的软链接</p>
+<p>ln file1 lnk1 创建一个指向文件或目录的物理链接</p>
+<p>touch -t 0712250000 file1 修改一个文件或目录的时间戳 - (YYMMDDhhmm)</p>
+<p>file file1 outputs the mime type of the file as text</p>
+<p>文件搜索</p>
+<p>find / -name file1 从 ‘/‘ 开始进入根文件系统搜索文件和目录</p>
+<p>find / -user user1 搜索属于用户 ‘user1’ 的文件和目录</p>
+<p>find /home/user1 -name *.bin 在目录 ‘/ home/user1’ 中搜索带有’.bin’ 结尾的文件</p>
+<p>find /usr/bin -type f -atime +100 搜索在过去100天内未被使用过的执行文件</p>
+<p>find /usr/bin -type f -mtime -10 搜索在10天内被创建或者修改过的文件</p>
+<p>find / -name *.rpm -exec chmod 755 ‘{}’ \; 搜索以 ‘.rpm’ 结尾的文件并定义其权限</p>
+<p>find / -xdev -name *.rpm 搜索以 ‘.rpm’ 结尾的文件，忽略光驱、捷盘等可移动设备</p>
+<p>locate *.ps 寻找以 ‘.ps’ 结尾的文件 - 先运行 ‘updatedb’ 命令</p>
+<p>whereis halt 显示一个二进制文件、源码或man的位置</p>
+<p>which halt 显示一个二进制文件或可执行文件的完整路径</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://hanjinbao.cn">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&title=《Linux 常用命令》 — 人间客栈&pic=https://hanjinbao.cn/2017/02/10/Linux 常用命令//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&title=《Linux 常用命令》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux 常用命令》 — 人间客栈&url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&via=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/02/14/文字溢出处理/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">文字溢出处理</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/23/Es6-babel/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Es6+babel</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Linux 常用命令" data-title="Linux 常用命令" data-url="https://hanjinbao.cn/2017/02/10/Linux 常用命令/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        您吉祥 ~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&title=《Linux 常用命令》 — 人间客栈&pic=https://hanjinbao.cn/2017/02/10/Linux 常用命令//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&title=《Linux 常用命令》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux 常用命令》 — 人间客栈&url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/&via=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2017/02/10/Linux 常用命令/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3a226DQAwFwPz/T9PXSgV0bJNK7A5PEaGwQyXHl/184uO4OP5+m19/9fn3mYcPDAyM1zKO26PK+LuIq0XfryFfGwYGxj6Mq1snYTEJqTkvZ2NgYGAky+oFx/uFYmBgYDzFeCrtu7oSAwMDo1fE3t8oKjWDttrXa3EMDIwXMvKu+/9//sp8AwMD41WMo3jkaVy+rGoxfLIqDAyMpRl5gKu2z55KDXM8BgbGqozqVq38wb1wnLymkzMYGBhLM3rt+LzIrA4+q6s6+Z9gYGAsx8iTvPlyqylgIbnEwMBYmtFbbhIcqw21Ku8z+TXAwMB4OWOyzSIJ2U8llxgYGPswek20BN9DVoPsySQWAwNjOUYypMwfXE0Znx08YGBgrM3Im/IT5Gh2kYAxMDCWZswfmZTE1Zc1D+UYGBjrMfLmft64r27jqJasGBgY+zDysNjb2NrbCjZK/jAwMBZiFBrurRSwt82ivNkCAwNjaUY+aOwVn0mCOE83MTAwdmBUQ2fv+gkp2rKGgYGxDWNeE0/u9pUhJQYGxkKMSSlbPV8di0ZUDAyMRRlH8ZiUtdUSN0kio9wWAwPj5YzJmHOSMlaba70mHQYGxkqMXpDN/zYvd3vbODAwMPZhVAPfZOg4Cd+jWhwDA2MzRrW5lpyvXlPu/GFgYGzG6CWCT72mh383MDAwXsKYbAubtPh7o00MDIzdGNW8K99g0dtykQ8vMTAwNmD8ADVDvCoWg5icAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>
