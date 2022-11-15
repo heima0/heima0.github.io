@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>网络协议01-通信协议综述 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="通信协议综述《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。 协议三要素 语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议01-通信协议综述">
+<meta property="og:url" content="https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="通信协议综述《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。 协议三要素 语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-14T05:40:06.273Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络协议01-通信协议综述">
+<meta name="twitter:description" content="通信协议综述《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。 协议三要素 语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">网络协议01-通信协议综述</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">网络协议01-通信协议综述</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-12T09:43:31.000Z" itemprop="datePublished" class="page-time">
+  2022-11-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#通信协议综述"><span class="post-toc-number">1.</span> <span class="post-toc-text">通信协议综述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#协议三要素"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">协议三要素</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查看IP地址"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">查看IP地址</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何配置-IP-地址？"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">如何配置 IP 地址？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">小结</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-网络协议01-通信协议综述"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">网络协议01-通信协议综述</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022年11月12日 17:43" datetime="2022-11-12T09:43:31.000Z"  itemprop="datePublished">2022-11-12</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="通信协议综述"><a href="#通信协议综述" class="headerlink" title="通信协议综述"></a>通信协议综述</h1><p>《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。</p>
+<h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul>
+<li><p>语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分号等。</p>
+</li>
+<li><p>语义，就是这一段内容要代表某种意义。例如数字减去数字是有意义的，数字减去文本一般来说就没有意义。</p>
+</li>
+<li><p>顺序，就是先干啥，后干啥。例如，可以先加上某个数值，然后再减去某个数值。</p>
+</li>
+</ul>
+<h3 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h3><blockquote>
+<p>Windows 上是 ipconfig，在 Linux 上是 ifconfig。</p>
+</blockquote>
+<h3 id="如何配置-IP-地址？"><a href="#如何配置-IP-地址？" class="headerlink" title="如何配置 IP 地址？"></a>如何配置 IP 地址？</h3><ul>
+<li>如果配置一个和谁都不搭边的地址呢？例如，旁边的机器都是 192.168.1.x，我非得配置一个 16.158.23.6，会出现什么现象呢？<br>答：不会出现任何现象，就是包发不出去呗<br>你看着它有自己的源 IP 地址 16.158.23.6，也有目标 IP 地址 192.168.1.6，但是包发不出去，这是因为 MAC 层还没填。<blockquote>
+<p>不在一个网段，会先发送至网关： 若没有网关，不发； 若配了网关，离开该局域网。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li><p>IP 是地址，有定位功能；MAC 是身份证，无定位功能；</p>
+</li>
+<li><p>CIDR 可以用来判断是不是本地人；(CIDR 无类型域间选路 将IP地址一分为二 分别为网络号和主机号)</p>
+<blockquote>
+<p>10.100.122.2/24，这个 IP 地址中有一个斜杠，斜杠后面有个数字 24。这种地址表示形式，就是 CIDR。后面 24 的意思是，32 位中，前 24 位是网络号，后 8 位是主机号。</p>
+</blockquote>
+</li>
+<li><p>IP 分公有的 IP 和私有的 IP。（私有IP只能被局域网的其他机器所访问。 共有IP能够被全世界的机器所访问。）</p>
+</li>
+<li><p>只要是在网络上跑的包，都是完整的，可以有下层没上层，绝对不可能有上层没下层。</p>
+<blockquote>
+<p>第5层:应用层 第4层:传输层 第3层:网络层 第2层:链路层 第1层:物理层</p>
+</blockquote>
+</li>
+</ul>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://hanjinbao.cn">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&title=《网络协议01-通信协议综述》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&title=《网络协议01-通信协议综述》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络协议01-通信协议综述》 — 人间客栈&url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&via=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/11/13/网络协议02-底层网络知识/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">网络协议02-底层网络知识</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/11/12/ES6/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ES6</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="网络协议01-通信协议综述" data-title="网络协议01-通信协议综述" data-url="https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        您吉祥 ~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&title=《网络协议01-通信协议综述》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&title=《网络协议01-通信协议综述》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络协议01-通信协议综述》 — 人间客栈&url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/&via=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3aQZLbMAwEwPz/00lVro61MwDp+NA+bUm2xOaBwAL49Sv+/P77eb3yev317vM3k7e8u3vsg4eHhzda+vOCnnmv30yu5It+fuYPm4iHh4d3jfd8TCdHdvv9NvzMnoCHh4f3f3nJ69uN2GwoHh4e3vfzclhejJiB8fDw8L6B1y63vf580CeF3eu1Fjw8PLyY1zbAvuHvi/09PDw8vEVXvQ0YSaKcJ9n7deLh4eHd4CXlgPzU3Q8iJAEgb4bh4eHh3ePlTfpZSGhHsmZ5cl3MxcPDwxvxNi/bV0HyIYNhEo+Hh4d3gbdPjtsxglnjbfXPAB4eHt5RXpLstgNPeek2DwOzwS88PDy8z/DyYzcfotqUHvLm2T8seHh4eJd5eQo7a/PPgkGbRr8NDHh4eHiHeLPSQN5Vm40O5An9qpiLh4eHt+btH5QUfNuGWfsWPDw8vM/w8jQ6DxWzZc3GFPDw8PA+yWtLtLMUeVNuSALM2yfj4eHhXea1xda2uZWXGzYtMTw8PLxP8jaJbLvcNjUfDhbg4eHhXePNGvzJQvM0fRMAfihG4OHh4R3lzRpgeXo9GzhoU+oiLOHh4eEd4m2aVZvxrHbIoE2v8fDw8G7wkqXnhYlN0yv5Vb6VeHh4ePd4eaqaH/p5M2w2QNBuNB4eHt493uzHeQutZR8o2uLh4eFd4+WkU6MGbXKcJM31ZBkeHh7eIV5bXGgDQxsANu0xPDw8vBu8zUHcJs152GiLIG+fhoeHh3eBtx9vyou/Sfqbt9D2zTY8PDy8DW9WPG234/amRK0vPDw8vKO8WTCYFTtmvLbmgIeHh/c9vLaVdWrpbTDDw8PD+wZe3rKa3W2bZ4dTajw8PLwLxYh8ACtfSj4+lZdx8fDw8G7zZg2wTTLdlomTcYRV0QQPDw8v5f0BYm0r8OO/X+EAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hanjinbao.cn/"/>
-  <updated>2022-11-14T02:27:26.128Z</updated>
+  <updated>2022-11-14T08:17:46.579Z</updated>
   <id>https://hanjinbao.cn/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>网络协议02-底层网络知识</title>
+    <link href="https://hanjinbao.cn/2022/11/13/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE02-%E5%BA%95%E5%B1%82%E7%BD%91%E7%BB%9C%E7%9F%A5%E8%AF%86/"/>
+    <id>https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/</id>
+    <published>2022-11-13T05:39:50.000Z</published>
+    <updated>2022-11-14T08:17:46.579Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="底层网络知识"><a href="#底层网络知识" class="headerlink" title="底层网络知识"></a>底层网络知识</h1><p>  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他的机器展开沟通了。</p><h2 id="从物理层到MAC层"><a href="#从物理层到MAC层" class="headerlink" title="从物理层到MAC层"></a>从物理层到MAC层</h2><ol><li><p>物理层提供设备，即数据传输的通路，将多台设备连接起来。设备如网线，接线头，hub等。</p></li><li><p>数据链路层，即mac层，medium access controller，媒体访问控制，需要解决几个问题</p><ul><li>谁先发谁后发</li><li>发给谁，谁接收</li><li>发送出现了错误，怎么办。</li></ul></li></ol><h4 id="一个广播的网络里面接入了-N-台机器，我怎么知道每个-MAC-地址是谁呢？"><a href="#一个广播的网络里面接入了-N-台机器，我怎么知道每个-MAC-地址是谁呢？" class="headerlink" title="一个广播的网络里面接入了 N 台机器，我怎么知道每个 MAC 地址是谁呢？"></a>一个广播的网络里面接入了 N 台机器，我怎么知道每个 MAC 地址是谁呢？</h4><p>  <code>首先根据目标ip地址找到目标机器所在的局域网，然后依赖ARP协议吼一嗓子，ip地址是192.168.3.58的机器你的mac是多少？</code></p><blockquote><p>通过ip地址，求mac地址的协议。 arp协议。ARP协议的前提是先要知道目标机器的IP, 根据目标IP求MAC地址的协议</p></blockquote><h4 id="二层设备：交换机"><a href="#二层设备：交换机" class="headerlink" title="二层设备：交换机"></a>二层设备：交换机</h4><blockquote><p>一台 MAC1 电脑将一个包发送给另一台 MAC2 电脑，当这个包到达交换机的时候，一开始交换机也不知道 MAC2 的电脑在哪个口，所以没办法，它只能将包转发给除了来的那个口之外的其他所有的口。但是，这个时候，交换机会干一件非常聪明的事情，就是交换机会记住，MAC1 是来自一个明确的口。以后有包的目的地址是 MAC1 的，直接发送到这个口就可以了。当交换机作为一个关卡一样，过了一段时间之后，就有了整个网络的一个结构了，这个时候，基本上不用广播了，全部可以准确转发。当然，每个机器的 IP 地址会变，所在的口也会变，因而交换机上的学习的结果，我们称为转发表，是有一个过期时间的。</p></blockquote><h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul><li><p>第一，MAC 层是用来解决多路访问的堵车问题的；</p></li><li><p>第二，ARP 是通过吼的方式来寻找目标 MAC 地址的，吼完之后记住一段时间，这个叫作缓存；</p></li><li><p>第三，交换机是有 MAC 地址学习能力的，学完了它就知道谁在哪儿了，不用广播了。</p></li></ul><blockquote><p> 我现在在公司的内网想要访问一个北京的外网ip， 首先把我自己的ip地址，mac地址，端口，外网的ip地址，端口，在内网吼一下，被公司网关收到，判断下这个ip是不是内网的， 不是的话，添加上公司自己的mac地址，然后往更上一层吼一下(某个区域电信的网关)，然后这个区域的电信网管判断下ip是不是我这一片的,再试再加上自己的mac地址，再层层往上吼，一直找到这个ip为止。  </p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;底层网络知识&quot;&gt;&lt;a href=&quot;#底层网络知识&quot; class=&quot;headerlink&quot; title=&quot;底层网络知识&quot;&gt;&lt;/a&gt;底层网络知识&lt;/h1&gt;&lt;p&gt;  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他
+      
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="https://hanjinbao.cn/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>网络协议01-通信协议综述</title>
-    <link href="https://hanjinbao.cn/2022/11/13/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE-01/"/>
-    <id>https://hanjinbao.cn/2022/11/13/网络协议-01/</id>
-    <published>2022-11-13T03:43:31.000Z</published>
-    <updated>2022-11-14T02:27:26.128Z</updated>
+    <link href="https://hanjinbao.cn/2022/11/12/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE01-%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E7%BB%BC%E8%BF%B0/"/>
+    <id>https://hanjinbao.cn/2022/11/12/网络协议01-通信协议综述/</id>
+    <published>2022-11-12T09:43:31.000Z</published>
+    <updated>2022-11-14T05:40:06.273Z</updated>
     
     <content type="html"><![CDATA[<h1 id="通信协议综述"><a href="#通信协议综述" class="headerlink" title="通信协议综述"></a>通信协议综述</h1><p>《圣经》中有一个通天塔的故事，大致是说，上帝为了阻止人类联合起来，就让人类说不同的语言。人类没法儿沟通，达不成“协议”，通天塔的计划就失败了。但是千年以后，有一种叫“程序猿”的物种，敲着一种这个群体通用的语言，连接着全世界所有的人，打造这互联网世界的通天塔。如今的世界，正是因为互联网，才连接在一起。</p><h3 id="协议三要素"><a href="#协议三要素" class="headerlink" title="协议三要素"></a>协议三要素</h3><ul><li><p>语法，就是这一段内容要符合一定的规则和格式。例如，括号要成对，结束要使用分号等。</p></li><li><p>语义，就是这一段内容要代表某种意义。例如数字减去数字是有意义的，数字减去文本一般来说就没有意义。</p></li><li><p>顺序，就是先干啥，后干啥。例如，可以先加上某个数值，然后再减去某个数值。</p></li></ul><h3 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h3><blockquote><p>Windows 上是 ipconfig，在 Linux 上是 ifconfig。</p></blockquote><h3 id="如何配置-IP-地址？"><a href="#如何配置-IP-地址？" class="headerlink" title="如何配置 IP 地址？"></a>如何配置 IP 地址？</h3><ul><li>如果配置一个和谁都不搭边的地址呢？例如，旁边的机器都是 192.168.1.x，我非得配置一个 16.158.23.6，会出现什么现象呢？<br>答：不会出现任何现象，就是包发不出去呗<br>你看着它有自己的源 IP 地址 16.158.23.6，也有目标 IP 地址 192.168.1.6，但是包发不出去，这是因为 MAC 层还没填。<blockquote><p>不在一个网段，会先发送至网关： 若没有网关，不发； 若配了网关，离开该局域网。</p></blockquote></li></ul><h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul><li><p>IP 是地址，有定位功能；MAC 是身份证，无定位功能；</p></li><li><p>CIDR 可以用来判断是不是本地人；(CIDR 无类型域间选路 将IP地址一分为二 分别为网络号和主机号)</p><blockquote><p>10.100.122.2/24，这个 IP 地址中有一个斜杠，斜杠后面有个数字 24。这种地址表示形式，就是 CIDR。后面 24 的意思是，32 位中，前 24 位是网络号，后 8 位是主机号。</p></blockquote></li><li><p>IP 分公有的 IP 和私有的 IP。（私有IP只能被局域网的其他机器所访问。 共有IP能够被全世界的机器所访问。）</p></li><li><p>只要是在网络上跑的包，都是完整的，可以有下层没上层，绝对不可能有上层没下层。</p><blockquote><p>第5层:应用层 第4层:传输层 第3层:网络层 第2层:链路层 第1层:物理层</p></blockquote></li></ul>]]></content>
     

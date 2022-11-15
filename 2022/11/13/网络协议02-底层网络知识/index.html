@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>网络协议02-底层网络知识 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="底层网络知识  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他的机器展开沟通了。 从物理层到MAC层 物理层提供设备，即数据传输的通路，将多台设备连接起来。设备如网线，接线头，hub等。  数据链路层，即mac层，medium access controller，媒体访问控制，需要解决几个问题  谁先发谁后发 发给谁，谁接收 发送出现了错误">
+<meta name="keywords" content="网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络协议02-底层网络知识">
+<meta property="og:url" content="https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="底层网络知识  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他的机器展开沟通了。 从物理层到MAC层 物理层提供设备，即数据传输的通路，将多台设备连接起来。设备如网线，接线头，hub等。  数据链路层，即mac层，medium access controller，媒体访问控制，需要解决几个问题  谁先发谁后发 发给谁，谁接收 发送出现了错误">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-14T08:17:46.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络协议02-底层网络知识">
+<meta name="twitter:description" content="底层网络知识  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他的机器展开沟通了。 从物理层到MAC层 物理层提供设备，即数据传输的通路，将多台设备连接起来。设备如网线，接线头，hub等。  数据链路层，即mac层，medium access controller，媒体访问控制，需要解决几个问题  谁先发谁后发 发给谁，谁接收 发送出现了错误">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">网络协议02-底层网络知识</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">网络协议02-底层网络知识</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-13T05:39:50.000Z" itemprop="datePublished" class="page-time">
+  2022-11-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#底层网络知识"><span class="post-toc-number">1.</span> <span class="post-toc-text">底层网络知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从物理层到MAC层"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">从物理层到MAC层</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一个广播的网络里面接入了-N-台机器，我怎么知道每个-MAC-地址是谁呢？"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">一个广播的网络里面接入了 N 台机器，我怎么知道每个 MAC 地址是谁呢？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二层设备：交换机"><span class="post-toc-number">1.1.0.2.</span> <span class="post-toc-text">二层设备：交换机</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">小结</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-网络协议02-底层网络知识"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">网络协议02-底层网络知识</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022年11月13日 13:39" datetime="2022-11-13T05:39:50.000Z"  itemprop="datePublished">2022-11-13</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="底层网络知识"><a href="#底层网络知识" class="headerlink" title="底层网络知识"></a>底层网络知识</h1><p>  我们见证了 IP 地址的诞生，或者说是整个操作系统的诞生。一旦机器有了 IP，就可以在网络的环境里和其他的机器展开沟通了。</p>
+<h2 id="从物理层到MAC层"><a href="#从物理层到MAC层" class="headerlink" title="从物理层到MAC层"></a>从物理层到MAC层</h2><ol>
+<li><p>物理层提供设备，即数据传输的通路，将多台设备连接起来。设备如网线，接线头，hub等。</p>
+</li>
+<li><p>数据链路层，即mac层，medium access controller，媒体访问控制，需要解决几个问题</p>
+<ul>
+<li>谁先发谁后发</li>
+<li>发给谁，谁接收</li>
+<li>发送出现了错误，怎么办。</li>
+</ul>
+</li>
+</ol>
+<h4 id="一个广播的网络里面接入了-N-台机器，我怎么知道每个-MAC-地址是谁呢？"><a href="#一个广播的网络里面接入了-N-台机器，我怎么知道每个-MAC-地址是谁呢？" class="headerlink" title="一个广播的网络里面接入了 N 台机器，我怎么知道每个 MAC 地址是谁呢？"></a>一个广播的网络里面接入了 N 台机器，我怎么知道每个 MAC 地址是谁呢？</h4><p>  <code>首先根据目标ip地址找到目标机器所在的局域网，然后依赖ARP协议吼一嗓子，ip地址是192.168.3.58的机器你的mac是多少？</code></p>
+<blockquote>
+<p>通过ip地址，求mac地址的协议。 arp协议。ARP协议的前提是先要知道目标机器的IP, 根据目标IP求MAC地址的协议</p>
+</blockquote>
+<h4 id="二层设备：交换机"><a href="#二层设备：交换机" class="headerlink" title="二层设备：交换机"></a>二层设备：交换机</h4><blockquote>
+<p>一台 MAC1 电脑将一个包发送给另一台 MAC2 电脑，当这个包到达交换机的时候，一开始交换机也不知道 MAC2 的电脑在哪个口，所以没办法，它只能将包转发给除了来的那个口之外的其他所有的口。但是，这个时候，交换机会干一件非常聪明的事情，就是交换机会记住，MAC1 是来自一个明确的口。以后有包的目的地址是 MAC1 的，直接发送到这个口就可以了。当交换机作为一个关卡一样，过了一段时间之后，就有了整个网络的一个结构了，这个时候，基本上不用广播了，全部可以准确转发。当然，每个机器的 IP 地址会变，所在的口也会变，因而交换机上的学习的结果，我们称为转发表，是有一个过期时间的。</p>
+</blockquote>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li><p>第一，MAC 层是用来解决多路访问的堵车问题的；</p>
+</li>
+<li><p>第二，ARP 是通过吼的方式来寻找目标 MAC 地址的，吼完之后记住一段时间，这个叫作缓存；</p>
+</li>
+<li><p>第三，交换机是有 MAC 地址学习能力的，学完了它就知道谁在哪儿了，不用广播了。</p>
+</li>
+</ul>
+<blockquote>
+<p> 我现在在公司的内网想要访问一个北京的外网ip， 首先把我自己的ip地址，mac地址，端口，外网的ip地址，端口，在内网吼一下，被公司网关收到，判断下这个ip是不是内网的， 不是的话，添加上公司自己的mac地址，然后往更上一层吼一下(某个区域电信的网关)，然后这个区域的电信网管判断下ip是不是我这一片的,再试再加上自己的mac地址，再层层往上吼，一直找到这个ip为止。  </p>
+</blockquote>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://hanjinbao.cn">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络/">网络</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&title=《网络协议02-底层网络知识》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&title=《网络协议02-底层网络知识》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络协议02-底层网络知识》 — 人间客栈&url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&via=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/11/12/网络协议01-通信协议综述/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">网络协议01-通信协议综述</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="网络协议02-底层网络知识" data-title="网络协议02-底层网络知识" data-url="https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        您吉祥 ~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&title=《网络协议02-底层网络知识》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&title=《网络协议02-底层网络知识》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《网络协议02-底层网络知识》 — 人间客栈&url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/&via=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/13/网络协议02-底层网络知识/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3a3coaUQwFUN//pb9CrwrVcWdnjraw5kpw/tYRTmKSxyM+fn4ff36+Pl5d9fc9r6999e3NBx4eHl716tOH5XeYsvdLjIeHh/cZXn675PGvrrpeoO7zGwseHh7eV3kJ+/pum9fFw8PD+99508JBFySS98HDw8P7Fq8rHySF2mnxd1PkxcPDw/sMryuhfvfz8f4eHh4eXtVVTzbcTdvs+pxpMHhyHzw8PLwDvOQBdwWJJGnOFyUpE+Ph4eGd4+UvkRQd8iGtvESbLNybHwYPDw/vAK8rTOSP6bb+JB0fhAc8PDy8Na9LfPNmf/5tN9T1ho2Hh4d3gJcnwXlUycuy03Gu6cLh4eHhneN1I1ZdYNhk9HlwetkAw8PDw1vz9u2laeN/WiDuggEeHh7eZ3h5M6k7Jy/C3lYKwcPDwzvA2wOmCXTX7N+MheHh4eHdy8ubT3edM03T8zD2shiBh4eHdytvusV3hd1pANh0r54sDR4eHt4xXpL+dqMD0+GAPGAM/jHg4eHh3cqblhi6oYHpcnRDYG9+ADw8PLw1b7/Fb7b7bikHTTI8PDy8A7xNcyvfoDfFiGk5o5xQwMPDw6t4+9JD1/LPn1Um7nh4eHjHePt0droE+wGsCIyHh4d3gDf4Y1+dk6fgm4LIoEqNh4eHt+BtCrXTTTx5rU0RGQ8PD+/f4Y2nD6rxgg7/5n3w8PDwDvC6v/r7Df3eku6gPYaHh4e35v0Mj33BokvK80AVpdR4eHh4C17Xnu+aXnlqnhcdumCGh4eHt+dNg8F04GAzLtAl3IPEGg8PD2/B62oY04Gq6WDBNJo9uQoPDw/vq7yund8Fj02p4jF9MB4eHt5h3jRdni7ZPjVfBQY8PDy8mNc1vfK0OA8n04bcaoAADw8Pr+J1w1V50yv/vP/2hv4eHh4e3tVb/QL4iw0BEEIAuAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>
