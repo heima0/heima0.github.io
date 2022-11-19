@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>flutter01-布局构建 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flutter01-布局构建">
+<meta property="og:url" content="https://hanjinbao.cn/2022/11/14/flutter01-布局构建/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-18T13:41:06.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flutter01-布局构建">
+<meta name="twitter:description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">flutter01-布局构建</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">flutter01-布局构建</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-14T12:00:34.000Z" itemprop="datePublished" class="page-time">
+  2022-11-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Flutter-中的布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">Flutter 中的布局</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局一个可见widget"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">布局一个可见widget</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建一个可见-widget"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1. 创建一个可见 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-将可见-widget-添加到布局-widget"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2. 将可见 widget 添加到布局 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-将布局-widget-添加到页面"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3. 将布局 widget 添加到页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#横向或纵向布局多个-widgets"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">横向或纵向布局多个 widgets</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对齐-widgets"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">对齐 widgets</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-flutter01-布局构建"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">flutter01-布局构建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022年11月14日 20:00" datetime="2022-11-14T12:00:34.000Z"  itemprop="datePublished">2022-11-14</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Flutter-中的布局"><a href="#Flutter-中的布局" class="headerlink" title="Flutter 中的布局"></a>Flutter 中的布局</h1><p>在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。</p>
+<h2 id="布局一个可见widget"><a href="#布局一个可见widget" class="headerlink" title="布局一个可见widget"></a>布局一个可见widget</h2><h3 id="1-创建一个可见-widget"><a href="#1-创建一个可见-widget" class="headerlink" title="1. 创建一个可见 widget"></a>1. 创建一个可见 widget</h3><p>  举个例子，创建一个 Text widget：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Text(&apos;Hello World&apos;),</span><br></pre></td></tr></table></figure>
+<p>  创建一个 Image widget</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(</span><br><span class="line">  &apos;images/lake.jpg&apos;,</span><br><span class="line">  fit: BoxFit.cover,</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<p>  创建一个 Icon widget</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Icon(</span><br><span class="line">  Icons.star,</span><br><span class="line">  color: Colors.red[500],</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h3 id="2-将可见-widget-添加到布局-widget"><a href="#2-将可见-widget-添加到布局-widget" class="headerlink" title="2. 将可见 widget 添加到布局 widget"></a>2. 将可见 widget 添加到布局 widget</h3><p>  所有布局 widgets 都具有以下任一项：</p>
+<pre><code>- 一个 child 属性，如果它们只包含一个子项 —— 例如 Center 和 Container
+
+- 一个 children 属性，如果它们包含多个子项 —— 例如 Row、Column、ListView 和 Stack
+</code></pre><p>  将 Text widget 添加进 Center widget：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const Center(</span><br><span class="line">  child: Text(&apos;Hello World&apos;),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+<h3 id="3-将布局-widget-添加到页面"><a href="#3-将布局-widget-添加到页面" class="headerlink" title="3. 将布局 widget 添加到页面"></a>3. 将布局 widget 添加到页面</h3><p>  一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 build() 方法，在 app 的 build() 方法中实例化和返回一个 widget 会让它显示出来。</p>
+<p>  对于 Material app，你可以使用 Scaffold widget，它提供默认的 banner 背景颜色，还有用于添加抽屉、提示条和底部列表弹窗的 API。你可以将 Center widget 直接添加到主页 body 的属性中。</p>
+<p>  <code>lib/main.dart (MyApp)</code><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  const MyApp(&#123;super.key&#125;);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return MaterialApp(</span><br><span class="line">      title: &apos;Flutter layout demo&apos;,</span><br><span class="line">      home: Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          title: const Text(&apos;Flutter layout demo&apos;),</span><br><span class="line">        ),</span><br><span class="line">        body: const Center(</span><br><span class="line">          child: Text(&apos;Hello World&apos;),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="横向或纵向布局多个-widgets"><a href="#横向或纵向布局多个-widgets" class="headerlink" title="横向或纵向布局多个 widgets"></a>横向或纵向布局多个 widgets</h2><p>  最常见的布局模式之一是垂直或水平 widgets。你可以使用 <code>Row widget</code> 水平排列 widgets，使用 <code>Column widget</code> 垂直排列 widgets。</p>
+<p><code>要点：</code></p>
+<ul>
+<li>Row 和 Column 是两种最常用的布局模式。</li>
+<li>Row 和 Column 每个都有一个子 widgets 列表。</li>
+<li>一个子 widget 本身可以是 Row、Column 或其他复杂 widget。</li>
+<li>可以指定 Row 或 Column 如何在垂直和水平方向上对齐其子项。</li>
+<li>可以拉伸或限制特定的子 widgets。</li>
+<li>可以指定子 widgets 如何占用 Row 或 Column 的可用空间。</li>
+</ul>
+<p><code>提示：</code></p>
+<blockquote>
+<p>Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。 Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。例如，和 Row 相比你可能更喜欢 ListTile，这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；和 Column 相比你也可能更喜欢 ListView，这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。</p>
+</blockquote>
+<h2 id="对齐-widgets"><a href="#对齐-widgets" class="headerlink" title="对齐 widgets"></a>对齐 widgets</h2><p>  你可以使用 mainAxisAlignment 和 crossAxisAlignment 属性控制行或列如何对齐其子项。对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。</p>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://hanjinbao.cn">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&title=《flutter01-布局构建》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/14/flutter01-布局构建//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&title=《flutter01-布局构建》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter01-布局构建》 — 人间客栈&url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&via=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/11/13/网络协议02-底层网络知识/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">网络协议02-底层网络知识</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="flutter01-布局构建" data-title="flutter01-布局构建" data-url="https://hanjinbao.cn/2022/11/14/flutter01-布局构建/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        您吉祥 ~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&title=《flutter01-布局构建》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/14/flutter01-布局构建//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&title=《flutter01-布局构建》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《flutter01-布局构建》 — 人间客栈&url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/&via=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/14/flutter01-布局构建/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3awRLCIAyEYd//pXHGq1PYzVLHhp9Tp1bo5yGShNdLHuMzvq/nn35fu3c2DxgwYDyWMaajtsD8yauZ5+tePQMDBoxzGPpi8ztXy88jpDLn4p1hwIABQ35dPVjr34UBAwYMl5Ekq3OMsi4MGDBOZtQCn5vKKsnw7bk4DBgwHshIGgN3X/+ovwEDBow/ZgxzKElp0p4cpQEDBozejHmSmRT07/sHMHa4MGDAaMEoFrbMIHt3ExQGDBi9GW6xLAmOSlivPQ8DBozejESfNx3dhNlIX2HAgNGO4QZZ9/CEgqmtDgMGjBMYbijUp9YDqD7bYgYYMGA0ZejB0W1wKtfJhvIyiYUBA0ZThgtIkli3hKf8lDBgwOjN0DeC7p38de1VYMCA0ZRRK8fXjoXl7czFmREYMGA0ZegbuFrJXk9W925DYcCA0ZXhlvLtICg3HmrtBBgwYPRm6AvXGgZJAU5pr8KAAeMEhtsMUI6C1VoFG4I7DBgw2jH04pdb4ndT2YQNAwaMkxlu83LvwS893MOAAaM3Y1fqqE9dC+Ju6gsDBoxOjGEO97dxC3NuKrvYGsKAAaMFww1zyrZSb0bqjQejMQADBoymjCQIuoG11haVUm4YMGAcwEgOWOgNzl1p8KIHCwMGjIMZygZOT4CT1DQKuDBgwDiGsXeTp/cuNmwNYcCA8ViGWzjLD1XUCnkwYMA4k+E2BhK2ssmrtRZgwIDRlPEGbET1G+hwsmcAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

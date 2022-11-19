@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://hanjinbao.cn/"/>
-  <updated>2022-11-14T08:17:46.579Z</updated>
+  <updated>2022-11-18T13:41:06.808Z</updated>
   <id>https://hanjinbao.cn/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>flutter01-布局构建</title>
+    <link href="https://hanjinbao.cn/2022/11/14/flutter01-%E5%B8%83%E5%B1%80%E6%9E%84%E5%BB%BA/"/>
+    <id>https://hanjinbao.cn/2022/11/14/flutter01-布局构建/</id>
+    <published>2022-11-14T12:00:34.000Z</published>
+    <updated>2022-11-18T13:41:06.808Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Flutter-中的布局"><a href="#Flutter-中的布局" class="headerlink" title="Flutter 中的布局"></a>Flutter 中的布局</h1><p>在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。</p><h2 id="布局一个可见widget"><a href="#布局一个可见widget" class="headerlink" title="布局一个可见widget"></a>布局一个可见widget</h2><h3 id="1-创建一个可见-widget"><a href="#1-创建一个可见-widget" class="headerlink" title="1. 创建一个可见 widget"></a>1. 创建一个可见 widget</h3><p>  举个例子，创建一个 Text widget：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Text(&apos;Hello World&apos;),</span><br></pre></td></tr></table></figure><p>  创建一个 Image widget</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(</span><br><span class="line">  &apos;images/lake.jpg&apos;,</span><br><span class="line">  fit: BoxFit.cover,</span><br><span class="line">),</span><br></pre></td></tr></table></figure><p>  创建一个 Icon widget</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Icon(</span><br><span class="line">  Icons.star,</span><br><span class="line">  color: Colors.red[500],</span><br><span class="line">),</span><br></pre></td></tr></table></figure><h3 id="2-将可见-widget-添加到布局-widget"><a href="#2-将可见-widget-添加到布局-widget" class="headerlink" title="2. 将可见 widget 添加到布局 widget"></a>2. 将可见 widget 添加到布局 widget</h3><p>  所有布局 widgets 都具有以下任一项：</p><pre><code>- 一个 child 属性，如果它们只包含一个子项 —— 例如 Center 和 Container- 一个 children 属性，如果它们包含多个子项 —— 例如 Row、Column、ListView 和 Stack</code></pre><p>  将 Text widget 添加进 Center widget：</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const Center(</span><br><span class="line">  child: Text(&apos;Hello World&apos;),</span><br><span class="line">),</span><br></pre></td></tr></table></figure><h3 id="3-将布局-widget-添加到页面"><a href="#3-将布局-widget-添加到页面" class="headerlink" title="3. 将布局 widget 添加到页面"></a>3. 将布局 widget 添加到页面</h3><p>  一个 Flutter app 本身就是一个 widget，大多数 widgets 都有一个 build() 方法，在 app 的 build() 方法中实例化和返回一个 widget 会让它显示出来。</p><p>  对于 Material app，你可以使用 Scaffold widget，它提供默认的 banner 背景颜色，还有用于添加抽屉、提示条和底部列表弹窗的 API。你可以将 Center widget 直接添加到主页 body 的属性中。</p><p>  <code>lib/main.dart (MyApp)</code><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class MyApp extends StatelessWidget &#123;</span><br><span class="line">  const MyApp(&#123;super.key&#125;);</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return MaterialApp(</span><br><span class="line">      title: &apos;Flutter layout demo&apos;,</span><br><span class="line">      home: Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          title: const Text(&apos;Flutter layout demo&apos;),</span><br><span class="line">        ),</span><br><span class="line">        body: const Center(</span><br><span class="line">          child: Text(&apos;Hello World&apos;),</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="横向或纵向布局多个-widgets"><a href="#横向或纵向布局多个-widgets" class="headerlink" title="横向或纵向布局多个 widgets"></a>横向或纵向布局多个 widgets</h2><p>  最常见的布局模式之一是垂直或水平 widgets。你可以使用 <code>Row widget</code> 水平排列 widgets，使用 <code>Column widget</code> 垂直排列 widgets。</p><p><code>要点：</code></p><ul><li>Row 和 Column 是两种最常用的布局模式。</li><li>Row 和 Column 每个都有一个子 widgets 列表。</li><li>一个子 widget 本身可以是 Row、Column 或其他复杂 widget。</li><li>可以指定 Row 或 Column 如何在垂直和水平方向上对齐其子项。</li><li>可以拉伸或限制特定的子 widgets。</li><li>可以指定子 widgets 如何占用 Row 或 Column 的可用空间。</li></ul><p><code>提示：</code></p><blockquote><p>Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。 Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。例如，和 Row 相比你可能更喜欢 ListTile，这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；和 Column 相比你也可能更喜欢 ListView，这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。</p></blockquote><h2 id="对齐-widgets"><a href="#对齐-widgets" class="headerlink" title="对齐 widgets"></a>对齐 widgets</h2><p>  你可以使用 mainAxisAlignment 和 crossAxisAlignment 属性控制行或列如何对齐其子项。对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Flutter-中的布局&quot;&gt;&lt;a href=&quot;#Flutter-中的布局&quot; class=&quot;headerlink&quot; title=&quot;Flutter 中的布局&quot;&gt;&lt;/a&gt;Flutter 中的布局&lt;/h1&gt;&lt;p&gt;在 Flutter 中，只需几步就可以在屏幕上显示文本、图标
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>网络协议02-底层网络知识</title>
