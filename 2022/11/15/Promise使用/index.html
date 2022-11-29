@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Promise使用 | 人间客栈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#080809">
+    
+    
+    <meta name="keywords" content="博客, 静态博客, 个人博客">
+    <meta name="description" content="Promise使用Promise对象方法 Promise.resolve 方法返回一个新的Promise实例，该实例的状态为 fulfilled Promise.resolve(&amp;#39;success&amp;#39;) 等价于 new Promise(resolve =&amp;gt; resolve(&amp;#39;success&amp;#39;))  Promise.reject 方法返回一个新的Promise实例，">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise使用">
+<meta property="og:url" content="https://hanjinbao.cn/2022/11/15/Promise使用/index.html">
+<meta property="og:site_name" content="人间客栈">
+<meta property="og:description" content="Promise使用Promise对象方法 Promise.resolve 方法返回一个新的Promise实例，该实例的状态为 fulfilled Promise.resolve(&amp;#39;success&amp;#39;) 等价于 new Promise(resolve =&amp;gt; resolve(&amp;#39;success&amp;#39;))  Promise.reject 方法返回一个新的Promise实例，">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2022-11-23T01:25:46.248Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Promise使用">
+<meta name="twitter:description" content="Promise使用Promise对象方法 Promise.resolve 方法返回一个新的Promise实例，该实例的状态为 fulfilled Promise.resolve(&amp;#39;success&amp;#39;) 等价于 new Promise(resolve =&amp;gt; resolve(&amp;#39;success&amp;#39;))  Promise.reject 方法返回一个新的Promise实例，">
+    
+        <link rel="alternative" href="/atom.xml" title="人间客栈" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.7">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpeg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Mr.Han</h5>
+          <a href="mailto:1960944297@qq.com" title="1960944297@qq.com" class="mail">1960944297@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags/" target="_blank" >
+                <i class="icon icon-lg icon-不似人间一场雪"></i>
+                不似人间一场雪
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives/"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/3788363512" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Promise使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Promise使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-11-15T12:32:16.000Z" itemprop="datePublished" class="page-time">
+  2022-11-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Promise使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">Promise使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Promise对象方法"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Promise对象方法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Promise使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Promise使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022年11月15日 20:32" datetime="2022-11-15T12:32:16.000Z"  itemprop="datePublished">2022-11-15</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Promise使用"><a href="#Promise使用" class="headerlink" title="Promise使用"></a>Promise使用</h1><h2 id="Promise对象方法"><a href="#Promise对象方法" class="headerlink" title="Promise对象方法"></a>Promise对象方法</h2><ol>
+<li><p>Promise.resolve</p>
+<p>方法返回一个新的Promise实例，该实例的状态为 fulfilled</p>
+<p><code>Promise.resolve(&#39;success&#39;)</code> 等价于 <code>new Promise(resolve =&gt; resolve(&#39;success&#39;))</code></p>
+</li>
+<li><p>Promise.reject</p>
+<p>方法返回一个新的Promise实例，该实例的状态为 rejected</p>
+<p><code>Promise.reject(&#39;error&#39;)</code> 等价于 <code>new Promise(reject =&gt; reject(&#39;error&#39;))</code></p>
+</li>
+<li><p>Promise.all</p>
+<p>用于将多个Promise实例，包装成一个新的Promise实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const p = Promise.all([p1,p2,p3])</span><br></pre></td></tr></table></figure>
+<p>p 的状态由p1,p2,p3决定，分两种情况</p>
+<ul>
+<li>p1,p2,p3状态都变为fulfilled，p状态才会变成fulfilled，此时p1,p2,p3的返回值组成一个数组，传递给p的回调函数。</li>
+<li>只要p1,p2,p3中有一个为rejected，p的状态就变成rejected，此时第一个被rejected的实例的返回值，传递给p的回调函数。</li>
+</ul>
+</li>
+<li><p>Promise.race</p>
+<p>用于将多个Promise实例，包装成一个新的Promise实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const p = Promise.race([p1,p2,p3])</span><br></pre></td></tr></table></figure>
+<p>只要p1,p2,p3中有一个实例率先改变状态，p的状态就跟着改变，率先改变状态实例的返回值，传递给p的回调函数。</p>
+</li>
+<li><p>Promise.allSetteled</p>
+<p>用于将多个Promise实例，包装成一个新的Promise实例<br>用来确定一组异步操作是否都结束了（不管成功或失败），只走then方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const p = Promise.allSetteled([p1,p2,p3]).then(result=&gt;&#123;</span><br><span class="line">  result.filter(item=&gt; item.status === &apos;fulfilled&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Promise.any</p>
+<p>用于将多个Promise实例，包装成一个新的Promise实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const p = Promise.all([p1,p2,p3])</span><br></pre></td></tr></table></figure>
+<p>p 的状态由p1,p2,p3决定，分两种情况</p>
+<ul>
+<li>只要p1,p2,p3中有一个为fulfilled，p的状态就变成fulfilled，此时第一个被fulfilled的实例的返回值，传递给p的回调函数。</li>
+<li>p1,p2,p3状态都变为rejected，p状态才会变成rejected。</li>
+</ul>
+</li>
+<li><p>Promise.finally</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const p = new Promise((resolve,reject) =&gt; resolve(&apos;success&apos;))</span><br><span class="line">p.then(res=&gt;&#123;&#125;)</span><br><span class="line">  .catch(err=&gt;&#123;&#125;)</span><br><span class="line">  .finally(()=&gt;&#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>finally最终肯定会执行的。</p>
+</li>
+</ol>
+
+        </div>
+
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="https://hanjinbao.cn">
+            <img src="/img/avatar.jpeg" alt="Mr.Han">
+            Mr.Han
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/15/Promise使用/&title=《Promise使用》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/15/Promise使用//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/15/Promise使用/&title=《Promise使用》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Promise使用》 — 人间客栈&url=https://hanjinbao.cn/2022/11/15/Promise使用/&via=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/11/14/flutter02-dart/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">flutter02-dart</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Promise使用" data-title="Promise使用" data-url="https://hanjinbao.cn/2022/11/15/Promise使用/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+// 
+var duoshuoQuery = {short_name:'ysblog', theme: 'none'};
+// lazyScripts.push('/js/embed.min.js?v=1.4.7');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        您吉祥 ~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="bottom">
+        <p>
+            <span>人间客栈 &copy; 2015 - 2022</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://hanjinbao.cn/2022/11/15/Promise使用/&title=《Promise使用》 — 人间客栈&pic=https://hanjinbao.cn/2022/11/15/Promise使用//img/avatar.jpeg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://hanjinbao.cn/2022/11/15/Promise使用/&title=《Promise使用》 — 人间客栈&source=我的个人静态博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Promise使用》 — 人间客栈&url=https://hanjinbao.cn/2022/11/15/Promise使用/&via=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://hanjinbao.cn/2022/11/15/Promise使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a0Y6DIBAF0P3/n+4m+9qI90K7iXB4atTqHJtMB4afn3i8/sb7kffjV2ffP19dc3XPDwwMDIzHMl7DcRXEONwccPWC8tgwMDDOYYyT7DjcHD+XgpM/AAwMDIxxadgCkuMYGBgYKwk3CSifoOavAwMDAyO53Qr4ewUoBgbGCYy2MfCfn7/Y38DAwHgI41WOT31rrli8vD8GBsbWjPFSWrKFYqUxmU9io3SMgYGxKSNf+l95fHI2bxUUdSsGBsYWjLkFsnYjRb45NQn35n8DAwNjU8Zcw3Juo0bbBqgX5jAwMDZl5FPQpJHZlnptS+BmuQ0DA2M7RjvJbHuI7ZWTCRcDA2NrxlwQ+aS0vX+78IeBgYHRlndzBV87JcbAwDiT0TYJ8ofNpeYP3BMDA2M7Rr6dYu6R9baJONViYGCcxpjbnpVv0WiTeH0EAwPjGEa+aTVPiHONz/rpGBgYmzLGhWC7TNY2QdtkfZNqMTAwNmUkF+VJtuXlBWLUOsXAwNiUMZ6s5sHl6TgpHItfAAMD4xhGXpbNTW7XC8ebODEwMLZm5AtkbRDjRLz+XQwMjHMYr3LMNThbTH0WAwNja8bK9qw8pbaT0pUGKgYGxq6MudIwZ7fJca6NioGBcQJjJZQ2da7w6tMYGBiHMdqp6XqzsyhMMTAwMIJlrxwwtznsJlljYGAcwFhpBqwk1rnQ60YmBgbGwxntBHJczK20LfMC8QMtTAwMjGcwfgG3r6h2V/DODgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+// 
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.7"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.7" async></script>
+
+
+
+
+
+
+</body>
+</html>

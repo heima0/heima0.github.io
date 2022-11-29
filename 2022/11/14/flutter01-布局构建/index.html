@@ -21,13 +21,14 @@
     
     <meta name="keywords" content="博客, 静态博客, 个人博客">
     <meta name="description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
+<meta name="keywords" content="flutter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flutter01-布局构建">
 <meta property="og:url" content="https://hanjinbao.cn/2022/11/14/flutter01-布局构建/index.html">
 <meta property="og:site_name" content="人间客栈">
 <meta property="og:description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2022-11-18T13:41:06.808Z">
+<meta property="og:updated_time" content="2022-11-28T09:09:17.124Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flutter01-布局构建">
 <meta name="twitter:description" content="Flutter 中的布局在 Flutter 中，只需几步就可以在屏幕上显示文本、图标或图像。 布局一个可见widget1. 创建一个可见 widget  举个例子，创建一个 Text widget：   1Text(&amp;apos;Hello World&amp;apos;),   创建一个 Image widget   1234Image.asset(  &amp;apos;images/lake.jpg&amp;apos">
@@ -144,7 +145,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Flutter-中的布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">Flutter 中的布局</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局一个可见widget"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">布局一个可见widget</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建一个可见-widget"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1. 创建一个可见 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-将可见-widget-添加到布局-widget"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2. 将可见 widget 添加到布局 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-将布局-widget-添加到页面"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3. 将布局 widget 添加到页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#横向或纵向布局多个-widgets"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">横向或纵向布局多个 widgets</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对齐-widgets"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">对齐 widgets</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Flutter-中的布局"><span class="post-toc-number">1.</span> <span class="post-toc-text">Flutter 中的布局</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局一个可见widget"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">布局一个可见widget</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-创建一个可见-widget"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1. 创建一个可见 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-将可见-widget-添加到布局-widget"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2. 将可见 widget 添加到布局 widget</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-将布局-widget-添加到页面"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3. 将布局 widget 添加到页面</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#横向或纵向布局多个-widgets"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">横向或纵向布局多个 widgets</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对齐-widgets"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">对齐 widgets</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#布局约束"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">布局约束</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Flutter-的布局方式与-HTML-的布局差异相当大"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Flutter 的布局方式与 HTML 的布局差异相当大</span></a></li></ol></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -200,6 +201,12 @@
 <p>Row 和 Column 是水平和垂直布局的基本原始 widgets —— 这些低级 widgets 允许最大程度的自定义。 Flutter 还提供专门的、更高级别的 widgets，可能可以直接满足需求。例如，和 Row 相比你可能更喜欢 ListTile，这是一个易于使用的 widget，有属性可以设置头尾图标，最多可以显示 3 行文本；和 Column 相比你也可能更喜欢 ListView，这是一种类似于列的布局，但如果其内容太长导致可用空间不够容纳时会自动滚动。</p>
 </blockquote>
 <h2 id="对齐-widgets"><a href="#对齐-widgets" class="headerlink" title="对齐 widgets"></a>对齐 widgets</h2><p>  你可以使用 mainAxisAlignment 和 crossAxisAlignment 属性控制行或列如何对齐其子项。对于一行来说，主轴水平延伸，交叉轴垂直延伸。对于一列来说，主轴垂直延伸，交叉轴水平延伸。</p>
+<h2 id="布局约束"><a href="#布局约束" class="headerlink" title="布局约束"></a>布局约束</h2><h3 id="Flutter-的布局方式与-HTML-的布局差异相当大"><a href="#Flutter-的布局方式与-HTML-的布局差异相当大" class="headerlink" title="Flutter 的布局方式与 HTML 的布局差异相当大"></a>Flutter 的布局方式与 HTML 的布局差异相当大</h3><p><code>规则：</code></p>
+<ul>
+<li>首先，上层 widget 向下层 widget 传递约束条件；</li>
+<li>然后，下层 widget 向上层 widget 传递大小信息。</li>
+<li>最后，上层 widget 决定下层 widget 的位置。</li>
+</ul>
 
         </div>
 
@@ -227,6 +234,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flutter/">flutter</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -280,7 +289,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/11/14/flutter02-dart/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">flutter02-dart</h4>
+      </a>
+    </div>
   
 
   
